@@ -23,7 +23,7 @@ export default function Home() {
       <div className="min-h-screen flex flex-col">
       {/* Top Bar - Social Media & Navigation */}
       <div className="bg-[#2C4A5E] text-white py-2">
-        <div className="container flex justify-between items-center">
+        <div className="container flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex gap-3">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
                className="w-8 h-8 bg-[#5DCED9] rounded flex items-center justify-center hover:bg-[#4ABDC8] transition-colors">
@@ -50,7 +50,7 @@ export default function Home() {
               <Mail size={16} />
             </a>
           </div>
-          <nav className="hidden md:flex gap-6 text-sm font-medium">
+          <nav className="flex flex-wrap justify-center gap-3 sm:gap-6 text-xs sm:text-sm font-medium">
             <a href="#about" className="hover:text-[#5DCED9] transition-colors">ABOUT</a>
             <a href="#blog" className="hover:text-[#5DCED9] transition-colors">BLOG</a>
             <a href="#portfolio" className="hover:text-[#5DCED9] transition-colors">PORTFOLIO</a>
@@ -60,14 +60,14 @@ export default function Home() {
       </div>
 
       {/* Main Header */}
-      <header className="bg-white border-b border-gray-200 py-4 sticky top-0 z-50 shadow-sm">
+      <header className="bg-white border-b border-gray-200 py-3 sm:py-4 sticky top-0 z-50 shadow-sm">
         <div className="container">
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-3 lg:gap-0">
             {/* Logo */}
-            <div className="flex items-center gap-3">
-              <img src="/logo.png" alt="Unlock SRQ" className="h-16 w-auto" />
+            <div className="flex items-center gap-2 sm:gap-3">
+              <img src="/logo.png" alt="Unlock SRQ" className="h-12 sm:h-16 w-auto" />
               <div className="flex flex-col">
-                <span className="text-2xl font-bold text-[#2C4A5E]">
+                <span className="text-xl sm:text-2xl font-bold text-[#2C4A5E]">
                   Unlock <span className="text-[#5DCED9]">SRQ</span>
                 </span>
                 <span className="text-xs text-gray-600">LLC</span>
@@ -75,7 +75,7 @@ export default function Home() {
             </div>
 
             {/* Contact Info */}
-            <div className="hidden lg:flex flex-col gap-1 text-sm">
+            <div className="hidden md:flex flex-col gap-1 text-xs lg:text-sm">
               <div className="flex items-center gap-2">
                 <Phone size={16} className="text-[#5DCED9]" />
                 <span className="font-semibold">Phone: <a href="tel:9415875050" className="text-[#2C4A5E] hover:text-[#5DCED9]">941-587-5050</a></span>
@@ -90,8 +90,17 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Mobile Contact Info */}
+            <div className="flex md:hidden items-center gap-4 text-xs">
+              <a href="tel:9415875050" className="flex items-center gap-1 text-[#2C4A5E] hover:text-[#5DCED9]">
+                <Phone size={14} />
+                <span className="font-semibold">941-587-5050</span>
+              </a>
+              <span className="text-[#5DCED9] font-semibold">24/7</span>
+            </div>
+
             {/* Main Navigation */}
-            <nav className="hidden xl:flex gap-6 text-sm font-semibold">
+            <nav className="hidden lg:flex gap-3 xl:gap-6 text-xs xl:text-sm font-semibold">
               <a href="#florida" className="text-[#2C4A5E] hover:text-[#5DCED9] transition-colors">FLORIDA UNLOCK SRQ</a>
               <a href="#services" className="text-[#2C4A5E] hover:text-[#5DCED9] transition-colors">SERVICES ▼</a>
               <a href="#products" className="text-[#2C4A5E] hover:text-[#5DCED9] transition-colors">PRODUCTS ▼</a>
@@ -101,26 +110,26 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-[600px] flex items-center justify-start bg-cover bg-center" 
+      <section className="relative min-h-[500px] sm:min-h-[600px] flex items-center justify-start bg-cover bg-center" 
                style={{ backgroundImage: 'url(/hero-bg.webp)' }}>
         {/* Purple Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-purple-700/60"></div>
         
-        <div className="container relative z-10 py-20">
-          <div className="max-w-2xl">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+        <div className="container relative z-10 py-12 sm:py-20">
+          <div className="max-w-2xl px-4 sm:px-0">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
               Unlock SRQ Services in Florida and Surrounding Areas
             </h1>
-            <p className="text-lg text-white/95 mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-white/95 mb-6 sm:mb-8 leading-relaxed">
               Unlock SRQ - Smart solutions for key problems and emergency automotive services. 
               We use advanced technology and an AI-powered approach for rapid key programming, 
               vehicle diagnostics, and locksmith services. We come to you within 15-30 minutes.
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <a href="/booking">
                 <Button 
                   size="lg" 
-                  className="bg-[#5DCED9] hover:bg-[#4ABDC8] text-[#2C4A5E] font-semibold px-8 py-6 text-lg rounded-full shadow-lg"
+                  className="bg-[#5DCED9] hover:bg-[#4ABDC8] text-[#2C4A5E] font-semibold px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full shadow-lg w-full sm:w-auto"
                 >
                   Book Appointment
                 </Button>
@@ -129,7 +138,7 @@ export default function Home() {
                 <Button 
                   size="lg" 
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white/10 font-semibold px-8 py-6 text-lg rounded-full shadow-lg"
+                  className="border-2 border-white text-white hover:bg-white/10 font-semibold px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full shadow-lg w-full sm:w-auto"
                 >
                   Pay Online
                 </Button>
