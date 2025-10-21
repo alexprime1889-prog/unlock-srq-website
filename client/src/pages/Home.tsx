@@ -135,7 +135,7 @@ export default function Home() {
           {/* Purple Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/85 via-purple-700/75 to-purple-600/70"></div>
           
-          <div className="container relative z-10 py-20 pb-40">
+          <div className="container relative z-10 py-20 pb-64">
             <div className="max-w-3xl">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 Unlock SRQ Services in Florida and Surrounding Areas
@@ -169,7 +169,7 @@ export default function Home() {
         </section>
 
         {/* 4 SERVICE CARDS - Overlapping Hero */}
-        <section className="relative -mt-40 z-20 pb-20">
+        <section className="relative -mt-48 z-20 pb-20">
           <div className="container">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Card 1: Residential */}
