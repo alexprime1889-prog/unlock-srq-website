@@ -74,7 +74,7 @@ export default function Home() {
                  className="w-8 h-8 bg-[#7dd3e8] rounded flex items-center justify-center hover:bg-[#6bc3d8] transition-colors">
                 <span className="text-[#1a3a52] font-bold text-sm">Y</span>
               </a>
-              <a href="mailto:info@unlocksrq.com" 
+              <a href="mailto:info@srqunlock.com" 
                  className="w-8 h-8 bg-[#7dd3e8] rounded flex items-center justify-center hover:bg-[#6bc3d8] transition-colors">
                 <Mail size={16} className="text-[#1a3a52]" />
               </a>
@@ -118,7 +118,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail size={14} className="text-[#7dd3e8]" />
-                  <span className="font-semibold">Email: <a href="mailto:info@unlocksrq.com" className="text-[#1a3a52] hover:text-[#7dd3e8]">info@unlocksrq.com</a></span>
+                  <span className="font-semibold">Email: <a href="mailto:info@srqunlock.com" className="text-[#1a3a52] hover:text-[#7dd3e8]">info@srqunlock.com</a></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock size={14} className="text-[#7dd3e8]" />
@@ -583,7 +583,7 @@ export default function Home() {
                  className="w-10 h-10 bg-[#7dd3e8] rounded-full flex items-center justify-center hover:bg-[#6bc3d8] transition-colors">
                 <Youtube size={20} className="text-[#1a3a52]" />
               </a>
-              <a href="mailto:info@unlocksrq.com" 
+              <a href="mailto:info@srqunlock.com" 
                  className="w-10 h-10 bg-[#7dd3e8] rounded-full flex items-center justify-center hover:bg-[#6bc3d8] transition-colors">
                 <Mail size={20} className="text-[#1a3a52]" />
               </a>
@@ -676,7 +676,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail size={16} className="text-[#7dd3e8]" />
-                    <a href="mailto:info@unlocksrq.com" className="hover:text-[#7dd3e8]">info@unlocksrq.com</a>
+                    <a href="mailto:info@srqunlock.com" className="hover:text-[#7dd3e8]">info@srqunlock.com</a>
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin size={16} className="text-[#7dd3e8]" />
@@ -748,7 +748,7 @@ export default function Home() {
                  className="w-10 h-10 bg-[#7dd3e8] rounded-full flex items-center justify-center hover:bg-[#6bc3d8] transition-colors">
                 <Youtube size={20} className="text-[#1a3a52]" />
               </a>
-              <a href="mailto:info@unlocksrq.com" 
+              <a href="mailto:info@srqunlock.com" 
                  className="w-10 h-10 bg-[#7dd3e8] rounded-full flex items-center justify-center hover:bg-[#6bc3d8] transition-colors">
                 <Mail size={20} className="text-[#1a3a52]" />
               </a>

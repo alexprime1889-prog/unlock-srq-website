@@ -15,7 +15,7 @@ export default function SEO({
   keywords = "locksmith Sarasota, locksmith North Port, emergency locksmith Florida, car key programming, lock installation, automotive locksmith, 24/7 locksmith, mobile locksmith, key duplication, smart lock installation",
   ogImage = "/logo.png",
   ogType = "website",
-  canonicalUrl = "https://unlocksrq.com",
+  canonicalUrl = "https://srqunlock.com",
 }: SEOProps) {
   useEffect(() => {
     // Update document title
@@ -95,7 +95,7 @@ export default function SEO({
         "longitude": "-82.2359"
       },
       "telephone": "+19415875050",
-      "email": "info@unlocksrq.com",
+      "email": "info@srqunlock.com",
       "url": canonicalUrl,
       "priceRange": "$$",
       "openingHoursSpecification": {

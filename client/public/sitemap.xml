@@ -6,7 +6,7 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://unlocksrq.com/</loc>
+    <loc>https://srqunlock.com/</loc>
     <lastmod>2025-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
   <!-- Booking Page -->
   <url>
-    <loc>https://unlocksrq.com/booking</loc>
+    <loc>https://srqunlock.com/booking</loc>
     <lastmod>2025-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -22,7 +22,7 @@
 
   <!-- Payment Page -->
   <url>
-    <loc>https://unlocksrq.com/payment</loc>
+    <loc>https://srqunlock.com/payment</loc>
     <lastmod>2025-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

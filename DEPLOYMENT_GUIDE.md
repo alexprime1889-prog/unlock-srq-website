@@ -70,7 +70,7 @@ The website is already hosted on the Manus platform. To publish:
 
 ### DNS Settings for Custom Domain
 
-Once you have your domain (e.g., unlocksrq.com), configure these DNS records:
+Once you have your domain (e.g., srqunlock.com), configure these DNS records:
 
 #### For Vercel:
 ```
@@ -152,7 +152,7 @@ Follow the specific DNS instructions provided in the Manus deployment interface.
 
 Before deploying, update the canonical URL in:
 - File: `client/src/components/SEO.tsx`
-- Change `canonicalUrl = "https://unlocksrq.com"` to your actual domain
+- Change `canonicalUrl = "https://srqunlock.com"` to your actual domain
 
 ### Submit to Search Engines
 
@@ -268,7 +268,7 @@ CALENDLY_USERNAME=your-username
 **Website Owner:** Maxim Yepichin  
 **Business:** Unlock SRQ LLC  
 **Phone:** 941-587-5050  
-**Email:** info@unlocksrq.com  
+**Email:** info@srqunlock.com  
 **Address:** 2456 Yancy Street, North Port, FL 34291
 
 ---
