@@ -177,7 +177,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-[#7dd3e8] rounded-lg flex items-center justify-center mb-4 mx-auto">
                   <HomeIcon size={32} className="text-[#2c4a5f]" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center">Residential KeySmartAI</h3>
+                <h3 className="text-xl font-bold mb-4 text-center">Residential SRQ Unlock</h3>
                 <p className="text-sm text-white/90 mb-6 leading-relaxed">
                   Our residential services provide Florida residents with a broad range of options to help repair, fix, rekey, replace, troubleshoot or consult on all types of home locks.
                 </p>
@@ -191,7 +191,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-[#2c4a5f] rounded-lg flex items-center justify-center mb-4 mx-auto">
                   <Shield size={32} className="text-[#7dd3e8]" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center">Commercial KeySmartAI</h3>
+                <h3 className="text-xl font-bold mb-4 text-center">Commercial SRQ Unlock</h3>
                 <p className="text-sm mb-6 leading-relaxed">
                   Our commercial services have been helping local businesses keep their premises secure and valuables safe. We offer a range of security and locking solutions tailored to your specific needs.
                 </p>
@@ -205,7 +205,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-[#7dd3e8] rounded-lg flex items-center justify-center mb-4 mx-auto">
                   <Car size={32} className="text-[#2c4a5f]" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center">Car KeySmartAI</h3>
+                <h3 className="text-xl font-bold mb-4 text-center">Car SRQ Unlock</h3>
                 <p className="text-sm text-white/90 mb-6 leading-relaxed">
                   Nothing is more frustrating than going to get into your car or truck only to find that you're locked out or you've lost your keys. We can help get you safely back into your vehicle.
                 </p>
@@ -219,7 +219,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-[#2c4a5f] rounded-lg flex items-center justify-center mb-4 mx-auto">
                   <Clock size={32} className="text-[#7dd3e8]" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center">Emergency KeySmartAI</h3>
+                <h3 className="text-xl font-bold mb-4 text-center">Emergency SRQ Unlock</h3>
                 <p className="text-sm mb-6 leading-relaxed">
                   Life happens...which is to say that every once in a while we get blindsided by unexpected situations. Our team is available for emergency calls 24 hours a day.
                 </p>
