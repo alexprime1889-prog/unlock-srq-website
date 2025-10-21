@@ -1,0 +1,18 @@
+# robots.txt for Unlock SRQ LLC
+# https://www.robotstxt.org/
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://unlocksrq.com/sitemap.xml
+
+# Crawl-delay for specific bots (optional)
+User-agent: Googlebot
+Crawl-delay: 0
+
+User-agent: Bingbot
+Crawl-delay: 0
+
