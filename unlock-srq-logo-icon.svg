@@ -1,0 +1,20 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background rounded square -->
+  <rect width="200" height="200" rx="20" fill="#7dd3e8"/>
+  
+  <!-- Key icon -->
+  <g transform="translate(50, 50)">
+    <!-- Key head (circle) -->
+    <circle cx="30" cy="30" r="25" fill="none" stroke="#2c4a5f" stroke-width="6"/>
+    <circle cx="30" cy="30" r="12" fill="none" stroke="#2c4a5f" stroke-width="6"/>
+    
+    <!-- Key shaft -->
+    <rect x="50" y="26" width="45" height="8" fill="#2c4a5f" rx="2"/>
+    
+    <!-- Key teeth -->
+    <rect x="70" y="34" width="8" height="12" fill="#2c4a5f"/>
+    <rect x="82" y="34" width="8" height="16" fill="#2c4a5f"/>
+    <rect x="88" y="34" width="7" height="10" fill="#2c4a5f"/>
+  </g>
+</svg>
+
