@@ -48,13 +48,15 @@
         .logo-icon {
             width: 48px;
             height: 48px;
-            background: linear-gradient(135deg, #7dd3e8 0%, #5dced9 100%);
-            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            color: white;
+        }
+        
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
         
         .logo-text {
@@ -143,7 +145,9 @@
     <div class="business-card">
         <div class="header-section">
             <div class="logo-section">
-                <div class="logo-icon">🔓</div>
+                <div class="logo-icon">
+                    <img src="logo-icon-only-square.png" alt="Unlock SRQ Logo">
+                </div>
                 <div class="logo-text">
                     <div>
                         <span class="logo-unlock">Unlock </span>
