@@ -13,7 +13,7 @@ export default function SEO({
   title = "Unlock SRQ LLC - Professional Locksmith Services in Sarasota, FL",
   description = "24/7 emergency locksmith services in Sarasota, North Port, Port Charlotte, Englewood, and Bradenton. Expert key programming, lock installation, and automotive locksmith services. Fast response within 15-30 minutes.",
   keywords = "locksmith Sarasota, locksmith North Port, emergency locksmith Florida, car key programming, lock installation, automotive locksmith, 24/7 locksmith, mobile locksmith, key duplication, smart lock installation",
-  ogImage = "/logo.png",
+  ogImage = "/professional-locksmith-mobile-workshop-sarasota-fl.webp",
   ogType = "website",
   canonicalUrl = "https://srqunlock.com",
 }: SEOProps) {
@@ -52,12 +52,19 @@ export default function SEO({
     setMetaTag("og:locale", "en_US", true);
     setMetaTag("og:site_name", "Unlock SRQ LLC", true);
 
-    // Twitter
-    setMetaTag("twitter:card", "summary_large_image", true);
-    setMetaTag("twitter:url", canonicalUrl, true);
-    setMetaTag("twitter:title", title, true);
-    setMetaTag("twitter:description", description, true);
-    setMetaTag("twitter:image", ogImage, true);
+    // Twitter (uses 'name' attribute, not 'property')
+    setMetaTag("twitter:card", "summary_large_image");
+    setMetaTag("twitter:url", canonicalUrl);
+    setMetaTag("twitter:title", title);
+    setMetaTag("twitter:description", description);
+    setMetaTag("twitter:image", ogImage);
+    setMetaTag("twitter:image:alt", "Professional locksmith Maxim Yepichin in mobile workshop - Unlock SRQ LLC");
+    
+    // Additional SEO metadata
+    setMetaTag("og:image:alt", "Professional locksmith Maxim Yepichin in mobile workshop with key programming equipment", true);
+    setMetaTag("og:image:type", "image/webp", true);
+    setMetaTag("og:image:width", "1920", true);
+    setMetaTag("og:image:height", "1280", true);
 
     // Local Business Tags
     setMetaTag("geo.region", "US-FL");
@@ -167,7 +174,27 @@ export default function SEO({
       ],
       "owner": {
         "@type": "Person",
-        "name": "Maxim Yepichin"
+        "name": "Maxim Yepichin",
+        "image": `${canonicalUrl}/professional-locksmith-mobile-workshop-sarasota-fl.webp`,
+        "jobTitle": "Owner & Master Locksmith",
+        "description": "Professional locksmith with expertise in key programming, automotive locksmith services, and emergency lockout assistance",
+        "worksFor": {
+          "@type": "Locksmith",
+          "name": "Unlock SRQ LLC"
+        },
+        "knowsAbout": [
+          "Key Programming",
+          "Automotive Locksmith Services",
+          "Emergency Lockout Assistance",
+          "Smart Lock Installation",
+          "Commercial Security Systems",
+          "Residential Lock Services"
+        ]
+      },
+      "employee": {
+        "@type": "Person",
+        "name": "Maxim Yepichin",
+        "jobTitle": "Owner & Master Locksmith"
       }
     };
 

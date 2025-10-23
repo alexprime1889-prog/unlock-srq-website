@@ -129,40 +129,81 @@ export default function Home() {
           </div>
         </header>
 
-        {/* HERO SECTION */}
+        {/* HERO SECTION - Split Layout with Owner Photo */}
         <section className="relative min-h-[80vh] flex items-center justify-start bg-cover bg-center" 
                  style={{ backgroundImage: 'url(/hero-bg.webp)' }}>
-          {/* Purple Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/85 via-purple-700/75 to-purple-600/70"></div>
+          {/* Navy to Purple Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#1a3a52]/90 via-purple-900/85 to-purple-700/80"></div>
           
           <div className="container relative z-10 py-20 pb-64">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Unlock SRQ Services in Florida and Surrounding Areas
-              </h1>
-              <p className="text-base sm:text-lg text-white/95 mb-8 leading-relaxed">
-                Unlock SRQ - Smart solutions for key problems and emergency automotive services. 
-                We use advanced technology and an AI-powered approach for rapid key programming, 
-                vehicle diagnostics, and locksmith services. We come to you within 15-30 minutes.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/booking">
-                  <Button 
-                    size="lg" 
-                    className="bg-[#7dd3e8] hover:bg-[#6bc3d8] text-[#1a3a52] font-semibold px-10 py-6 text-lg rounded-lg shadow-lg w-full sm:w-auto"
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Column - Text Content */}
+              <div className="max-w-2xl">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                  Unlock SRQ Services in Florida and Surrounding Areas
+                </h1>
+                <p className="text-base sm:text-lg text-white/95 mb-8 leading-relaxed">
+                  Unlock SRQ - Smart solutions for key problems and emergency automotive services. 
+                  We use advanced technology and an AI-powered approach for rapid key programming, 
+                  vehicle diagnostics, and locksmith services. We come to you within 15-30 minutes.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a href="/booking" data-testid="link-booking-hero">
+                    <Button 
+                      size="lg" 
+                      className="bg-[#7dd3e8] hover:bg-[#6bc3d8] text-[#1a3a52] font-semibold px-10 py-6 text-lg rounded-lg shadow-lg w-full sm:w-auto"
+                      data-testid="button-book-appointment"
+                    >
+                      Book Appointment
+                    </Button>
+                  </a>
+                  <a href="/payment" data-testid="link-payment-hero">
+                    <Button 
+                      size="lg" 
+                      variant="outline"
+                      className="border-2 border-white text-white hover:bg-white hover:text-[#1a3a52] font-semibold px-10 py-6 text-lg rounded-lg shadow-lg w-full sm:w-auto"
+                      data-testid="button-pay-online"
+                    >
+                      Pay Online
+                    </Button>
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Column - Owner Photo with SEO Schema */}
+              <div className="hidden lg:block">
+                <figure 
+                  itemScope 
+                  itemType="https://schema.org/ImageObject"
+                  className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 hover:border-[#7dd3e8]/50 transition-all duration-300"
+                >
+                  <picture>
+                    <source 
+                      srcSet="/professional-locksmith-mobile-workshop-sarasota-fl.webp" 
+                      type="image/webp"
+                    />
+                    <img 
+                      src="/professional-locksmith-mobile-workshop-sarasota-fl.png"
+                      alt="Maxim Yepichin, professional locksmith and owner of Unlock SRQ LLC, in mobile locksmith workshop with key programming equipment in Sarasota Florida"
+                      itemProp="contentUrl"
+                      loading="lazy"
+                      width="1920"
+                      height="1280"
+                      className="w-full h-auto object-cover"
+                      data-testid="img-owner-workshop"
+                    />
+                  </picture>
+                  <figcaption 
+                    itemProp="caption"
+                    className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1a3a52]/95 to-transparent p-6 text-white"
                   >
-                    Book Appointment
-                  </Button>
-                </a>
-                <a href="/payment">
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    className="border-2 border-white text-white hover:bg-white hover:text-[#1a3a52] font-semibold px-10 py-6 text-lg rounded-lg shadow-lg w-full sm:w-auto"
-                  >
-                    Pay Online
-                  </Button>
-                </a>
+                    <p className="text-lg font-bold mb-1" itemProp="name">Maxim Yepichin</p>
+                    <p className="text-sm text-white/90">Owner & Master Locksmith</p>
+                    <p className="text-xs text-white/75 mt-2">Professional mobile locksmith service in Sarasota, FL</p>
+                  </figcaption>
+                  <meta itemProp="creator" content="Unlock SRQ LLC" />
+                  <meta itemProp="copyrightHolder" content="Unlock SRQ LLC" />
+                </figure>
               </div>
             </div>
           </div>
