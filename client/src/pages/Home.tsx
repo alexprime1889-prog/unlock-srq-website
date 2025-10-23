@@ -187,8 +187,6 @@ export default function Home() {
                       alt="Maxim Yepichin, professional locksmith and owner of Unlock SRQ LLC, in mobile locksmith workshop with key programming equipment in Sarasota Florida"
                       itemProp="contentUrl"
                       loading="eager"
-                      decoding="async"
-                      fetchPriority="high"
                       width="1920"
                       height="1280"
                       className="w-full h-auto object-cover"
