@@ -27,10 +27,11 @@ Professional locksmith website for Unlock SRQ LLC serving Sarasota, North Port, 
   - `logo.png` - Company logo
   - `hero-bg.webp` - Hero section background
   - **Professional Photography** (WebP + PNG fallback):
-    - `professional-locksmith-mobile-workshop-sarasota-fl` (163KB) - Hero & About sections
+    - `professional-locksmith-mobile-workshop-sarasota-fl` (163KB) - Hero section
     - `maxim-yepichin-owner-master-locksmith-sarasota-fl` (51KB) - Latest Updates
     - `mobile-locksmith-workshop-key-programming-sarasota` (177KB) - Latest Updates
     - `lishi-tool-automotive-lockout-service-unlock-srq` (36KB) - Latest Updates
+    - `maxim-yepichin-locksmith-with-customer-sarasota-fl` (412KB) - About Company
     - `emergency-lockout-service-action-sarasota-florida` (86KB) - Contact Form
   - `robots.txt` - SEO configuration
   - `sitemap.xml` - SEO sitemap
@@ -171,8 +172,8 @@ npm run db:push
 - ✅ Database schema pushed successfully
 - ✅ Application running on port 5000
 - ✅ **Professional Photography Integration (October 23, 2025)**:
-  - Integrated 5 professional photos of owner Maxim Yepichin and services
-  - Converted all images from PNG to WebP format (93.5% file size reduction: ~8.5MB → ~550KB)
+  - Integrated 6 professional photos of owner Maxim Yepichin and services
+  - Converted all images from PNG/JPEG to WebP format (90%+ file size reduction)
   - Implemented comprehensive SEO optimization:
     * Schema.org ImageObject markup for all images
     * Location-optimized alt text with service keywords
@@ -180,9 +181,15 @@ npm run db:push
     * Eager loading for Hero image (LCP optimization)
     * Lazy loading for secondary images
     * Width/height attributes for CLS prevention
+    * Proper aspect ratios for portrait/landscape images
     * Copyright metadata and accessibility features
-  - Photo placements: Hero (owner in workshop), Latest Updates (3 articles), About Company (workshop equipment), Contact Form (emergency service)
+  - Photo placements: 
+    * Hero (owner in workshop - 163KB)
+    * Latest Updates (3 articles: owner portrait 51KB, mobile workshop 177KB, Lishi tool 36KB)
+    * About Company (Maxim with customer - 412KB, portrait orientation with 3:4 aspect ratio)
+    * Contact Form (emergency service - 86KB)
   - All images include data-testid attributes for automated testing
+  - **Latest Update**: Replaced About Company image with customer service photo (900KB JPEG → 412KB WebP, 54% reduction)
 
 ## Project Status
 

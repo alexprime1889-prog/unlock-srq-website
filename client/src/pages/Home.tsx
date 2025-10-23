@@ -611,32 +611,34 @@ export default function Home() {
         <section className="py-20 bg-gray-50">
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left: Professional Workshop Image */}
+              {/* Left: Maxim Yepichin with Customer Photo */}
               <figure 
                 itemScope 
                 itemType="https://schema.org/ImageObject"
-                className="relative h-96 overflow-hidden rounded-xl shadow-lg"
+                className="relative w-full aspect-[3/4] overflow-hidden rounded-xl shadow-lg"
               >
                 <picture>
                   <source 
-                    srcSet="/professional-locksmith-mobile-workshop-sarasota-fl.webp" 
+                    srcSet="/maxim-yepichin-locksmith-with-customer-sarasota-fl.webp" 
                     type="image/webp"
                   />
                   <img 
-                    src="/professional-locksmith-mobile-workshop-sarasota-fl.png"
-                    alt="Professional locksmith mobile workshop with advanced tools and equipment - Unlock SRQ Sarasota Florida"
+                    src="/maxim-yepichin-locksmith-with-customer-sarasota-fl.png"
+                    alt="Maxim Yepichin, professional locksmith owner of Unlock SRQ, providing excellent customer service in Sarasota Florida"
                     itemProp="contentUrl"
                     loading="lazy"
-                    width="1920"
-                    height="1280"
+                    width="1536"
+                    height="2048"
                     className="w-full h-full object-cover"
-                    data-testid="img-about-workshop"
+                    data-testid="img-about-customer-service"
                   />
                 </picture>
                 <meta itemProp="creator" content="Unlock SRQ LLC" />
                 <meta itemProp="copyrightHolder" content="Unlock SRQ LLC" />
+                <meta itemProp="description" content="Professional locksmith Maxim Yepichin providing personalized customer service to satisfied client in Sarasota, Florida area" />
+                <meta itemProp="keywords" content="locksmith Sarasota, customer service, professional locksmith, North Port FL, Maxim Yepichin" />
                 <figcaption itemProp="caption" className="sr-only">
-                  Professional mobile locksmith workshop equipped with modern tools and technology in Sarasota, Florida
+                  Maxim Yepichin, owner and master locksmith at Unlock SRQ LLC, delivering professional locksmith services with excellent customer care in Sarasota, Florida
                 </figcaption>
               </figure>
 
