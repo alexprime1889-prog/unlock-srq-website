@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlock SRQ Business Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f0f0f0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .business-card {
+            width: 3.5in;
+            height: 2in;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            padding: 20px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #7dd3e8 0%, #5dced9 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-unlock {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a3a52;
+            line-height: 1;
+        }
+        
+        .logo-srq {
+            font-size: 20px;
+            font-weight: 700;
+            color: #7dd3e8;
+            line-height: 1;
+        }
+        
+        .logo-llc {
+            font-size: 10px;
+            color: #1a3a52;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+        
+        .contact-section {
+            text-align: right;
+        }
+        
+        .contact-item {
+            font-size: 11px;
+            color: #1a3a52;
+            margin-bottom: 3px;
+            font-weight: 500;
+        }
+        
+        .contact-item strong {
+            font-weight: 600;
+        }
+        
+        .emergency {
+            color: #dc2626;
+            font-weight: 600;
+            font-size: 10px;
+        }
+        
+        .menu-section {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            padding: 8px 0;
+        }
+        
+        .menu-item {
+            font-size: 11px;
+            font-weight: 600;
+            color: #1a3a52;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #7dd3e8, transparent);
+            margin: 8px 0;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .business-card {
+                box-shadow: none;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="business-card">
+        <div class="header-section">
+            <div class="logo-section">
+                <div class="logo-icon">🔓</div>
+                <div class="logo-text">
+                    <div>
+                        <span class="logo-unlock">Unlock </span>
+                        <span class="logo-srq">SRQ</span>
+                    </div>
+                    <div class="logo-llc">LLC</div>
+                </div>
+            </div>
+            
+            <div class="contact-section">
+                <div class="contact-item"><strong>Phone:</strong> (941) 587-5050</div>
+                <div class="contact-item"><strong>Email:</strong> info@srqunlock.com</div>
+                <div class="emergency">*Emergency: 24/7/365*</div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="menu-section">
+            <div class="menu-item">FLORIDA UNLOCK SRQ</div>
+            <div class="menu-item">SERVICES</div>
+            <div class="menu-item">PRODUCTS</div>
+        </div>
+    </div>
+</body>
+</html>
+
