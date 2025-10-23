@@ -440,8 +440,8 @@ export default function Home() {
         </section>
 
         {/* WHY CHOOSE US SECTION */}
-        <section className="relative py-20 bg-cover bg-center" style={{ backgroundImage: 'url(/interior-bg.jpg)' }}>
-          <div className="absolute inset-0 bg-black/70"></div>
+        <section className="relative py-20 bg-gradient-to-br from-[#1a3a52] to-[#2c4a5f]">
+          <div className="absolute inset-0 bg-black/20"></div>
           
           <div className="container relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
