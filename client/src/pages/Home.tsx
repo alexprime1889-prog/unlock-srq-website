@@ -186,7 +186,9 @@ export default function Home() {
                       src="/professional-locksmith-mobile-workshop-sarasota-fl.png"
                       alt="Maxim Yepichin, professional locksmith and owner of Unlock SRQ LLC, in mobile locksmith workshop with key programming equipment in Sarasota Florida"
                       itemProp="contentUrl"
-                      loading="lazy"
+                      loading="eager"
+                      decoding="async"
+                      fetchPriority="high"
                       width="1920"
                       height="1280"
                       className="w-full h-auto object-cover"
@@ -496,35 +498,104 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-center text-[#1a3a52] mb-16">Latest Updates</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              {/* Article 1 */}
+              {/* Article 1 - Meet Our Owner */}
               <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow">
-                <div className="h-48 bg-gray-300"></div>
+                <figure 
+                  itemScope 
+                  itemType="https://schema.org/ImageObject"
+                  className="relative h-64 overflow-hidden"
+                >
+                  <picture>
+                    <source 
+                      srcSet="/maxim-yepichin-owner-master-locksmith-sarasota-fl.webp" 
+                      type="image/webp"
+                    />
+                    <img 
+                      src="/maxim-yepichin-owner-master-locksmith-sarasota-fl.png"
+                      alt="Maxim Yepichin, certified master locksmith and owner of Unlock SRQ LLC, Sarasota Florida"
+                      itemProp="contentUrl"
+                      loading="lazy"
+                      width="800"
+                      height="600"
+                      className="w-full h-full object-cover"
+                      data-testid="img-owner-portrait"
+                    />
+                  </picture>
+                  <meta itemProp="creator" content="Unlock SRQ LLC" />
+                  <meta itemProp="copyrightHolder" content="Unlock SRQ LLC" />
+                </figure>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#1a3a52] mb-3">Keeping your Business Secure During Covid-19</h3>
+                  <h3 className="text-xl font-bold text-[#1a3a52] mb-3">Meet Maxim Yepichin - Master Locksmith</h3>
                   <p className="text-gray-600 text-sm mb-4">
-                    Learn essential tips for maintaining business security during challenging times...
+                    Owner and certified master locksmith with years of experience serving Sarasota and surrounding areas with professional, reliable service.
                   </p>
                 </div>
               </div>
 
-              {/* Article 2 */}
+              {/* Article 2 - Mobile Workshop */}
               <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow">
-                <div className="h-48 bg-gray-300"></div>
+                <figure 
+                  itemScope 
+                  itemType="https://schema.org/ImageObject"
+                  className="relative h-64 overflow-hidden"
+                >
+                  <picture>
+                    <source 
+                      srcSet="/mobile-locksmith-workshop-key-programming-sarasota.webp" 
+                      type="image/webp"
+                    />
+                    <img 
+                      src="/mobile-locksmith-workshop-key-programming-sarasota.png"
+                      alt="Mobile locksmith workshop van with professional key programming equipment - Unlock SRQ Sarasota"
+                      itemProp="contentUrl"
+                      loading="lazy"
+                      width="800"
+                      height="600"
+                      className="w-full h-full object-cover"
+                      data-testid="img-mobile-workshop"
+                    />
+                  </picture>
+                  <meta itemProp="creator" content="Unlock SRQ LLC" />
+                  <meta itemProp="copyrightHolder" content="Unlock SRQ LLC" />
+                </figure>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#1a3a52] mb-3">Mechanical Vs Electronic Locks</h3>
+                  <h3 className="text-xl font-bold text-[#1a3a52] mb-3">State-of-the-Art Mobile Workshop</h3>
                   <p className="text-gray-600 text-sm mb-4">
-                    Discover the pros and cons of different lock types and which is best for you...
+                    Our fully-equipped mobile workshop brings professional locksmith services directly to you with advanced key programming technology.
                   </p>
                 </div>
               </div>
 
-              {/* Article 3 */}
+              {/* Article 3 - Professional Tools */}
               <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow">
-                <div className="h-48 bg-gray-300"></div>
+                <figure 
+                  itemScope 
+                  itemType="https://schema.org/ImageObject"
+                  className="relative h-64 overflow-hidden"
+                >
+                  <picture>
+                    <source 
+                      srcSet="/lishi-tool-automotive-lockout-service-unlock-srq.webp" 
+                      type="image/webp"
+                    />
+                    <img 
+                      src="/lishi-tool-automotive-lockout-service-unlock-srq.png"
+                      alt="Professional Lishi tool for automotive lockout service - non-destructive car unlocking Sarasota FL"
+                      itemProp="contentUrl"
+                      loading="lazy"
+                      width="800"
+                      height="600"
+                      className="w-full h-full object-cover"
+                      data-testid="img-lishi-tool"
+                    />
+                  </picture>
+                  <meta itemProp="creator" content="Unlock SRQ LLC" />
+                  <meta itemProp="copyrightHolder" content="Unlock SRQ LLC" />
+                </figure>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#1a3a52] mb-3">Benefits of Replacing VS. Rekeying Locks</h3>
+                  <h3 className="text-xl font-bold text-[#1a3a52] mb-3">Professional Non-Destructive Lockout Tools</h3>
                   <p className="text-gray-600 text-sm mb-4">
-                    Understanding when to replace or rekey your locks can save you money...
+                    We use specialized Lishi tools and advanced techniques to unlock vehicles without damage, ensuring your property remains intact during emergency lockout situations.
                   </p>
                 </div>
               </div>
@@ -542,8 +613,34 @@ export default function Home() {
         <section className="py-20 bg-gray-50">
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left: Image */}
-              <div className="h-96 bg-gray-300 rounded-xl"></div>
+              {/* Left: Professional Workshop Image */}
+              <figure 
+                itemScope 
+                itemType="https://schema.org/ImageObject"
+                className="relative h-96 overflow-hidden rounded-xl shadow-lg"
+              >
+                <picture>
+                  <source 
+                    srcSet="/professional-locksmith-mobile-workshop-sarasota-fl.webp" 
+                    type="image/webp"
+                  />
+                  <img 
+                    src="/professional-locksmith-mobile-workshop-sarasota-fl.png"
+                    alt="Professional locksmith mobile workshop with advanced tools and equipment - Unlock SRQ Sarasota Florida"
+                    itemProp="contentUrl"
+                    loading="lazy"
+                    width="1920"
+                    height="1280"
+                    className="w-full h-full object-cover"
+                    data-testid="img-about-workshop"
+                  />
+                </picture>
+                <meta itemProp="creator" content="Unlock SRQ LLC" />
+                <meta itemProp="copyrightHolder" content="Unlock SRQ LLC" />
+                <figcaption itemProp="caption" className="sr-only">
+                  Professional mobile locksmith workshop equipped with modern tools and technology in Sarasota, Florida
+                </figcaption>
+              </figure>
 
               {/* Right: Content */}
               <div>
@@ -635,8 +732,34 @@ export default function Home() {
         {/* CONTACT FORM SECTION */}
         <section className="relative">
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            {/* Left: Image */}
-            <div className="h-96 lg:h-auto bg-gray-300"></div>
+            {/* Left: Emergency Service Image */}
+            <figure 
+              itemScope 
+              itemType="https://schema.org/ImageObject"
+              className="relative h-96 lg:h-auto overflow-hidden"
+            >
+              <picture>
+                <source 
+                  srcSet="/emergency-lockout-service-action-sarasota-florida.webp" 
+                  type="image/webp"
+                />
+                <img 
+                  src="/emergency-lockout-service-action-sarasota-florida.png"
+                  alt="Professional emergency lockout service in action - 24/7 mobile locksmith Sarasota Florida"
+                  itemProp="contentUrl"
+                  loading="lazy"
+                  width="1200"
+                  height="800"
+                  className="w-full h-full object-cover"
+                  data-testid="img-emergency-service"
+                />
+              </picture>
+              <meta itemProp="creator" content="Unlock SRQ LLC" />
+              <meta itemProp="copyrightHolder" content="Unlock SRQ LLC" />
+              <figcaption itemProp="caption" className="sr-only">
+                Professional locksmith providing emergency vehicle lockout service in Sarasota, Florida
+              </figcaption>
+            </figure>
 
             {/* Right: Form */}
             <div className="bg-[#1a3a52] p-12 lg:p-16">
