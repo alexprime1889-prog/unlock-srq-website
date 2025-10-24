@@ -207,14 +207,17 @@ The locksmith website is now fully functional with:
 
 ## Known Configuration Items
 
-### Environment Variables (Optional)
-The following environment variables are used but have defaults:
-- `VITE_APP_TITLE` - defaults to "App"
-- `VITE_APP_LOGO` - defaults to placeholder image
-- `VITE_ANALYTICS_ENDPOINT` - optional analytics
-- `VITE_ANALYTICS_WEBSITE_ID` - optional analytics
+### Environment Variables (Fixed for Production)
+The following environment variables have been configured with production-ready defaults:
+- `VITE_APP_TITLE` - defaults to "Unlock SRQ LLC - Professional Locksmith Services"
+- `VITE_APP_LOGO` - defaults to "/logo.png"
+- Analytics scripts removed from `index.html` to prevent deployment errors
 
-These can be ignored for now as the application works with the defaults.
+**Deployment Fix (October 24, 2025):**
+- ✅ Removed %VITE_*% syntax from `client/index.html` (caused URI malformed errors)
+- ✅ Updated `client/src/const.ts` with proper defaults for Unlock SRQ LLC
+- ✅ Production build tested and verified successful
+- ✅ Application ready for deployment without environment variable configuration
 
 ## Next Steps
 
