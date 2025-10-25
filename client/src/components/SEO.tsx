@@ -10,9 +10,9 @@ interface SEOProps {
 }
 
 export default function SEO({
-  title = "Unlock SRQ LLC - Professional Locksmith Services in Sarasota, FL",
-  description = "24/7 emergency locksmith services in Sarasota, North Port, Port Charlotte, Englewood, and Bradenton. Expert key programming, lock installation, and automotive locksmith services. Fast response within 15-30 minutes.",
-  keywords = "locksmith Sarasota, locksmith North Port, emergency locksmith Florida, car key programming, lock installation, automotive locksmith, 24/7 locksmith, mobile locksmith, key duplication, smart lock installation",
+  title = "24/7 Emergency Locksmith North Port & Port Charlotte FL | Unlock SRQ",
+  description = "24/7 emergency locksmith serving North Port, Port Charlotte, Punta Gorda, Venice. Licensed & insured. 15-minute response. Lost keys, lockouts, commercial. Call (941) 587-5050",
+  keywords = "locksmith North Port, locksmith Port Charlotte, locksmith Punta Gorda, locksmith Venice FL, emergency locksmith Charlotte County, 24/7 locksmith Florida, car key programming, mobile locksmith, automotive locksmith, commercial locksmith, residential locksmith",
   ogImage = "/professional-locksmith-mobile-workshop-sarasota-fl.webp",
   ogType = "website",
   canonicalUrl = "https://srqunlock.com",
@@ -84,7 +84,7 @@ export default function SEO({
     // Structured Data - JSON-LD
     const businessSchema = {
       "@context": "https://schema.org",
-      "@type": "Locksmith",
+      "@type": ["Locksmith", "LocalBusiness", "EmergencyService"],
       "name": "Unlock SRQ LLC",
       "image": `${canonicalUrl}/logo.png`,
       "description": description,
@@ -122,14 +122,6 @@ export default function SEO({
       "areaServed": [
         {
           "@type": "City",
-          "name": "Sarasota",
-          "containedIn": {
-            "@type": "State",
-            "name": "Florida"
-          }
-        },
-        {
-          "@type": "City",
           "name": "North Port",
           "containedIn": {
             "@type": "State",
@@ -146,6 +138,22 @@ export default function SEO({
         },
         {
           "@type": "City",
+          "name": "Punta Gorda",
+          "containedIn": {
+            "@type": "State",
+            "name": "Florida"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Venice",
+          "containedIn": {
+            "@type": "State",
+            "name": "Florida"
+          }
+        },
+        {
+          "@type": "City",
           "name": "Englewood",
           "containedIn": {
             "@type": "State",
@@ -154,24 +162,77 @@ export default function SEO({
         },
         {
           "@type": "City",
-          "name": "Bradenton",
+          "name": "Rotonda West",
           "containedIn": {
             "@type": "State",
             "name": "Florida"
           }
+        },
+        {
+          "@type": "State",
+          "name": "Sarasota County"
+        },
+        {
+          "@type": "State",
+          "name": "Charlotte County"
         }
       ],
-      "serviceType": [
-        "Emergency Locksmith",
-        "Automotive Locksmith",
-        "Residential Locksmith",
-        "Commercial Locksmith",
-        "Key Programming",
-        "Lock Installation",
-        "Lock Repair",
-        "Key Duplication",
-        "Smart Lock Installation"
+      "availableService": [
+        {
+          "@type": "Service",
+          "name": "24/7 Emergency Locksmith",
+          "description": "Immediate response emergency lockout and lock repair services available 24/7/365",
+          "serviceType": "Emergency Service"
+        },
+        {
+          "@type": "Service",
+          "name": "Automotive Locksmith",
+          "description": "Car key programming, transponder keys, smart keys, ignition repair, car lockout",
+          "serviceType": "Automotive"
+        },
+        {
+          "@type": "Service",
+          "name": "Residential Locksmith",
+          "description": "House lockout, lock rekey, smart lock installation, high-security locks",
+          "serviceType": "Residential"
+        },
+        {
+          "@type": "Service",
+          "name": "Commercial Locksmith",
+          "description": "Office lockout, access control systems, master key systems, panic bars",
+          "serviceType": "Commercial"
+        }
       ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Locksmith Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Emergency Lockout Service",
+              "description": "24/7 emergency lockout assistance for cars, homes, and businesses"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Key Programming",
+              "description": "Transponder key programming, smart key programming, push-to-start keys"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Lock Installation & Repair",
+              "description": "Professional lock installation, repair, and rekeying services"
+            }
+          }
+        ]
+      },
       "owner": {
         "@type": "Person",
         "name": "Maksim Yepikhin",
