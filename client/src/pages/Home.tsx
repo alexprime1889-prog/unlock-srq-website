@@ -30,12 +30,15 @@ import {
   Search,
   Users,
   Settings,
-  CheckCircle
+  CheckCircle,
+  Award,
+  Zap
 } from "lucide-react";
 import { SiTiktok } from "react-icons/si";
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [showLocations, setShowLocations] = useState(false);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -101,13 +104,56 @@ export default function Home() {
               </div>
 
               {/* Navigation */}
-              <nav className="hidden lg:flex gap-6 text-sm font-semibold">
-                <a href="#services" className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors">FLORIDA UNLOCK SRQ</a>
-                <a href="#services" className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors flex items-center gap-1">
-                  SERVICES <ChevronDown size={16} />
+              <nav className="hidden lg:flex gap-6 text-sm font-semibold items-center">
+                <a href="/" className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors" data-testid="nav-home">HOME</a>
+                <a href="/automotive-services" className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors" data-testid="nav-services">
+                  SERVICES
                 </a>
-                <a href="#products" className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors flex items-center gap-1">
-                  PRODUCTS <ChevronDown size={16} />
+                <a href="/automotive-products" className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors" data-testid="nav-products">
+                  PRODUCTS
+                </a>
+                
+                {/* Locations Dropdown */}
+                <div 
+                  className="relative"
+                  onMouseEnter={() => setShowLocations(true)}
+                  onMouseLeave={() => setShowLocations(false)}
+                >
+                  <button className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors flex items-center gap-1" data-testid="nav-locations">
+                    LOCATIONS <ChevronDown size={16} />
+                  </button>
+                  {showLocations && (
+                    <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl py-2 w-64 z-50">
+                      <a href="/locksmith-north-port" className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors" data-testid="loc-north-port">
+                        North Port, FL
+                      </a>
+                      <a href="/locksmith-port-charlotte" className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors" data-testid="loc-port-charlotte">
+                        Port Charlotte, FL
+                      </a>
+                      <a href="/locksmith-sarasota" className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors" data-testid="loc-sarasota">
+                        Sarasota, FL
+                      </a>
+                      <a href="/locksmith-punta-gorda" className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors" data-testid="loc-punta-gorda">
+                        Punta Gorda, FL
+                      </a>
+                      <a href="/locksmith-venice-fl" className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors" data-testid="loc-venice">
+                        Venice, FL
+                      </a>
+                      <a href="/locksmith-englewood" className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors" data-testid="loc-englewood">
+                        Englewood, FL
+                      </a>
+                      <a href="/locksmith-bradenton" className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors" data-testid="loc-bradenton">
+                        Bradenton, FL
+                      </a>
+                      <a href="/emergency-locksmith-charlotte-county" className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors border-t border-gray-200 mt-1 pt-3" data-testid="loc-charlotte-county">
+                        Emergency - Charlotte County
+                      </a>
+                    </div>
+                  )}
+                </div>
+
+                <a href="/about-us" className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors" data-testid="nav-about">
+                  ABOUT US
                 </a>
               </nav>
 
@@ -213,6 +259,87 @@ export default function Home() {
                   <meta itemProp="creator" content="Unlock SRQ LLC" />
                   <meta itemProp="copyrightHolder" content="Unlock SRQ LLC" />
                 </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CERTIFICATIONS SECTION */}
+        <section className="relative -mt-32 z-30 pb-12">
+          <div className="container">
+            <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#1a3a52] mb-3">
+                  Certified & Trusted Professionals
+                </h2>
+                <p className="text-lg text-gray-600">
+                  NASTF & VSP Certified • 95% of Keys & Fobs In Stock • Less Than Half Dealer Cost
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6 mb-8">
+                <div className="text-center p-6 bg-gradient-to-br from-[#1a3a52] to-[#2c4a5f] text-white rounded-xl" data-testid="cert-nastf">
+                  <div className="w-16 h-16 bg-[#7dd3e8] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Award size={32} className="text-[#1a3a52]" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">NASTF Certified</h3>
+                  <p className="text-white/90 text-sm">
+                    National Automotive Service Task Force certification for professional automotive locksmith services
+                  </p>
+                </div>
+
+                <div className="text-center p-6 bg-gradient-to-br from-[#7dd3e8] to-[#6bc3d8] text-[#1a3a52] rounded-xl" data-testid="cert-vsp">
+                  <div className="w-16 h-16 bg-[#1a3a52] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Shield size={32} className="text-[#7dd3e8]" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">VSP Certified</h3>
+                  <p className="text-sm">
+                    Vehicle Security Professional - advanced automotive security systems training and expertise
+                  </p>
+                </div>
+
+                <div className="text-center p-6 bg-gradient-to-br from-[#1a3a52] to-[#2c4a5f] text-white rounded-xl" data-testid="cert-autoauth">
+                  <div className="w-16 h-16 bg-[#7dd3e8] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle size={32} className="text-[#1a3a52]" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">AUTOAUTH Certified</h3>
+                  <p className="text-white/90 text-sm">
+                    Authorized automotive locksmith with verified credentials and professional training
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-[#1a3a52] to-[#2c4a5f] rounded-xl p-6 text-white">
+                <div className="flex items-center gap-3 mb-4">
+                  <Zap size={28} className="text-[#7dd3e8]" />
+                  <h3 className="text-2xl font-bold">Latest Technology & Equipment</h3>
+                </div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0" />
+                    <span>Laser Key Cutting Equipment</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0" />
+                    <span>Latest Key Programming Technology</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0" />
+                    <span>OEM Key Programming Software</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0" />
+                    <span>Transponder Chip Programming</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0" />
+                    <span>ECU Re-Flash Equipment</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0" />
+                    <span>Immobilizer Diagnostic Tools</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
