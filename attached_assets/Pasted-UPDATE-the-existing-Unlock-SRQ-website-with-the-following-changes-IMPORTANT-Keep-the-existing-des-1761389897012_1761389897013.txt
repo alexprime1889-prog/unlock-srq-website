@@ -1,0 +1,159 @@
+UPDATE the existing Unlock SRQ website with the following changes.
+IMPORTANT: Keep the existing design, color scheme, and layout style unchanged!
+
+=== CRITICAL CHANGES ===
+
+1. OWNER NAME REMOVAL:
+- Remove "Owner: Maksim Yepikhin" from hero section completely
+- Move owner info ONLY to "About Us" page (create if doesn't exist)
+- Keep company name "Unlock SRQ LLC" prominent
+
+2. PRICING REMOVAL:
+- Remove ALL specific prices ($150, $250, $350, $450, etc.)
+- Replace with "Call for FREE Quote" or "Starting from $29"
+- Add text: "Prices vary by service type and time"
+
+3. ADDRESS UPDATE:
+- Remove specific street address from footer
+- Keep only: "North Port, FL 34291"
+- Add: "Mobile Service - We Come to You!"
+
+=== CONTENT UPDATES ===
+
+HERO SECTION:
+Title: "24/7 Emergency Locksmith North Port & Port Charlotte FL"
+Subtitle: "Licensed & Insured • Serving Sarasota & Charlotte Counties • 15-Min Response"
+- Remove owner name
+- Keep the van/technician photo
+- Add trust badges: "Licensed", "Insured", "24/7", "Mobile Service"
+
+SERVICE DESCRIPTIONS (Expand each card):
+1. Residential Locksmith:
+   • House Lockout Service (24/7)
+   • Lock Rekey & Master Key Systems
+   • High-Security Lock Installation
+   • Smart Lock Installation & Programming
+   • Broken Key Extraction
+   • Door Security Upgrades
+   
+2. Commercial Locksmith:
+   • Office Lockout Emergency Service
+   • Access Control Systems
+   • Master Key System Design
+   • File Cabinet & Desk Locks
+   • Panic Bar Installation & Repair
+   • ADA Compliant Solutions
+
+3. Car Locksmith:
+   • Emergency Car Lockout
+   • Transponder Key Programming
+   • Smart Key & Push-to-Start Keys
+   • Ignition Repair & Replacement
+   • All Makes & Models
+   • Motorcycle & RV Keys
+
+4. Emergency Services:
+   • 24/7 Immediate Response
+   • Break-in Damage Repair
+   • Lost Key Replacement
+   • Storm Damage Lock Repair
+   • Eviction Locksmith Service
+   • Safe Opening
+
+NEW SECTION - Service Areas:
+Add section with heading "We Serve All of North Port & Charlotte County"
+Include interactive map or list showing:
+- North Port (Headquarters) - 10-15 min
+- Port Charlotte - 15-20 min
+- Punta Gorda - 20-25 min
+- Venice - 15-20 min
+- Englewood - 20-30 min
+- Rotonda West - 25-30 min
+
+Text: "Our mobile technicians are stationed throughout the area for fastest response times"
+
+FAQ SECTION (Replace current Q&A):
+Q: "What areas do you service?"
+A: "We serve all of Sarasota and Charlotte Counties including North Port, Port Charlotte, Punta Gorda, Venice, and Englewood. Average response time is 15-20 minutes."
+
+Q: "Are you available 24/7?"
+A: "Yes! We provide 24/7 emergency locksmith services, 365 days a year including holidays."
+
+Q: "Are you licensed and insured?"
+A: "Absolutely! Unlock SRQ is fully licensed, bonded, and insured. We carry $2M liability insurance for your protection."
+
+Q: "Do you offer warranties?"
+A: "Yes! 90-day warranty on all labor, 1-year warranty on parts. Lifetime warranty available on high-security locks."
+
+Q: "What payment methods do you accept?"
+A: "We accept cash, all major credit cards, Zelle, Venmo, PayPal, and checks. No hidden fees ever!"
+
+TRUST SECTION (Update "Why Choose Us"):
+- Licensed & Insured Florida Locksmith
+- 24/7 Emergency Service - 365 Days
+- 15-Minute Average Response Time
+- Transparent Pricing - No Hidden Fees
+- 90-Day Warranty on All Work
+- Background-Checked Technicians
+- Locally Owned & Operated
+- Mobile Service - We Come to You
+
+FOOTER UPDATES:
+Contact:
+Unlock SRQ LLC
+Emergency: (941) 587-5050
+Email: info@unlocksrq.com
+"Serving North Port & Charlotte County 24/7"
+
+Service Areas (two columns):
+Sarasota County:        Charlotte County:
+- North Port            • Port Charlotte
+- Venice                • Punta Gorda
+- South Sarasota        • Englewood
+- Nokomis              • Rotonda West
+
+Remove: Specific address, social media icons (unless active accounts exist)
+
+=== SEO OPTIMIZATIONS ===
+
+Page Title: "24/7 Emergency Locksmith North Port & Port Charlotte FL | Unlock SRQ"
+Meta Description: "24/7 emergency locksmith serving North Port, Port Charlotte, Punta Gorda, Venice. Licensed & insured. 15-minute response. Lost keys, lockouts, commercial. Call (941) 587-5050"
+
+Add Schema Markup:
+- LocalBusiness schema
+- Service area business
+- Emergency service availability
+- Review/Rating schema (prepare for future reviews)
+
+Alt Tags for Images:
+- "Unlock SRQ mobile locksmith van in North Port FL"
+- "Emergency car lockout service Port Charlotte"
+- "Commercial lock installation Sarasota County"
+- "24/7 locksmith technician Charlotte County"
+
+=== CREATE NEW PAGES ===
+
+1. /locksmith-port-charlotte/ 
+2. /locksmith-punta-gorda/
+3. /locksmith-venice-fl/
+4. /emergency-locksmith-charlotte-county/
+5. /about-us/ (include owner info here only)
+
+=== DO NOT CHANGE ===
+- Current color scheme (blues/teals)
+- Font styles
+- Overall design aesthetic
+- Mobile responsiveness
+- Phone number: (941) 587-5050
+- Email: info@unlocksrq.com
+
+=== REMOVE COMPLETELY ===
+- All specific dollar amounts
+- Owner name from main pages
+- Detailed street address
+- "Latest Updates" section (temporarily, until content ready)
+- Any placeholder content
+
+Make all changes incrementally to maintain site functionality.
+Ensure mobile-first responsive design is preserved.
+Add click-to-call functionality on phone number for mobile devices.
