@@ -70,7 +70,7 @@ VITE_APP_LOGO=/logo.png
 
 # Owner Information
 OWNER_OPEN_ID=your-owner-id
-OWNER_NAME=Maxim Yepichin
+OWNER_NAME=Maksim Yepikhin
 
 # Analytics
 VITE_ANALYTICS_ENDPOINT=your-analytics-endpoint
@@ -241,7 +241,7 @@ Follow the comprehensive guide in `DOMAIN_SETUP_GUIDE.md` to connect your custom
 ## 📱 Contact Information
 
 **Company:** Unlock SRQ LLC  
-**Owner:** Maxim Yepichin  
+**Owner:** Maksim Yepikhin  
 **Phone:** (941) 587-5050  
 **Email:** info@srqunlock.com  
 **Address:** 2456 Yancy Street, North Port, FL 34291  

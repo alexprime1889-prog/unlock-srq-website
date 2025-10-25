@@ -58,10 +58,10 @@ export default function SEO({
     setMetaTag("twitter:title", title);
     setMetaTag("twitter:description", description);
     setMetaTag("twitter:image", ogImage);
-    setMetaTag("twitter:image:alt", "Professional locksmith Maxim Yepichin in mobile workshop - Unlock SRQ LLC");
+    setMetaTag("twitter:image:alt", "Professional locksmith Maksim Yepikhin in mobile workshop - Unlock SRQ LLC");
     
     // Additional SEO metadata
-    setMetaTag("og:image:alt", "Professional locksmith Maxim Yepichin in mobile workshop with key programming equipment", true);
+    setMetaTag("og:image:alt", "Professional locksmith Maksim Yepikhin in mobile workshop with key programming equipment", true);
     setMetaTag("og:image:type", "image/webp", true);
     setMetaTag("og:image:width", "1920", true);
     setMetaTag("og:image:height", "1280", true);
@@ -174,7 +174,7 @@ export default function SEO({
       ],
       "owner": {
         "@type": "Person",
-        "name": "Maxim Yepichin",
+        "name": "Maksim Yepikhin",
         "image": `${canonicalUrl}/professional-locksmith-mobile-workshop-sarasota-fl.webp`,
         "jobTitle": "Owner & Master Locksmith",
         "description": "Professional locksmith with expertise in key programming, automotive locksmith services, and emergency lockout assistance",
@@ -193,7 +193,7 @@ export default function SEO({
       },
       "employee": {
         "@type": "Person",
-        "name": "Maxim Yepichin",
+        "name": "Maksim Yepikhin",
         "jobTitle": "Owner & Master Locksmith"
       }
     };

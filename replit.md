@@ -62,7 +62,7 @@ Professional locksmith website for Unlock SRQ LLC serving Sarasota, North Port, 
 ## Business Information
 
 **Company**: Unlock SRQ LLC  
-**Owner**: Maxim Yepichin  
+**Owner**: Maksim Yepikhin  
 **Phone**: (941) 587-5050  
 **Email**: info@srqunlock.com  
 **Address**: 2456 Yancy Street, North Port, FL 34291  
@@ -172,7 +172,7 @@ npm run db:push
 - ✅ Database schema pushed successfully
 - ✅ Application running on port 5000
 - ✅ **Professional Photography Integration (October 23, 2025)**:
-  - Integrated 6 professional photos of owner Maxim Yepichin and services
+  - Integrated 6 professional photos of owner Maksim Yepikhin and services
   - Converted all images from PNG/JPEG to WebP format (90%+ file size reduction)
   - Implemented comprehensive SEO optimization:
     * Schema.org ImageObject markup for all images
@@ -186,7 +186,7 @@ npm run db:push
   - Photo placements: 
     * Hero (owner in workshop - 163KB)
     * Latest Updates (3 articles: owner portrait 51KB, mobile workshop 177KB, Lishi tool 36KB)
-    * About Company (Maxim with customer - 412KB, portrait orientation with 3:4 aspect ratio)
+    * About Company (Maksim with customer - 412KB, portrait orientation with 3:4 aspect ratio)
     * Contact Form (emergency service - 86KB)
   - All images include data-testid attributes for automated testing
   - **Latest Update**: Replaced About Company image with customer service photo (900KB JPEG → 412KB WebP, 54% reduction)

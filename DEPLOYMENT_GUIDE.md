@@ -265,7 +265,7 @@ CALENDLY_USERNAME=your-username
 
 ## Contact Information
 
-**Website Owner:** Maxim Yepichin  
+**Website Owner:** Maksim Yepikhin  
 **Business:** Unlock SRQ LLC  
 **Phone:** 941-587-5050  
 **Email:** info@srqunlock.com  
