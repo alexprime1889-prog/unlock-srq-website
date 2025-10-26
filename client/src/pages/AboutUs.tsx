@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { 
   Phone,
   Mail,
@@ -22,6 +24,8 @@ export default function AboutUs() {
       />
       
       <div className="min-h-screen flex flex-col">
+        <Header />
+        
         {/* HERO SECTION */}
         <section className="relative min-h-[50vh] flex items-center justify-center bg-gradient-to-br from-[#1a3a52] via-purple-900 to-purple-700">
           <div className="container relative z-10 py-20 text-center">
@@ -277,6 +281,8 @@ export default function AboutUs() {
             </div>
           </div>
         </section>
+
+        <Footer />
       </div>
     </>
   );
