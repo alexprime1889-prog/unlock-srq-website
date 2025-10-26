@@ -47,7 +47,11 @@ export default function Home() {
 
   return (
     <>
-      <SEO />
+      <SEO
+        title="24/7 Emergency Locksmith North Port & Port Charlotte FL | Unlock SRQ"
+        description="24/7 emergency locksmith serving North Port, Port Charlotte, Punta Gorda, Venice. Licensed & insured. 15-minute response. Lost keys, lockouts, commercial. Call (941) 587-5050"
+        canonicalUrl="https://srqunlock.com"
+      />
       <div className="min-h-screen flex flex-col">
         <Header />
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "wouter";
 import {
   Facebook,
   Instagram,
@@ -13,6 +14,13 @@ import { SiTiktok } from "react-icons/si";
 
 export default function Header() {
   const [showLocations, setShowLocations] = useState(false);
+
+  // Close dropdown on ESC key
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      setShowLocations(false);
+    }
+  };
 
   return (
     <>
@@ -81,7 +89,7 @@ export default function Header() {
         <div className="container">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
             {/* Logo */}
-            <a href="/" className="flex items-center gap-3" data-testid="link-logo">
+            <Link href="/" className="flex items-center gap-3" data-testid="link-logo">
               <div className="w-12 h-12 bg-[#7dd3e8] rounded-lg flex items-center justify-center">
                 <Key size={24} className="text-[#1a3a52]" />
               </div>
@@ -91,113 +99,117 @@ export default function Header() {
                 </span>
                 <span className="text-xs text-gray-600">LLC</span>
               </div>
-            </a>
+            </Link>
 
             {/* Navigation */}
             <nav className="hidden lg:flex gap-6 text-sm font-semibold items-center">
-              <a
+              <Link
                 href="/"
                 className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors"
                 data-testid="nav-home"
               >
                 HOME
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/automotive-services"
                 className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors"
                 data-testid="nav-services"
               >
                 SERVICES
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/automotive-products"
                 className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors"
                 data-testid="nav-products"
               >
                 PRODUCTS
-              </a>
+              </Link>
 
               {/* Locations Dropdown */}
               <div
                 className="relative"
                 onMouseEnter={() => setShowLocations(true)}
                 onMouseLeave={() => setShowLocations(false)}
+                onKeyDown={handleKeyDown}
               >
                 <button
                   className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors flex items-center gap-1"
                   data-testid="nav-locations"
+                  onClick={() => setShowLocations(!showLocations)}
+                  aria-expanded={showLocations}
+                  aria-haspopup="true"
                 >
                   LOCATIONS <ChevronDown size={16} />
                 </button>
                 {showLocations && (
                   <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl py-2 w-64 z-50">
-                    <a
+                    <Link
                       href="/locksmith-north-port"
                       className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors"
                       data-testid="loc-north-port"
                     >
                       North Port, FL
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/locksmith-port-charlotte"
                       className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors"
                       data-testid="loc-port-charlotte"
                     >
                       Port Charlotte, FL
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/locksmith-sarasota"
                       className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors"
                       data-testid="loc-sarasota"
                     >
                       Sarasota, FL
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/locksmith-punta-gorda"
                       className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors"
                       data-testid="loc-punta-gorda"
                     >
                       Punta Gorda, FL
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/locksmith-venice-fl"
                       className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors"
                       data-testid="loc-venice"
                     >
                       Venice, FL
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/locksmith-englewood"
                       className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors"
                       data-testid="loc-englewood"
                     >
                       Englewood, FL
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/locksmith-bradenton"
                       className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors"
                       data-testid="loc-bradenton"
                     >
                       Bradenton, FL
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/emergency-locksmith-charlotte-county"
                       className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors border-t border-gray-200 mt-1 pt-3"
                       data-testid="loc-charlotte-county"
                     >
                       Emergency - Charlotte County
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>
 
-              <a
+              <Link
                 href="/about-us"
                 className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors"
                 data-testid="nav-about"
               >
                 ABOUT US
-              </a>
+              </Link>
             </nav>
 
             {/* Contact Info */}

@@ -38,7 +38,7 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2">
                 <Phone size={16} className="text-[#7dd3e8]" />
-                <a href="tel:9415875050" className="hover:text-[#7dd3e8]">
+                <a href="tel:9415875050" className="hover:text-[#7dd3e8]" data-testid="link-phone-footer">
                   (941) 587-5050
                 </a>
               </div>
@@ -47,6 +47,7 @@ export default function Footer() {
                 <a
                   href="mailto:info@srqunlock.com"
                   className="hover:text-[#7dd3e8]"
+                  data-testid="link-email-footer-contact"
                 >
                   info@srqunlock.com
                 </a>
