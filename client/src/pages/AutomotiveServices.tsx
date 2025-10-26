@@ -1,24 +1,19 @@
 import SEO from "@/components/SEO";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
   Phone,
-  Mail,
-  MapPin,
-  Clock,
   Key,
-  Lock,
   Car,
+  Clock,
   Shield,
   CheckCircle,
   Award,
   Wrench,
   Zap,
-  Facebook,
-  Instagram,
-  Youtube,
 } from "lucide-react";
-import { SiTiktok } from "react-icons/si";
 
 export default function AutomotiveServices() {
   const certifications = [
@@ -136,103 +131,7 @@ export default function AutomotiveServices() {
       />
 
       <div className="min-h-screen flex flex-col">
-        {/* TOP BAR - Social Media */}
-        <div className="bg-[#1a3a52] text-white py-2">
-          <div className="container flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div className="flex gap-3">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 bg-[#7dd3e8] rounded flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                data-testid="link-facebook"
-              >
-                <Facebook size={16} className="text-[#1a3a52]" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 bg-[#7dd3e8] rounded flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                data-testid="link-instagram"
-              >
-                <Instagram size={16} className="text-[#1a3a52]" />
-              </a>
-              <a
-                href="https://www.yellowpages.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 bg-[#7dd3e8] rounded flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                data-testid="link-yellowpages"
-              >
-                <span className="text-[#1a3a52] font-bold text-sm">YP</span>
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 bg-[#7dd3e8] rounded flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                data-testid="link-youtube"
-              >
-                <Youtube size={16} className="text-[#1a3a52]" />
-              </a>
-              <a
-                href="https://tiktok.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 bg-[#7dd3e8] rounded flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                data-testid="link-tiktok"
-              >
-                <SiTiktok size={16} className="text-[#1a3a52]" />
-              </a>
-              <a
-                href="mailto:info@srqunlock.com"
-                className="w-8 h-8 bg-[#7dd3e8] rounded flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                data-testid="link-email"
-              >
-                <Mail size={16} className="text-[#1a3a52]" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* HEADER */}
-        <header className="bg-white border-b border-gray-200 py-4 sticky top-0 z-50 shadow-sm">
-          <div className="container">
-            <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
-              <a href="/" className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-[#7dd3e8] rounded-lg flex items-center justify-center">
-                  <Key size={24} className="text-[#1a3a52]" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-2xl font-bold text-[#1a3a52]">
-                    Unlock <span className="text-[#7dd3e8]">SRQ</span>
-                  </span>
-                  <span className="text-xs text-gray-600">LLC</span>
-                </div>
-              </a>
-
-              <div className="flex flex-col gap-1 text-xs lg:text-sm">
-                <div className="flex items-center gap-2">
-                  <Phone size={14} className="text-[#7dd3e8]" />
-                  <span className="font-semibold">
-                    Phone:{" "}
-                    <a
-                      href="tel:9415875050"
-                      className="text-[#1a3a52] hover:text-[#7dd3e8]"
-                    >
-                      (941) 587-5050
-                    </a>
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock size={14} className="text-[#7dd3e8]" />
-                  <span className="font-semibold text-[#1a3a52]">24/7 Emergency Service</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>
+        <Header />
 
         {/* HERO SECTION */}
         <section className="bg-gradient-to-br from-[#1a3a52] to-[#2c4a5f] text-white py-16">
@@ -325,8 +224,61 @@ export default function AutomotiveServices() {
           </div>
         </section>
 
-        {/* KEY FEATURES */}
+        {/* PROFESSIONAL EQUIPMENT - LISHI TOOL SHOWCASE */}
         <section className="py-12 bg-gray-50">
+          <div className="container">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-[#1a3a52] mb-4">
+                  Professional Tools & Expertise
+                </h2>
+                <p className="text-lg text-gray-700 mb-6">
+                  We use industry-leading Lishi tools and automotive locksmith equipment to provide 
+                  fast, non-destructive lockout service for all vehicle makes and models. Our NASTF 
+                  and VSP certifications ensure we stay current with the latest automotive security systems.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle size={20} className="text-[#7dd3e8] mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700">
+                      <strong>Non-Destructive Entry:</strong> Professional Lishi tools preserve your vehicle's locks
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle size={20} className="text-[#7dd3e8] mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700">
+                      <strong>Mobile Workshop:</strong> Fully equipped service van arrives at your location
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle size={20} className="text-[#7dd3e8] mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700">
+                      <strong>Latest Technology:</strong> OEM programming tools and diagnostic equipment
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div className="relative">
+                <picture>
+                  <source 
+                    srcSet="/lishi-tool-automotive-lockout-service-unlock-srq.webp" 
+                    type="image/webp" 
+                  />
+                  <img
+                    src="/lishi-tool-automotive-lockout-service-unlock-srq.png"
+                    alt="Professional Lishi tool used by Unlock SRQ master locksmith for non-destructive automotive lockout service in North Port and Port Charlotte Florida"
+                    className="rounded-lg shadow-2xl w-full h-auto object-cover"
+                    loading="lazy"
+                    data-testid="img-lishi-tool"
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* KEY FEATURES */}
+        <section className="py-12 bg-white">
           <div className="container">
             <div className="grid md:grid-cols-4 gap-6 text-center">
               <div data-testid="feature-inventory">
@@ -363,6 +315,67 @@ export default function AutomotiveServices() {
                 </div>
                 <h3 className="font-bold text-[#1a3a52] mb-2">24/7 Availability</h3>
                 <p className="text-gray-600 text-sm">Emergency locksmith service around the clock</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* OWNER EXPERTISE SECTION */}
+        <section className="py-12 bg-gray-50">
+          <div className="container">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="relative order-2 md:order-1">
+                <picture>
+                  <source 
+                    srcSet="/maxim-yepichin-owner-master-locksmith-sarasota-fl.webp" 
+                    type="image/webp" 
+                  />
+                  <img
+                    src="/maxim-yepichin-owner-master-locksmith-sarasota-fl.png"
+                    alt="Maksim Yepikhin, owner and master automotive locksmith at Unlock SRQ in North Port Florida, NASTF and VSP certified professional"
+                    className="rounded-lg shadow-2xl w-full h-auto object-cover"
+                    loading="lazy"
+                    data-testid="img-owner-maksim"
+                  />
+                </picture>
+              </div>
+              <div className="order-1 md:order-2">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#1a3a52] mb-4">
+                  Master Locksmith Maksim Yepikhin
+                </h2>
+                <p className="text-lg text-gray-700 mb-4">
+                  Owner and founder of Unlock SRQ LLC, serving the North Port, Port Charlotte, 
+                  and Sarasota communities with professional automotive locksmith services since 2020.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <Award size={24} className="text-[#7dd3e8] flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-bold text-[#1a3a52] mb-1">NASTF Certified Professional</h3>
+                      <p className="text-gray-600">
+                        National Automotive Service Task Force member with access to OEM programming data
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Shield size={24} className="text-[#7dd3e8] flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-bold text-[#1a3a52] mb-1">Licensed & Insured</h3>
+                      <p className="text-gray-600">
+                        $2 million liability insurance • Background checked • Bonded
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Wrench size={24} className="text-[#7dd3e8] flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-bold text-[#1a3a52] mb-1">Specialized Expertise</h3>
+                      <p className="text-gray-600">
+                        Transponder programming • ECU reflash • High-security automotive systems
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -446,80 +459,7 @@ export default function AutomotiveServices() {
           </div>
         </section>
 
-        {/* FOOTER */}
-        <footer className="bg-[#1a3a52] text-white py-12">
-          <div className="container">
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
-              <div>
-                <h3 className="text-xl font-bold mb-4 text-[#7dd3e8]">Contact Us</h3>
-                <div className="space-y-3">
-                  <p className="flex items-center gap-2">
-                    <Phone size={18} className="text-[#7dd3e8]" />
-                    <a href="tel:9415875050" className="hover:text-[#7dd3e8]">
-                      (941) 587-5050
-                    </a>
-                  </p>
-                  <p className="flex items-center gap-2">
-                    <Mail size={18} className="text-[#7dd3e8]" />
-                    <a href="mailto:info@srqunlock.com" className="hover:text-[#7dd3e8]">
-                      info@srqunlock.com
-                    </a>
-                  </p>
-                  <p className="flex items-start gap-2">
-                    <MapPin size={18} className="text-[#7dd3e8] mt-1" />
-                    <span>North Port, FL 34291</span>
-                  </p>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-bold mb-4 text-[#7dd3e8]">Quick Links</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <a href="/" className="hover:text-[#7dd3e8]">
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/automotive-services" className="hover:text-[#7dd3e8]">
-                      Services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/about-us" className="hover:text-[#7dd3e8]">
-                      About Us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/booking" className="hover:text-[#7dd3e8]">
-                      Book Appointment
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-bold mb-4 text-[#7dd3e8]">Service Areas</h3>
-                <ul className="space-y-2 text-sm">
-                  <li>North Port, FL</li>
-                  <li>Port Charlotte, FL</li>
-                  <li>Punta Gorda, FL</li>
-                  <li>Venice, FL</li>
-                  <li>Sarasota, FL</li>
-                  <li>Englewood, FL</li>
-                  <li>Bradenton, FL</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="border-t border-gray-600 pt-6 text-center text-sm">
-              <p>© 2025 Unlock SRQ LLC. All rights reserved.</p>
-              <p className="mt-2">
-                Licensed & Insured | NASTF Certified | VSP Certified | AUTOAUTH Certified
-              </p>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );
