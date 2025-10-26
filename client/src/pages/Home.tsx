@@ -11,15 +11,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import SEO from "@/components/SEO";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { 
-  Facebook, 
-  Instagram, 
-  Youtube, 
   Mail,
   Phone,
   MapPin,
   Clock,
-  ChevronDown,
   Key,
   Lock,
   Car,
@@ -32,13 +30,16 @@ import {
   Settings,
   CheckCircle,
   Award,
-  Zap
+  Zap,
+  ChevronDown,
+  Facebook,
+  Instagram,
+  Youtube
 } from "lucide-react";
 import { SiTiktok } from "react-icons/si";
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [showLocations, setShowLocations] = useState(false);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -48,133 +49,7 @@ export default function Home() {
     <>
       <SEO />
       <div className="min-h-screen flex flex-col">
-        {/* TOP BAR - Social Media */}
-        <div className="bg-[#1a3a52] text-white py-2">
-          <div className="container flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div className="flex gap-3">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
-                 className="w-8 h-8 bg-[#7dd3e8] rounded flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                 data-testid="link-facebook">
-                <Facebook size={16} className="text-[#1a3a52]" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
-                 className="w-8 h-8 bg-[#7dd3e8] rounded flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                 data-testid="link-instagram">
-                <Instagram size={16} className="text-[#1a3a52]" />
-              </a>
-              <a href="https://www.yellowpages.com" target="_blank" rel="noopener noreferrer" 
-                 className="w-8 h-8 bg-[#7dd3e8] rounded flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                 data-testid="link-yellowpages">
-                <span className="text-[#1a3a52] font-bold text-sm">YP</span>
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" 
-                 className="w-8 h-8 bg-[#7dd3e8] rounded flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                 data-testid="link-youtube">
-                <Youtube size={16} className="text-[#1a3a52]" />
-              </a>
-              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" 
-                 className="w-8 h-8 bg-[#7dd3e8] rounded flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                 data-testid="link-tiktok">
-                <SiTiktok size={16} className="text-[#1a3a52]" />
-              </a>
-              <a href="mailto:info@srqunlock.com" 
-                 className="w-8 h-8 bg-[#7dd3e8] rounded flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                 data-testid="link-email">
-                <Mail size={16} className="text-[#1a3a52]" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* HEADER - Sticky */}
-        <header className="bg-white border-b border-gray-200 py-4 sticky top-0 z-50 shadow-sm">
-          <div className="container">
-            <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
-              {/* Logo */}
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-[#7dd3e8] rounded-lg flex items-center justify-center">
-                  <Key size={24} className="text-[#1a3a52]" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-2xl font-bold text-[#1a3a52]">
-                    Unlock <span className="text-[#7dd3e8]">SRQ</span>
-                  </span>
-                  <span className="text-xs text-gray-600">LLC</span>
-                </div>
-              </div>
-
-              {/* Navigation */}
-              <nav className="hidden lg:flex gap-6 text-sm font-semibold items-center">
-                <a href="/" className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors" data-testid="nav-home">HOME</a>
-                <a href="/automotive-services" className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors" data-testid="nav-services">
-                  SERVICES
-                </a>
-                <a href="/automotive-products" className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors" data-testid="nav-products">
-                  PRODUCTS
-                </a>
-                
-                {/* Locations Dropdown */}
-                <div 
-                  className="relative"
-                  onMouseEnter={() => setShowLocations(true)}
-                  onMouseLeave={() => setShowLocations(false)}
-                >
-                  <button className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors flex items-center gap-1" data-testid="nav-locations">
-                    LOCATIONS <ChevronDown size={16} />
-                  </button>
-                  {showLocations && (
-                    <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl py-2 w-64 z-50">
-                      <a href="/locksmith-north-port" className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors" data-testid="loc-north-port">
-                        North Port, FL
-                      </a>
-                      <a href="/locksmith-port-charlotte" className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors" data-testid="loc-port-charlotte">
-                        Port Charlotte, FL
-                      </a>
-                      <a href="/locksmith-sarasota" className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors" data-testid="loc-sarasota">
-                        Sarasota, FL
-                      </a>
-                      <a href="/locksmith-punta-gorda" className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors" data-testid="loc-punta-gorda">
-                        Punta Gorda, FL
-                      </a>
-                      <a href="/locksmith-venice-fl" className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors" data-testid="loc-venice">
-                        Venice, FL
-                      </a>
-                      <a href="/locksmith-englewood" className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors" data-testid="loc-englewood">
-                        Englewood, FL
-                      </a>
-                      <a href="/locksmith-bradenton" className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors" data-testid="loc-bradenton">
-                        Bradenton, FL
-                      </a>
-                      <a href="/emergency-locksmith-charlotte-county" className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors border-t border-gray-200 mt-1 pt-3" data-testid="loc-charlotte-county">
-                        Emergency - Charlotte County
-                      </a>
-                    </div>
-                  )}
-                </div>
-
-                <a href="/about-us" className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors" data-testid="nav-about">
-                  ABOUT US
-                </a>
-              </nav>
-
-              {/* Contact Info */}
-              <div className="flex flex-col gap-1 text-xs lg:text-sm">
-                <div className="flex items-center gap-2">
-                  <Phone size={14} className="text-[#7dd3e8]" />
-                  <span className="font-semibold">Phone: <a href="tel:9415875050" className="text-[#1a3a52] hover:text-[#7dd3e8]">(941) 587-5050</a></span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail size={14} className="text-[#7dd3e8]" />
-                  <span className="font-semibold">Email: <a href="mailto:info@srqunlock.com" className="text-[#1a3a52] hover:text-[#7dd3e8]">info@srqunlock.com</a></span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock size={14} className="text-[#7dd3e8]" />
-                  <span className="font-semibold text-[#7dd3e8]">*Emergency: 24/7/365*</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>
+        <Header />
 
         {/* HERO SECTION - Split Layout with Owner Photo */}
         <section className="relative min-h-[80vh] flex items-center justify-start bg-cover bg-center" 
@@ -354,7 +229,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-[#7dd3e8] rounded-lg flex items-center justify-center mb-4 mx-auto">
                   <HomeIcon size={32} className="text-[#2c4a5f]" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center">Residential SRQ Unlock</h3>
+                <h3 className="text-xl font-bold mb-4 text-center">Residential Services</h3>
                 <div className="text-sm text-white/90 mb-6 leading-relaxed text-left space-y-1">
                   <p>• House Lockout Service (24/7)</p>
                   <p>• Lock Rekey & Master Key Systems</p>
@@ -373,7 +248,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-[#2c4a5f] rounded-lg flex items-center justify-center mb-4 mx-auto">
                   <Shield size={32} className="text-[#7dd3e8]" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center">Commercial SRQ Unlock</h3>
+                <h3 className="text-xl font-bold mb-4 text-center">Commercial Solutions</h3>
                 <div className="text-sm mb-6 leading-relaxed text-left space-y-1">
                   <p>• Office Lockout Emergency Service</p>
                   <p>• Access Control Systems</p>
@@ -392,7 +267,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-[#7dd3e8] rounded-lg flex items-center justify-center mb-4 mx-auto">
                   <Car size={32} className="text-[#2c4a5f]" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center">Car SRQ Unlock</h3>
+                <h3 className="text-xl font-bold mb-4 text-center">Automotive Services</h3>
                 <div className="text-sm text-white/90 mb-6 leading-relaxed text-left space-y-1">
                   <p>• Emergency Car Lockout</p>
                   <p>• Transponder Key Programming</p>
@@ -411,7 +286,7 @@ export default function Home() {
                 <div className="w-16 h-16 bg-[#2c4a5f] rounded-lg flex items-center justify-center mb-4 mx-auto">
                   <Clock size={32} className="text-[#7dd3e8]" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center">Emergency SRQ Unlock</h3>
+                <h3 className="text-xl font-bold mb-4 text-center">Emergency Response</h3>
                 <div className="text-sm mb-6 leading-relaxed text-left space-y-1">
                   <p>• 24/7 Immediate Response</p>
                   <p>• Break-in Damage Repair</p>
@@ -993,122 +868,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FOOTER */}
-        <footer className="bg-[#344c5a] text-white py-16">
-          <div className="container">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-              {/* Column 1: Logo & Info */}
-              <div>
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-10 h-10 bg-[#7dd3e8] rounded-lg flex items-center justify-center">
-                    <Key size={20} className="text-[#1a3a52]" />
-                  </div>
-                  <span className="text-xl font-bold">Unlock <span className="text-[#7dd3e8]">SRQ</span> LLC</span>
-                </div>
-                <p className="text-white/80 mb-4 text-sm leading-relaxed">
-                  Professional locksmith services available 24/7 for all your security needs.
-                </p>
-                <p className="text-white/60 text-sm">Owner: Maksim Yepikhin</p>
-              </div>
-
-              {/* Column 2: Contact Us */}
-              <div>
-                <h4 className="text-lg font-bold mb-4">Contact Us</h4>
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Phone size={16} className="text-[#7dd3e8]" />
-                    <a href="tel:9415875050" className="hover:text-[#7dd3e8]">(941) 587-5050</a>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Mail size={16} className="text-[#7dd3e8]" />
-                    <a href="mailto:info@srqunlock.com" className="hover:text-[#7dd3e8]">info@srqunlock.com</a>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin size={16} className="text-[#7dd3e8]" />
-                    <span>North Port, FL 34291</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Car size={16} className="text-[#7dd3e8]" />
-                    <span className="font-semibold">Mobile Service - We Come to You!</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Column 3: Emergency Service */}
-              <div>
-                <h4 className="text-lg font-bold mb-4">Emergency Service</h4>
-                <p className="text-white/80 text-sm mb-4">
-                  Available 24 hours a day, 7 days a week, 365 days a year
-                </p>
-                <p className="text-4xl font-bold text-[#7dd3e8]">24/7/365</p>
-              </div>
-
-              {/* Column 4: Service Areas */}
-              <div>
-                <h4 className="text-lg font-bold mb-4">Service Areas</h4>
-                <div className="grid grid-cols-2 gap-4 text-sm text-white/80">
-                  <div>
-                    <p className="font-semibold text-[#7dd3e8] mb-2">Sarasota County:</p>
-                    <ul className="space-y-1">
-                      <li>• North Port</li>
-                      <li>• Venice</li>
-                      <li>• South Sarasota</li>
-                      <li>• Nokomis</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-[#7dd3e8] mb-2">Charlotte County:</p>
-                    <ul className="space-y-1">
-                      <li>• Port Charlotte</li>
-                      <li>• Punta Gorda</li>
-                      <li>• Englewood</li>
-                      <li>• Rotonda West</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Icons */}
-            <div className="flex justify-center gap-4 mb-8 pb-8 border-b border-white/20">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
-                 className="w-10 h-10 bg-[#7dd3e8] rounded-full flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                 data-testid="link-facebook-footer">
-                <Facebook size={20} className="text-[#1a3a52]" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
-                 className="w-10 h-10 bg-[#7dd3e8] rounded-full flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                 data-testid="link-instagram-footer">
-                <Instagram size={20} className="text-[#1a3a52]" />
-              </a>
-              <a href="https://www.yellowpages.com" target="_blank" rel="noopener noreferrer" 
-                 className="w-10 h-10 bg-[#7dd3e8] rounded-full flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                 data-testid="link-yellowpages-footer">
-                <span className="text-[#1a3a52] font-bold">YP</span>
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" 
-                 className="w-10 h-10 bg-[#7dd3e8] rounded-full flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                 data-testid="link-youtube-footer">
-                <Youtube size={20} className="text-[#1a3a52]" />
-              </a>
-              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" 
-                 className="w-10 h-10 bg-[#7dd3e8] rounded-full flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                 data-testid="link-tiktok-footer">
-                <SiTiktok size={20} className="text-[#1a3a52]" />
-              </a>
-              <a href="mailto:info@srqunlock.com" 
-                 className="w-10 h-10 bg-[#7dd3e8] rounded-full flex items-center justify-center hover:bg-[#6bc3d8] transition-colors"
-                 data-testid="link-email-footer">
-                <Mail size={20} className="text-[#1a3a52]" />
-              </a>
-            </div>
-
-            {/* Copyright */}
-            <div className="text-center text-white/60 text-sm">
-              <p>&copy; {new Date().getFullYear()} Unlock SRQ LLC. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );
