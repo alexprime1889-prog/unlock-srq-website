@@ -182,7 +182,7 @@ export default function Home() {
         </section>
 
         {/* 4 SERVICE CARDS - Overlapping Hero */}
-        <section className="relative -mt-48 z-20 pb-20">
+        <section className="relative -mt-40 z-20 pb-20">
           <div className="container">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Card 1: Residential */}
