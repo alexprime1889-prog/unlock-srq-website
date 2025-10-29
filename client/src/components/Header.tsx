@@ -9,11 +9,15 @@ import {
   Clock,
   ChevronDown,
   Key,
+  Menu,
+  X,
 } from "lucide-react";
 import { SiTiktok } from "react-icons/si";
 
 export default function Header() {
   const [showLocations, setShowLocations] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [showMobileLocations, setShowMobileLocations] = useState(false);
 
   // Close dropdown on ESC key
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -214,8 +218,8 @@ export default function Header() {
               </Link>
             </nav>
 
-            {/* Contact Info */}
-            <div className="flex flex-col gap-1 text-xs lg:text-sm">
+            {/* Contact Info - Hidden on Mobile */}
+            <div className="hidden lg:flex flex-col gap-1 text-xs lg:text-sm">
               <div className="flex items-center gap-2">
                 <Phone size={14} className="text-[#7dd3e8]" />
                 <span className="font-semibold">
@@ -247,7 +251,191 @@ export default function Header() {
                 </span>
               </div>
             </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden p-2 text-[#1a3a52] hover:text-[#7dd3e8] transition-colors"
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
+              data-testid="button-mobile-menu"
+              aria-label="Toggle mobile menu"
+            >
+              {showMobileMenu ? <X size={28} /> : <Menu size={28} />}
+            </button>
           </div>
+
+          {/* Mobile Menu Overlay */}
+          {showMobileMenu && (
+            <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-xl z-50">
+              <nav className="container py-6 space-y-4">
+                <Link
+                  href="/"
+                  className="block text-[#1a3a52] hover:text-[#7dd3e8] font-semibold text-lg py-2"
+                  data-testid="mobile-nav-home"
+                  onClick={() => setShowMobileMenu(false)}
+                >
+                  HOME
+                </Link>
+                <Link
+                  href="/automotive-services"
+                  className="block text-[#1a3a52] hover:text-[#7dd3e8] font-semibold text-lg py-2"
+                  data-testid="mobile-nav-services"
+                  onClick={() => setShowMobileMenu(false)}
+                >
+                  SERVICES
+                </Link>
+                <Link
+                  href="/automotive-products"
+                  className="block text-[#1a3a52] hover:text-[#7dd3e8] font-semibold text-lg py-2"
+                  data-testid="mobile-nav-products"
+                  onClick={() => setShowMobileMenu(false)}
+                >
+                  PRODUCTS
+                </Link>
+
+                {/* Mobile Locations Expandable */}
+                <div>
+                  <button
+                    className="w-full text-left text-[#1a3a52] hover:text-[#7dd3e8] font-semibold text-lg py-2 flex items-center justify-between"
+                    data-testid="mobile-nav-locations"
+                    onClick={() => setShowMobileLocations(!showMobileLocations)}
+                  >
+                    LOCATIONS
+                    <ChevronDown
+                      size={20}
+                      className={`transform transition-transform ${
+                        showMobileLocations ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {showMobileLocations && (
+                    <div className="pl-4 mt-2 space-y-2 border-l-2 border-[#7dd3e8]">
+                      <Link
+                        href="/locksmith-north-port"
+                        className="block text-[#1a3a52] hover:text-[#7dd3e8] py-2"
+                        data-testid="mobile-loc-north-port"
+                        onClick={() => {
+                          setShowMobileMenu(false);
+                          setShowMobileLocations(false);
+                        }}
+                      >
+                        North Port, FL
+                      </Link>
+                      <Link
+                        href="/locksmith-port-charlotte"
+                        className="block text-[#1a3a52] hover:text-[#7dd3e8] py-2"
+                        data-testid="mobile-loc-port-charlotte"
+                        onClick={() => {
+                          setShowMobileMenu(false);
+                          setShowMobileLocations(false);
+                        }}
+                      >
+                        Port Charlotte, FL
+                      </Link>
+                      <Link
+                        href="/locksmith-sarasota"
+                        className="block text-[#1a3a52] hover:text-[#7dd3e8] py-2"
+                        data-testid="mobile-loc-sarasota"
+                        onClick={() => {
+                          setShowMobileMenu(false);
+                          setShowMobileLocations(false);
+                        }}
+                      >
+                        Sarasota, FL
+                      </Link>
+                      <Link
+                        href="/locksmith-punta-gorda"
+                        className="block text-[#1a3a52] hover:text-[#7dd3e8] py-2"
+                        data-testid="mobile-loc-punta-gorda"
+                        onClick={() => {
+                          setShowMobileMenu(false);
+                          setShowMobileLocations(false);
+                        }}
+                      >
+                        Punta Gorda, FL
+                      </Link>
+                      <Link
+                        href="/locksmith-venice-fl"
+                        className="block text-[#1a3a52] hover:text-[#7dd3e8] py-2"
+                        data-testid="mobile-loc-venice"
+                        onClick={() => {
+                          setShowMobileMenu(false);
+                          setShowMobileLocations(false);
+                        }}
+                      >
+                        Venice, FL
+                      </Link>
+                      <Link
+                        href="/locksmith-englewood"
+                        className="block text-[#1a3a52] hover:text-[#7dd3e8] py-2"
+                        data-testid="mobile-loc-englewood"
+                        onClick={() => {
+                          setShowMobileMenu(false);
+                          setShowMobileLocations(false);
+                        }}
+                      >
+                        Englewood, FL
+                      </Link>
+                      <Link
+                        href="/locksmith-bradenton"
+                        className="block text-[#1a3a52] hover:text-[#7dd3e8] py-2"
+                        data-testid="mobile-loc-bradenton"
+                        onClick={() => {
+                          setShowMobileMenu(false);
+                          setShowMobileLocations(false);
+                        }}
+                      >
+                        Bradenton, FL
+                      </Link>
+                      <Link
+                        href="/emergency-locksmith-charlotte-county"
+                        className="block text-[#1a3a52] hover:text-[#7dd3e8] py-2 border-t border-gray-200 pt-3 mt-2"
+                        data-testid="mobile-loc-charlotte-county"
+                        onClick={() => {
+                          setShowMobileMenu(false);
+                          setShowMobileLocations(false);
+                        }}
+                      >
+                        Emergency - Charlotte County
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                <Link
+                  href="/about-us"
+                  className="block text-[#1a3a52] hover:text-[#7dd3e8] font-semibold text-lg py-2"
+                  data-testid="mobile-nav-about"
+                  onClick={() => setShowMobileMenu(false)}
+                >
+                  ABOUT US
+                </Link>
+
+                {/* Mobile Contact Info */}
+                <div className="pt-4 border-t border-gray-200 space-y-3">
+                  <a
+                    href="tel:9415875050"
+                    className="flex items-center gap-3 text-[#1a3a52] hover:text-[#7dd3e8] font-semibold"
+                    data-testid="mobile-phone"
+                  >
+                    <Phone size={18} className="text-[#7dd3e8]" />
+                    <span>(941) 587-5050</span>
+                  </a>
+                  <a
+                    href="mailto:info@srqunlock.com"
+                    className="flex items-center gap-3 text-[#1a3a52] hover:text-[#7dd3e8] font-semibold"
+                    data-testid="mobile-email"
+                  >
+                    <Mail size={18} className="text-[#7dd3e8]" />
+                    <span>info@srqunlock.com</span>
+                  </a>
+                  <div className="flex items-center gap-3 text-[#7dd3e8] font-semibold">
+                    <Clock size={18} />
+                    <span>Emergency: 24/7/365</span>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          )}
         </div>
       </header>
     </>

@@ -146,37 +146,35 @@ export default function Home() {
         {/* TECHNOLOGIES SECTION */}
         <section className="relative -mt-32 z-30 pb-12">
           <div className="container">
-            <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
-              <div className="bg-gradient-to-r from-[#1a3a52] to-[#2c4a5f] rounded-xl p-6 text-white">
-                <div className="flex items-center gap-3 mb-4">
-                  <Zap size={28} className="text-[#7dd3e8]" />
-                  <h3 className="text-2xl font-bold">Latest Technology & Equipment</h3>
+            <div className="bg-gradient-to-r from-[#1a3a52] to-[#2c4a5f] rounded-xl p-8 md:p-10 text-white shadow-2xl">
+              <div className="flex items-center gap-3 mb-6">
+                <Zap size={32} className="text-[#7dd3e8]" />
+                <h3 className="text-2xl md:text-3xl font-bold">Latest Technology & Equipment</h3>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                <div className="flex items-center gap-2">
+                  <CheckCircle size={18} className="text-[#7dd3e8] flex-shrink-0" />
+                  <span>Laser Key Cutting Equipment</span>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0" />
-                    <span>Laser Key Cutting Equipment</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0" />
-                    <span>Latest Key Programming Technology</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0" />
-                    <span>OEM Key Programming Software</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0" />
-                    <span>Transponder Chip Programming</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0" />
-                    <span>ECU Re-Flash Equipment</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0" />
-                    <span>Immobilizer Diagnostic Tools</span>
-                  </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle size={18} className="text-[#7dd3e8] flex-shrink-0" />
+                  <span>Latest Key Programming Technology</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle size={18} className="text-[#7dd3e8] flex-shrink-0" />
+                  <span>OEM Key Programming Software</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle size={18} className="text-[#7dd3e8] flex-shrink-0" />
+                  <span>Transponder Chip Programming</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle size={18} className="text-[#7dd3e8] flex-shrink-0" />
+                  <span>ECU Re-Flash Equipment</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle size={18} className="text-[#7dd3e8] flex-shrink-0" />
+                  <span>Immobilizer Diagnostic Tools</span>
                 </div>
               </div>
             </div>
