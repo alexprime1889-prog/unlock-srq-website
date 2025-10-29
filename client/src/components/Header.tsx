@@ -128,21 +128,23 @@ export default function Header() {
               {/* Locations Dropdown */}
               <div
                 className="relative"
-                onMouseEnter={() => setShowLocations(true)}
-                onMouseLeave={() => setShowLocations(false)}
                 onKeyDown={handleKeyDown}
               >
                 <button
                   className="text-[#1a3a52] hover:text-[#7dd3e8] transition-colors flex items-center gap-1"
                   data-testid="nav-locations"
                   onClick={() => setShowLocations(!showLocations)}
+                  onMouseEnter={() => setShowLocations(true)}
                   aria-expanded={showLocations}
                   aria-haspopup="true"
                 >
                   LOCATIONS <ChevronDown size={16} />
                 </button>
                 {showLocations && (
-                  <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl py-2 w-64 z-50">
+                  <div 
+                    className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl py-2 w-64 z-50"
+                    onMouseLeave={() => setShowLocations(false)}
+                  >
                     <Link
                       href="/locksmith-north-port"
                       className="block px-4 py-2 text-sm text-[#1a3a52] hover:bg-[#7dd3e8] hover:text-white transition-colors"

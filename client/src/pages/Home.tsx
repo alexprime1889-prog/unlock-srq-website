@@ -143,51 +143,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CERTIFICATIONS SECTION */}
+        {/* TECHNOLOGIES SECTION */}
         <section className="relative -mt-32 z-30 pb-12">
           <div className="container">
             <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#1a3a52] mb-3">
-                  Certified & Trusted Professionals
-                </h2>
-                <p className="text-lg text-gray-600">
-                  NASTF & VSP Certified • 95% of Keys & Fobs In Stock • Less Than Half Dealer Cost
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
-                <div className="text-center p-6 bg-gradient-to-br from-[#1a3a52] to-[#2c4a5f] text-white rounded-xl" data-testid="cert-nastf">
-                  <div className="w-16 h-16 bg-[#7dd3e8] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Award size={32} className="text-[#1a3a52]" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">NASTF Certified</h3>
-                  <p className="text-white/90 text-sm">
-                    National Automotive Service Task Force certification for professional automotive locksmith services
-                  </p>
-                </div>
-
-                <div className="text-center p-6 bg-gradient-to-br from-[#7dd3e8] to-[#6bc3d8] text-[#1a3a52] rounded-xl" data-testid="cert-vsp">
-                  <div className="w-16 h-16 bg-[#1a3a52] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Shield size={32} className="text-[#7dd3e8]" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">VSP Certified</h3>
-                  <p className="text-sm">
-                    Vehicle Security Professional - advanced automotive security systems training and expertise
-                  </p>
-                </div>
-
-                <div className="text-center p-6 bg-gradient-to-br from-[#1a3a52] to-[#2c4a5f] text-white rounded-xl" data-testid="cert-autoauth">
-                  <div className="w-16 h-16 bg-[#7dd3e8] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle size={32} className="text-[#1a3a52]" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">AUTOAUTH Certified</h3>
-                  <p className="text-white/90 text-sm">
-                    Authorized automotive locksmith with verified credentials and professional training
-                  </p>
-                </div>
-              </div>
-
               <div className="bg-gradient-to-r from-[#1a3a52] to-[#2c4a5f] rounded-xl p-6 text-white">
                 <div className="flex items-center gap-3 mb-4">
                   <Zap size={28} className="text-[#7dd3e8]" />
@@ -227,79 +186,167 @@ export default function Home() {
         {/* 4 SERVICE CARDS - Overlapping Hero */}
         <section className="relative -mt-48 z-20 pb-20">
           <div className="container">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Card 1: Residential */}
-              <div className="bg-[#2c4a5f] text-white rounded-xl p-8 shadow-2xl hover:transform hover:scale-105 transition-all">
-                <div className="w-16 h-16 bg-[#7dd3e8] rounded-lg flex items-center justify-center mb-4 mx-auto">
-                  <HomeIcon size={32} className="text-[#2c4a5f]" />
+              <div className="bg-[#2c4a5f] text-white rounded-2xl p-10 shadow-2xl hover:shadow-3xl hover:transform hover:scale-105 transition-all duration-300">
+                <div className="w-20 h-20 bg-[#7dd3e8] rounded-xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+                  <HomeIcon size={36} className="text-[#2c4a5f]" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center">Residential Services</h3>
-                <div className="text-sm text-white/90 mb-6 leading-relaxed text-left space-y-1">
-                  <p>• House Lockout Service (24/7)</p>
-                  <p>• Lock Rekey & Master Key Systems</p>
-                  <p>• High-Security Lock Installation</p>
-                  <p>• Smart Lock Installation & Programming</p>
-                  <p>• Broken Key Extraction</p>
-                  <p>• Door Security Upgrades</p>
+                <h3 className="text-2xl font-bold mb-6 text-center">Residential Services</h3>
+                <div className="border-t border-white/20 pt-6 mb-6"></div>
+                <div className="text-sm text-white/95 mb-8 leading-relaxed text-left space-y-2.5">
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0 mt-0.5" />
+                    <span>House Lockout Service (24/7)</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0 mt-0.5" />
+                    <span>Lock Rekey & Master Key Systems</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0 mt-0.5" />
+                    <span>High-Security Lock Installation</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0 mt-0.5" />
+                    <span>Smart Lock Installation & Programming</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0 mt-0.5" />
+                    <span>Broken Key Extraction</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0 mt-0.5" />
+                    <span>Door Security Upgrades</span>
+                  </p>
                 </div>
-                <Button className="w-full bg-[#7dd3e8] hover:bg-[#6bc3d8] text-[#2c4a5f] font-semibold">
+                <Button 
+                  className="w-full bg-[#7dd3e8] hover:bg-[#6bc3d8] text-[#2c4a5f] font-bold py-6 text-base shadow-lg"
+                  data-testid="button-residential"
+                >
                   Learn More
                 </Button>
               </div>
 
               {/* Card 2: Commercial */}
-              <div className="bg-[#7dd3e8] text-[#1a3a52] rounded-xl p-8 shadow-2xl hover:transform hover:scale-105 transition-all">
-                <div className="w-16 h-16 bg-[#2c4a5f] rounded-lg flex items-center justify-center mb-4 mx-auto">
-                  <Shield size={32} className="text-[#7dd3e8]" />
+              <div className="bg-[#7dd3e8] text-[#1a3a52] rounded-2xl p-10 shadow-2xl hover:shadow-3xl hover:transform hover:scale-105 transition-all duration-300">
+                <div className="w-20 h-20 bg-[#2c4a5f] rounded-xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+                  <Shield size={36} className="text-[#7dd3e8]" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center">Commercial Solutions</h3>
-                <div className="text-sm mb-6 leading-relaxed text-left space-y-1">
-                  <p>• Office Lockout Emergency Service</p>
-                  <p>• Access Control Systems</p>
-                  <p>• Master Key System Design</p>
-                  <p>• File Cabinet & Desk Locks</p>
-                  <p>• Panic Bar Installation & Repair</p>
-                  <p>• ADA Compliant Solutions</p>
+                <h3 className="text-2xl font-bold mb-6 text-center">Commercial Solutions</h3>
+                <div className="border-t border-[#1a3a52]/20 pt-6 mb-6"></div>
+                <div className="text-sm mb-8 leading-relaxed text-left space-y-2.5">
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#2c4a5f] flex-shrink-0 mt-0.5" />
+                    <span>Office Lockout Emergency Service</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#2c4a5f] flex-shrink-0 mt-0.5" />
+                    <span>Access Control Systems</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#2c4a5f] flex-shrink-0 mt-0.5" />
+                    <span>Master Key System Design</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#2c4a5f] flex-shrink-0 mt-0.5" />
+                    <span>File Cabinet & Desk Locks</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#2c4a5f] flex-shrink-0 mt-0.5" />
+                    <span>Panic Bar Installation & Repair</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#2c4a5f] flex-shrink-0 mt-0.5" />
+                    <span>ADA Compliant Solutions</span>
+                  </p>
                 </div>
-                <Button className="w-full bg-[#2c4a5f] hover:bg-[#1a3a52] text-white font-semibold">
+                <Button 
+                  className="w-full bg-[#2c4a5f] hover:bg-[#1a3a52] text-white font-bold py-6 text-base shadow-lg"
+                  data-testid="button-commercial"
+                >
                   Learn More
                 </Button>
               </div>
 
               {/* Card 3: Car */}
-              <div className="bg-[#2c4a5f] text-white rounded-xl p-8 shadow-2xl hover:transform hover:scale-105 transition-all">
-                <div className="w-16 h-16 bg-[#7dd3e8] rounded-lg flex items-center justify-center mb-4 mx-auto">
-                  <Car size={32} className="text-[#2c4a5f]" />
+              <div className="bg-[#2c4a5f] text-white rounded-2xl p-10 shadow-2xl hover:shadow-3xl hover:transform hover:scale-105 transition-all duration-300">
+                <div className="w-20 h-20 bg-[#7dd3e8] rounded-xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+                  <Car size={36} className="text-[#2c4a5f]" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center">Automotive Services</h3>
-                <div className="text-sm text-white/90 mb-6 leading-relaxed text-left space-y-1">
-                  <p>• Emergency Car Lockout</p>
-                  <p>• Transponder Key Programming</p>
-                  <p>• Smart Key & Push-to-Start Keys</p>
-                  <p>• Ignition Repair & Replacement</p>
-                  <p>• All Makes & Models</p>
-                  <p>• Motorcycle & RV Keys</p>
+                <h3 className="text-2xl font-bold mb-6 text-center">Automotive Services</h3>
+                <div className="border-t border-white/20 pt-6 mb-6"></div>
+                <div className="text-sm text-white/95 mb-8 leading-relaxed text-left space-y-2.5">
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0 mt-0.5" />
+                    <span>Emergency Car Lockout</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0 mt-0.5" />
+                    <span>Transponder Key Programming</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0 mt-0.5" />
+                    <span>Smart Key & Push-to-Start Keys</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0 mt-0.5" />
+                    <span>Ignition Repair & Replacement</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0 mt-0.5" />
+                    <span>All Makes & Models</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#7dd3e8] flex-shrink-0 mt-0.5" />
+                    <span>Motorcycle & RV Keys</span>
+                  </p>
                 </div>
-                <Button className="w-full bg-[#7dd3e8] hover:bg-[#6bc3d8] text-[#2c4a5f] font-semibold">
+                <Button 
+                  className="w-full bg-[#7dd3e8] hover:bg-[#6bc3d8] text-[#2c4a5f] font-bold py-6 text-base shadow-lg"
+                  data-testid="button-automotive"
+                >
                   Learn More
                 </Button>
               </div>
 
               {/* Card 4: Emergency */}
-              <div className="bg-[#7dd3e8] text-[#1a3a52] rounded-xl p-8 shadow-2xl hover:transform hover:scale-105 transition-all">
-                <div className="w-16 h-16 bg-[#2c4a5f] rounded-lg flex items-center justify-center mb-4 mx-auto">
-                  <Clock size={32} className="text-[#7dd3e8]" />
+              <div className="bg-[#7dd3e8] text-[#1a3a52] rounded-2xl p-10 shadow-2xl hover:shadow-3xl hover:transform hover:scale-105 transition-all duration-300">
+                <div className="w-20 h-20 bg-[#2c4a5f] rounded-xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+                  <Clock size={36} className="text-[#7dd3e8]" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-center">Emergency Response</h3>
-                <div className="text-sm mb-6 leading-relaxed text-left space-y-1">
-                  <p>• 24/7 Immediate Response</p>
-                  <p>• Break-in Damage Repair</p>
-                  <p>• Lost Key Replacement</p>
-                  <p>• Storm Damage Lock Repair</p>
-                  <p>• Eviction Locksmith Service</p>
-                  <p>• Safe Opening</p>
+                <h3 className="text-2xl font-bold mb-6 text-center">Emergency Response</h3>
+                <div className="border-t border-[#1a3a52]/20 pt-6 mb-6"></div>
+                <div className="text-sm mb-8 leading-relaxed text-left space-y-2.5">
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#2c4a5f] flex-shrink-0 mt-0.5" />
+                    <span>24/7 Immediate Response</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#2c4a5f] flex-shrink-0 mt-0.5" />
+                    <span>Break-in Damage Repair</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#2c4a5f] flex-shrink-0 mt-0.5" />
+                    <span>Lost Key Replacement</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#2c4a5f] flex-shrink-0 mt-0.5" />
+                    <span>Storm Damage Lock Repair</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#2c4a5f] flex-shrink-0 mt-0.5" />
+                    <span>Eviction Locksmith Service</span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <CheckCircle size={16} className="text-[#2c4a5f] flex-shrink-0 mt-0.5" />
+                    <span>Safe Opening</span>
+                  </p>
                 </div>
-                <Button className="w-full bg-[#2c4a5f] hover:bg-[#1a3a52] text-white font-semibold">
+                <Button 
+                  className="w-full bg-[#2c4a5f] hover:bg-[#1a3a52] text-white font-bold py-6 text-base shadow-lg"
+                  data-testid="button-emergency"
+                >
                   Learn More
                 </Button>
               </div>

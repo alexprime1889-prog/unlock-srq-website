@@ -16,24 +16,6 @@ import {
 } from "lucide-react";
 
 export default function AutomotiveServices() {
-  const certifications = [
-    {
-      name: "NASTF Certified",
-      description: "National Automotive Service Task Force certification for automotive locksmith services",
-      icon: Award,
-    },
-    {
-      name: "VSP Certified",
-      description: "Vehicle Security Professional - advanced automotive security systems training",
-      icon: Shield,
-    },
-    {
-      name: "AUTOAUTH Certified",
-      description: "Authorized automotive locksmith with verified credentials and training",
-      icon: CheckCircle,
-    },
-  ];
-
   const technologies = [
     "Laser Key Cutting Equipment",
     "Latest Key Programming Technology",
@@ -125,8 +107,8 @@ export default function AutomotiveServices() {
   return (
     <>
       <SEO
-        title="Automotive Locksmith Services | NASTF Certified | Unlock SRQ"
-        description="Complete automotive locksmith services in North Port, Port Charlotte & Sarasota. NASTF & VSP certified. Key programming, lockouts, transponder keys, ECU reflash. 95% of keys in stock. Call (941) 587-5050"
+        title="Automotive Locksmith Services | Professional Key Programming | Unlock SRQ"
+        description="Complete automotive locksmith services in North Port, Port Charlotte & Sarasota. Key programming, lockouts, transponder keys, ECU reflash. 95% of keys in stock, half dealer cost. Call (941) 587-5050"
         canonicalUrl="https://srqunlock.com/automotive-services/"
       />
 
@@ -141,7 +123,7 @@ export default function AutomotiveServices() {
                 Professional Automotive Locksmith Services
               </h1>
               <p className="text-xl md:text-2xl mb-6 text-[#7dd3e8]">
-                NASTF & VSP Certified | 95% of All Keys & Fobs In Stock
+                95% of All Keys & Fobs In Stock | Less Than Half Dealer Cost
               </p>
               <p className="text-lg mb-8">
                 Serving North Port, Port Charlotte, Punta Gorda, Venice, Sarasota & All Surrounding
@@ -173,35 +155,9 @@ export default function AutomotiveServices() {
           </div>
         </section>
 
-        {/* CERTIFICATIONS SECTION */}
+        {/* TECHNOLOGIES SECTION */}
         <section className="py-12 bg-white">
           <div className="container">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1a3a52] mb-4">
-                Certified & Trusted Professionals
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                We carry the highest industry certifications and use the latest technology to
-                provide professional automotive locksmith services at less than half dealer prices.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              {certifications.map((cert, index) => (
-                <Card
-                  key={index}
-                  className="p-6 text-center hover:shadow-lg transition-shadow"
-                  data-testid={`card-certification-${index}`}
-                >
-                  <div className="w-16 h-16 bg-[#7dd3e8] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <cert.icon size={32} className="text-[#1a3a52]" />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#1a3a52] mb-2">{cert.name}</h3>
-                  <p className="text-gray-600">{cert.description}</p>
-                </Card>
-              ))}
-            </div>
-
             {/* Technologies */}
             <div className="bg-gradient-to-br from-[#1a3a52] to-[#2c4a5f] rounded-lg p-8 text-white">
               <div className="flex items-center gap-3 mb-6">
