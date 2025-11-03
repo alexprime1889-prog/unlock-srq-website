@@ -31,20 +31,8 @@ const pages = [
   { path: '/about-us', file: 'about-us/index.html' }
 ];
 
-// Find system Chromium path
-function getChromiumPath() {
-  const paths = [
-    '/nix/store/zi4f80l169xlmivz8vja8wlphq74qqk0-chromium-125.0.6422.141/bin/chromium-browser',
-    '/usr/bin/chromium-browser',
-    '/usr/bin/chromium'
-  ];
-  
-  for (const p of paths) {
-    if (fs.existsSync(p)) return p;
-  }
-  
-  return null;
-}
+// Puppeteer will use its bundled Chromium automatically
+// No need for manual path detection
 
 async function prerenderPage(browser, url, outputPath) {
   const page = await browser.newPage();
@@ -91,25 +79,16 @@ async function main() {
     process.exit(1);
   }
   
-  // Find Chromium
-  const chromiumPath = getChromiumPath();
-  if (!chromiumPath) {
-    console.error('❌ Error: Chromium not found. Install with: packager_tool system chromium');
-    process.exit(1);
-  }
+  console.log('📦 Using Puppeteer bundled Chromium\n');
   
-  console.log(`📦 Using Chromium: ${chromiumPath}\n`);
-  
-  // Launch browser
+  // Launch browser with bundled Chromium
   const browser = await puppeteer.launch({
-    executablePath: chromiumPath,
     headless: true,
     args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',
       '--disable-dev-shm-usage',
-      '--disable-gpu',
-      '--disable-web-security'
+      '--disable-gpu'
     ]
   });
   
