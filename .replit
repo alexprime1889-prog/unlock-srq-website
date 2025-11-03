@@ -4,7 +4,7 @@ hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
 
 [nix]
 channel = "stable-24_05"
-packages = ["imagemagick"]
+packages = ["imagemagick", "xorg.libXcomposite", "xorg.libXdamage", "xorg.libXrandr", "xorg.libXext", "xorg.libXfixes", "xorg.libxcb", "xorg.libX11", "mesa", "pango", "atk", "gdk-pixbuf", "gtk3", "nss", "nspr", "cups", "dbus", "expat", "fontconfig", "freetype", "glib", "cairo", "xorg.libXtst", "alsa-lib", "at-spi2-atk", "at-spi2-core", "chromium", "xorg.libXScrnSaver", "xorg.libXcursor", "xorg.libXi", "xorg.libXrender", "libxkbcommon"]
 
 [deployment]
 deploymentTarget = "autoscale"
@@ -12,12 +12,12 @@ build = ["npm", "run", "build"]
 run = ["npm", "run", "start"]
 
 [[ports]]
-localPort = 5000
-externalPort = 80
+localPort = 3000
+externalPort = 4200
 
 [[ports]]
-localPort = 36869
-externalPort = 4200
+localPort = 5000
+externalPort = 80
 
 [[ports]]
 localPort = 37715
