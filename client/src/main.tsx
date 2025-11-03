@@ -1,10 +1,23 @@
 import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+const rootElement = document.getElementById("root")!;
+
+// Use hydrateRoot if content was pre-rendered by react-snap
+// Otherwise use createRoot for normal client-side rendering
+if (rootElement.hasChildNodes()) {
+  hydrateRoot(
+    rootElement,
+    <StrictMode>
+      <App />
+    </StrictMode>
+  );
+} else {
+  createRoot(rootElement).render(
+    <StrictMode>
+      <App />
+    </StrictMode>
+  );
+}
