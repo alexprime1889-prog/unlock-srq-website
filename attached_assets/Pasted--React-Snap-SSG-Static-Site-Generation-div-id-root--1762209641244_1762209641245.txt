@@ -1,0 +1,107 @@
+ЗАДАЧА: Внедрить React-Snap для SSG (Static Site Generation)
+
+ЦЕЛЬ: Заполнить <div id="root"> реальным HTML контентом для Google индексации
+
+ТРЕБОВАНИЯ:
+1. ❌ НЕ ТРОГАТЬ: PostgreSQL, Drizzle, React Query, Booking.tsx, Payment.tsx, Express server
+2. ✅ ТОЛЬКО: Установить react-snap и настроить pre-rendering
+3. ⚠️ КРИТИЧНО: Не нарушать существующий функционал
+
+ШАГИ ВЫПОЛНЕНИЯ:
+
+Шаг 1: Установить react-snap
+npm install --save-dev react-snap
+
+Шаг 2: Настроить package.json
+Добавь в "scripts":
+  "postbuild": "react-snap"
+
+Добавь в конец файла:
+  "reactSnap": {
+    "source": "dist",
+    "minifyHtml": {
+      "collapseWhitespace": false,
+      "removeComments": false
+    },
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
+    "include": [
+      "/",
+      "/booking",
+      "/payment",
+      "/automotive-services",
+      "/automotive-products",
+      "/locksmith-north-port",
+      "/locksmith-port-charlotte",
+      "/locksmith-sarasota",
+      "/locksmith-punta-gorda",
+      "/locksmith-venice",
+      "/locksmith-englewood",
+      "/locksmith-bradenton",
+      "/charlotte-county-locksmith",
+      "/about"
+    ]
+  }
+
+Шаг 3: Обновить client/src/main.tsx
+ЗАМЕНИТЬ код рендеринга:
+
+ДО:
+  ReactDOM.createRoot(document.getElementById("root")!).render(...)
+
+ПОСЛЕ:
+  import { hydrate, render } from "react-dom";
+  
+  const rootElement = document.getElementById("root");
+  const app = (
+    <StrictMode>
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
+    </StrictMode>
+  );
+  
+  if (rootElement?.hasChildNodes()) {
+    hydrate(app, rootElement);
+  } else {
+    render(app, rootElement);
+  }
+
+Шаг 4: Проверить зависимости
+Убедись что в package.json есть:
+  "react-dom": "^18.x.x" или "^19.x.x"
+
+Шаг 5: Выполнить build
+npm run build
+
+Шаг 6: ПРОВЕРКА РЕЗУЛЬТАТА
+Открой dist/index.html и проверь что:
+  <div id="root">
+    <!-- ЗДЕСЬ ДОЛЖЕН БЫТЬ КОНТЕНТ! -->
+    <header>...</header>
+    <main>...</main>
+    <footer>...</footer>
+  </div>
+
+ОЖИДАЕМЫЙ РЕЗУЛЬТАТ:
+✅ HTML файл содержит полный контент внутри <div id="root">
+✅ Google бот видит весь текст, заголовки, ссылки
+✅ Сайт остаётся интерактивным (React hydration работает)
+✅ Booking и Payment работают как раньше
+✅ База данных не затронута
+
+КРИТИЧНЫЕ ПРАВИЛА:
+- НЕ удаляй существующий код
+- НЕ меняй роутинг (Wouter остаётся)
+- НЕ трогай Express сервер
+- НЕ переписывай компоненты
+- ТОЛЬКО добавь react-snap и настрой hydration
+
+ЕСЛИ ВОЗНИКНУТ ПРОБЛЕМЫ:
+- Ошибка с Puppeteer → добавь больше puppeteerArgs
+- React 19 incompatibility → используй react-dom/client
+- Timeout → увеличь timeout в reactSnap config
+
+Начинай работу! 🚀
