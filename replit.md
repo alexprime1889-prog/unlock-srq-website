@@ -43,3 +43,33 @@ The project utilizes a modern web stack with a clear separation of concerns.
 - **PostgreSQL**: The primary database for data storage, managed by Replit.
 - **Google Analytics**: Integrated for tracking website performance and user behavior (G-R0JFDJZ0MW).
 - **Puppeteer**: Used within a custom script for pre-rendering static HTML pages for SEO purposes.
+
+## Deployment Process
+
+### Production Build Script
+**Location:** `scripts/build-production.sh`
+
+This automated script must be run before EVERY deployment:
+```bash
+./scripts/build-production.sh
+```
+
+**What it does:**
+1. Runs `npm run build` - builds Vite bundle and Express server
+2. Runs `node scripts/simple-prerender.js` - generates 14 static HTML pages with full SEO content
+3. Prepares `dist/public/` directory for deployment
+
+**Result:** All 14 pages (40-80KB each) contain full HTML content visible to Google bots
+
+### Deployment Steps
+1. Run `./scripts/build-production.sh` in Shell
+2. Click "Publish" button in Replit
+3. Replit automatically deploys `dist/public/` with production server
+
+### Verification
+After deployment, visit https://srqunlock.com and view page source:
+- ✅ Should see full HTML inside `<div id="root">`
+- ✅ File size ~80KB for homepage
+- ✅ All meta tags, Schema.org, Open Graph data visible
+
+**Full deployment documentation:** See `DEPLOYMENT.md`
