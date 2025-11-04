@@ -10,8 +10,7 @@
     "start": "next start",
     "lint": "next lint"
   },
-
-  "dependencies": {
+  "dependencies": {    ← No blank line between
     "@hookform/resolvers": "^3.10.0",
     "@jridgewell/trace-mapping": "^0.3.25",
     "@neondatabase/serverless": "^0.10.4",
