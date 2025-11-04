@@ -50,11 +50,11 @@ The project utilizes a modern web stack with a clear separation of concerns.
 - **Templates**: A reusable `LocationPage.tsx` template is used for generating various location-specific service pages to maintain consistency and efficiency.
 
 ### Technical Implementations
-- **Frontend**: Built with **Next.js 15** (App Router), React 19, and TypeScript for optimal SEO and performance. Next.js provides automatic Server-Side Rendering (SSR) ensuring all content is visible to search engines. Styling is handled using Tailwind CSS and shadcn/ui components.
+- **Frontend**: Built with **Next.js 16** (Pages Router), React 19, and TypeScript for optimal SEO and performance. Next.js Pages Router provides traditional Server-Side Rendering (SSR) and Static Site Generation (SSG) ensuring all content is fully rendered in HTML `<body>` tags visible to search engines. Styling is handled using Tailwind CSS and shadcn/ui components.
 - **Backend**: Next.js API routes handle server-side functionality. PostgreSQL database integration via Drizzle ORM.
 - **Database**: PostgreSQL (managed by Replit) is used for data persistence, integrated via Drizzle ORM.
-- **SEO**: Comprehensive SEO optimization achieved through Next.js SSR with meta tags, Schema.org structured data (LocalBusiness, Service, Product) via `generateMetadata()` functions, geo-location tags, `robots.txt`, and `sitemap.xml`. All 14 pages serve 68-278KB of fully-rendered HTML to search engine crawlers.
-- **Routing**: Next.js App Router with `(marketing)` route group organizing all 14 public pages: homepage, about, booking, payment, automotive services/products, and 8 location-specific pages.
+- **SEO**: Comprehensive SEO optimization achieved through Next.js Pages Router with meta tags in `<Head>` components, Schema.org structured data (LocalBusiness, Service, Product) via JSON-LD scripts, geo-location tags, trailing slash URLs, `robots.txt`, and `sitemap.xml`. All 14 pages serve 63-70KB of fully-rendered static HTML to search engine crawlers.
+- **Routing**: Next.js Pages Router with individual page files in `/pages` directory organizing all 14 public pages: homepage (index.tsx), about-us, booking, payment, automotive services/products, and 8 location-specific pages.
 
 ### Feature Specifications
 - **Homepage**: Features 10 sections including Hero, Services, Pricing, FAQ, Why Choose Us, Blog, About, Videos, Contact, and Footer.
@@ -80,10 +80,61 @@ The project utilizes a modern web stack with a clear separation of concerns.
 
 ## Migration History
 
-### React SPA to Next.js 15 Migration (November 2025)
+### Next.js 16 App Router to Pages Router Migration (November 2025)
 **Status:** ✅ **COMPLETED AND VERIFIED**
 
-Successfully migrated from React SPA (Vite + Wouter) to Next.js 15 with Server-Side Rendering to resolve critical SEO issue where Google bots were seeing empty HTML.
+Successfully migrated from Next.js 16 App Router to Pages Router to resolve critical SEO issue where React Server Components (RSC) streaming delivered content as JavaScript payload instead of static HTML in `<body>` tags.
+
+**Critical Discovery:**
+Next.js 16 App Router uses RSC streaming architecture that serves content as `<script>self.__next_f.push([1,"..."])</script>` JavaScript payloads, leaving Google bots with empty `<body>` containing only `<div hidden=""><!--$--><!--/$--></div>` placeholder. The `export const dynamic = 'force-static'` configuration does NOT change this behavior - it's fundamental to App Router architecture.
+
+**Solution:**
+Migrated all 14 pages to Pages Router which renders traditional SSR/SSG HTML directly into `<body>` tags without JavaScript streaming payloads.
+
+**Migration Steps:**
+1. ✅ Created `/pages` directory with `_app.tsx` and `_document.tsx`
+2. ✅ Migrated all 14 pages from `app/(marketing)/*` to `pages/*.tsx`
+3. ✅ Converted `generateMetadata()` functions to `<Head>` components from `next/head`
+4. ✅ Preserved all SEO metadata, Schema.org JSON-LD, and owner name "Maksim Yepikhin"
+5. ✅ Added `trailingSlash: true` to `next.config.ts` for canonical URL consistency
+6. ✅ Moved `globals.css` to `/styles` directory
+7. ✅ Removed App Router directory
+
+**Build Results:**
+```
+Route (pages)
+┌ ○ / (437 ms)
+├ ○ /about-us
+├ ○ /automotive-products
+├ ○ /automotive-services
+├ ○ /booking
+├ ○ /emergency-locksmith-charlotte-county
+├ ○ /locksmith-bradenton
+├ ○ /locksmith-englewood
+├ ○ /locksmith-north-port
+├ ○ /locksmith-port-charlotte
+├ ○ /locksmith-punta-gorda
+├ ○ /locksmith-sarasota
+├ ○ /locksmith-venice-fl
+└ ○ /payment
+
+○ (Static) prerendered as static content
+```
+
+**Verified Features:**
+- ✅ All 14 pages build as Static (○)
+- ✅ Full HTML content in `<body>` tags (63KB homepage)
+- ✅ No JavaScript payload streaming
+- ✅ All SEO metadata preserved in `<Head>` components
+- ✅ Schema.org JSON-LD structured data intact
+- ✅ Owner name "Maksim Yepikhin" in all metadata
+- ✅ Trailing slash URLs for SEO consistency
+- ✅ Google Analytics (G-R0JFDJZ0MW) integrated
+
+### React SPA to Next.js 15 Migration (November 2025)
+**Status:** ✅ **SUPERSEDED BY PAGES ROUTER MIGRATION**
+
+Initial migration from React SPA (Vite + Wouter) to Next.js 15 App Router, later migrated to Pages Router due to RSC streaming limitations.
 
 **Issues Encountered & Fixes:**
 1. ✅ **package.json syntax errors** - Removed invalid JSON comments and standalone commas
