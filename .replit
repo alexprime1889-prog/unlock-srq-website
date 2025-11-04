@@ -8,12 +8,44 @@ packages = ["imagemagick", "xorg.libXcomposite", "xorg.libXdamage", "xorg.libXra
 
 [deployment]
 deploymentTarget = "autoscale"
-build = ["sh", "-c", "npm run build"]
-run = ["sh", "-c", "npx next start -p 5000"]
+build = ["sh", "-c", "sh scripts/build-production.sh"]
+run = ["npm", "run", "start"]
+
+[[ports]]
+localPort = 3000
+externalPort = 4200
+
+[[ports]]
+localPort = 3001
+externalPort = 6000
+
+[[ports]]
+localPort = 3333
+externalPort = 5173
 
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[[ports]]
+localPort = 37715
+externalPort = 3002
+
+[[ports]]
+localPort = 42667
+externalPort = 3003
+
+[[ports]]
+localPort = 44799
+externalPort = 3001
+
+[[ports]]
+localPort = 44945
+externalPort = 3000
+
+[[ports]]
+localPort = 46503
+externalPort = 5000
 
 [env]
 PORT = "5000"
