@@ -31,8 +31,55 @@ The project utilizes a modern web stack with a clear separation of concerns.
     - Sticky header, social media links.
     - Certifications (NASTF, VSP, AUTOAUTH) and technology highlights.
 
+## SEO Pre-rendering Solution (November 2025)
+
+### Critical Problem Solved
+React apps render client-side, meaning Google bots initially see empty HTML (`<div id="root"></div>`) which is catastrophic for SEO.
+
+### Solution Implemented
+Custom Puppeteer-based pre-rendering system that generates static HTML for all 14 pages:
+
+**How It Works:**
+1. **Build**: `npm run build` creates React production build in `dist/public/`
+2. **Pre-render**: `node scripts/simple-prerender.js` generates static HTML
+3. **Server**: Spins up local server serving built files
+4. **Crawl**: Puppeteer (bundled Chromium) visits all 14 routes
+5. **Capture**: Saves complete rendered HTML (40-80KB per page)
+6. **Hydrate**: React hydrates pre-rendered content on client for interactivity
+
+**Technical Stack:**
+- **Script**: `scripts/simple-prerender.js` (ES modules)
+- **Browser**: Puppeteer 24.28.0 with bundled Chromium (production-safe)
+- **Pages**: 14 routes pre-rendered
+- **Hydration**: `client/src/main.tsx` uses `hydrateRoot()` for React 18
+
+**Why Custom Solution?**
+- react-snap: Incompatible with NixOS Chromium 125
+- Next.js: Would require complete rewrite (2-3 days)
+- Custom: Full control, 1 hour implementation
+
+**Results:**
+✅ All 14 pages have full HTML (not empty shells)  
+✅ Google sees complete content immediately  
+✅ Homepage: 80KB with Schema.org, meta tags  
+✅ Location pages: 44KB each  
+
+**Usage:**
+```bash
+npm run build
+node scripts/simple-prerender.js
+```
+
 ## External Dependencies
 - **Calendly**: Integrated via iframe for appointment scheduling on the Booking page.
 - **Stripe**: Payment portal ready for integration on the Payment page. Requires API keys.
 - **PostgreSQL**: Managed by Replit, utilized as the primary database with Drizzle ORM.
 - **Google Analytics**: Implemented for tracking purposes (G-R0JFDJZ0MW).
+- **Puppeteer**: 24.28.0 with bundled Chromium for pre-rendering static HTML.
+
+## Next Steps
+1. **GitHub Migration**: Push code to `alexprime1889-prog/unlock-srq-website`
+2. Configure Calendly username for booking integration
+3. Set up Stripe API keys for payment processing
+4. Deploy to production with custom domain (srqunlock.com)
+5. Submit sitemap to Google Search Console

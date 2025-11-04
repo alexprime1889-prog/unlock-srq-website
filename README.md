@@ -7,47 +7,45 @@ Professional, SEO-optimized website for Unlock SRQ LLC, a premier locksmith serv
 ## 🌟 Features
 
 - **Modern, Responsive Design** - Fully optimized for desktop, tablet, and mobile devices
-- **10 Content Sections** - Hero, Services, Pricing, FAQ, Why Choose Us, Blog, About, Videos, Contact, Footer
-- **SEO Optimized** - Complete meta tags, Schema.org structured data, sitemap, robots.txt
+- **14 SEO-Optimized Pages** - Homepage + Services + Products + 8 Location Pages + Emergency + Booking + Payment + About
+- **Pre-rendered Static HTML** - Google bots see full HTML content immediately (not empty React shells)
+- **Comprehensive SEO** - Meta tags, Schema.org structured data, sitemap, robots.txt, Open Graph
+- **Google Analytics** - Integrated tracking (G-R0JFDJZ0MW)
 - **Online Booking Integration** - Calendly integration for appointment scheduling
 - **Payment Portal** - Ready for Stripe integration for online payments
-- **Contact Forms** - Multiple contact points throughout the site
 - **24/7 Emergency Service** - Prominent emergency contact information
-- **Service Area Coverage** - Clear display of 5-city service area
-- **Google Analytics Ready** - Built-in analytics tracking
+- **Professional Photography** - WebP optimized images throughout
 - **Fast Performance** - Optimized loading times and Core Web Vitals
 
 ## 🚀 Tech Stack
 
-- **Frontend**: React 19 + TypeScript
-- **Styling**: Tailwind CSS 4 + shadcn/ui components
-- **Backend**: Express 4 + tRPC 11
-- **Database**: MySQL (TiDB)
-- **Authentication**: Manus OAuth
-- **Build Tool**: Vite
-- **ORM**: Drizzle
-- **Deployment**: Manus Platform
+- **Frontend**: React 19 + TypeScript + Vite
+- **Styling**: Tailwind CSS + shadcn/ui components
+- **Backend**: Express 4
+- **Database**: PostgreSQL (Replit managed) + Drizzle ORM
+- **Routing**: Wouter
+- **Pre-rendering**: Custom Puppeteer solution with bundled Chromium
+- **Deployment**: Replit
 
 ## 📋 Prerequisites
 
-- Node.js 22.x or higher
-- pnpm package manager
-- MySQL database (or TiDB)
-- Manus account for deployment
+- Node.js 18.x or higher
+- npm package manager
+- PostgreSQL database (or use Replit's built-in database)
 
 ## 🛠️ Installation
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/unlock-srq.git
-cd unlock-srq
+git clone https://github.com/alexprime1889-prog/unlock-srq-website.git
+cd unlock-srq-website
 ```
 
 ### 2. Install dependencies
 
 ```bash
-pnpm install
+npm install
 ```
 
 ### 3. Set up environment variables
@@ -55,86 +53,142 @@ pnpm install
 Create a `.env` file in the root directory:
 
 ```env
-# Database
-DATABASE_URL=mysql://user:password@host:port/database
+# Database (Replit provides this automatically)
+DATABASE_URL=postgresql://user:password@host:port/database
 
-# Authentication
-JWT_SECRET=your-jwt-secret-here
-OAUTH_SERVER_URL=https://api.manus.im
-VITE_OAUTH_PORTAL_URL=https://portal.manus.im
+# Session Secret (generate a random string)
+SESSION_SECRET=your-random-secret-here
 
 # App Configuration
-VITE_APP_ID=your-app-id
-VITE_APP_TITLE=Unlock SRQ LLC
+VITE_APP_TITLE=Unlock SRQ LLC - Professional Locksmith Services
 VITE_APP_LOGO=/logo.png
-
-# Owner Information
-OWNER_OPEN_ID=your-owner-id
-OWNER_NAME=Maksim Yepikhin
-
-# Analytics
-VITE_ANALYTICS_ENDPOINT=your-analytics-endpoint
-VITE_ANALYTICS_WEBSITE_ID=your-website-id
-
-# Built-in Services
-BUILT_IN_FORGE_API_URL=https://forge-api.manus.im
-BUILT_IN_FORGE_API_KEY=your-api-key
 ```
 
-### 4. Set up the database
+### 4. Set up the database (if using PostgreSQL)
 
 ```bash
-pnpm db:push
+npx drizzle-kit push
 ```
 
-### 5. Start the development server
+### 5. Build the application
 
 ```bash
-pnpm dev
+npm run build
 ```
 
-The application will be available at `http://localhost:3000`
+### 6. Run pre-rendering (critical for SEO!)
+
+```bash
+node scripts/simple-prerender.js
+```
+
+This generates static HTML for all 14 pages so Google can index your content immediately.
+
+### 7. Start the development server
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5000`
 
 ## 📁 Project Structure
 
 ```
-unlock-srq/
+unlock-srq-website/
 ├── client/                    # Frontend application
 │   ├── public/               # Static assets
 │   │   ├── logo.png         # Company logo
 │   │   ├── hero-bg.webp     # Hero background image
 │   │   ├── robots.txt       # SEO robots file
-│   │   └── sitemap.xml      # SEO sitemap
+│   │   └── sitemap.xml      # SEO sitemap (14 pages)
 │   ├── src/
 │   │   ├── components/      # Reusable UI components
+│   │   │   ├── ui/          # shadcn/ui components
 │   │   │   └── SEO.tsx      # SEO component with meta tags
 │   │   ├── pages/           # Page components
-│   │   │   ├── Home.tsx     # Main landing page
-│   │   │   ├── Booking.tsx  # Appointment booking page
-│   │   │   └── Payment.tsx  # Online payment page
-│   │   ├── lib/             # Utilities and libraries
-│   │   │   └── trpc.ts      # tRPC client setup
-│   │   ├── App.tsx          # Main app component with routing
-│   │   ├── main.tsx         # Application entry point
-│   │   └── index.css        # Global styles and Tailwind config
+│   │   │   ├── Home.tsx             # Main landing page
+│   │   │   ├── Booking.tsx          # Calendly booking page
+│   │   │   ├── Payment.tsx          # Stripe payment page
+│   │   │   ├── LocationPage.tsx     # Reusable location template
+│   │   │   ├── AutomotiveServices.tsx
+│   │   │   ├── AutomotiveProducts.tsx
+│   │   │   └── AboutUs.tsx
+│   │   ├── lib/             # Utilities
+│   │   ├── App.tsx          # Main app with routing
+│   │   ├── main.tsx         # Entry point with hydration support
+│   │   └── index.css        # Global styles + Tailwind config
 ├── server/                   # Backend application
-│   ├── _core/               # Core server functionality
-│   ├── db.ts                # Database queries
-│   ├── routers.ts           # tRPC API routes
-│   └── storage.ts           # S3 storage helpers
-├── drizzle/                 # Database schema and migrations
-│   └── schema.ts            # Database schema definitions
-├── shared/                  # Shared types and constants
+│   ├── routes.ts            # Express API routes
+│   ├── storage.ts           # Storage interface
+│   ├── db.ts                # Database connection
+│   └── index.ts             # Express server
+├── scripts/
+│   └── simple-prerender.js  # Custom pre-rendering script (Puppeteer)
+├── shared/
+│   └── schema.ts            # Database schema (Drizzle)
+├── dist/public/             # Built files (pre-rendered HTML)
 ├── DEPLOYMENT_GUIDE.md      # Deployment instructions
 ├── DOMAIN_SETUP_GUIDE.md    # Domain configuration guide
-└── QUICK_DOMAIN_SETUP.md    # Quick domain setup reference
+└── replit.md                # Replit project documentation
 ```
+
+## 🎯 SEO Pre-rendering Solution
+
+### The Problem
+React apps render on the client side, which means Google bots initially see an empty HTML shell with just `<div id="root"></div>`. This is terrible for SEO.
+
+### The Solution
+We use a custom Puppeteer-based pre-rendering script that:
+
+1. **Builds the React app** → Creates optimized production build
+2. **Starts local server** → Serves the built files
+3. **Opens headless browser** → Puppeteer with bundled Chromium
+4. **Visits each route** → Navigates to all 14 pages
+5. **Captures full HTML** → Saves complete rendered HTML with all SEO tags
+6. **Replaces build output** → Google sees full content immediately
+
+### How to Use
+
+After making content changes, always run:
+
+```bash
+# Step 1: Build the app
+npm run build
+
+# Step 2: Pre-render all pages
+node scripts/simple-prerender.js
+```
+
+This generates 14 static HTML files (40-80KB each) with:
+- ✅ Full page content (headings, text, images)
+- ✅ Meta tags (title, description, keywords)
+- ✅ Schema.org JSON-LD structured data
+- ✅ Open Graph tags for social media
+- ✅ Google Analytics tracking code
+
+### Pre-rendered Pages
+
+All 14 pages are pre-rendered for maximum SEO visibility:
+
+1. **Homepage** (`/`) - 80KB
+2. **Booking** (`/booking`) - Calendly integration
+3. **Payment** (`/payment`) - Stripe portal
+4. **Automotive Services** (`/automotive-services`) - 64KB
+5. **Automotive Products** (`/automotive-products`) - 64KB
+6. **North Port** (`/locksmith-north-port`) - 44KB (headquarters)
+7. **Port Charlotte** (`/locksmith-port-charlotte`) - 44KB
+8. **Sarasota** (`/locksmith-sarasota`) - 44KB
+9. **Punta Gorda** (`/locksmith-punta-gorda`) - 44KB
+10. **Venice FL** (`/locksmith-venice-fl`) - 44KB
+11. **Englewood** (`/locksmith-englewood`) - 44KB
+12. **Bradenton** (`/locksmith-bradenton`) - 44KB
+13. **Emergency Charlotte County** (`/emergency-locksmith-charlotte-county`) - 44KB
+14. **About Us** (`/about-us`) - 40KB
 
 ## 🎨 Customization
 
 ### Updating Company Information
-
-Edit the following files to update company details:
 
 **Contact Information:**
 - `client/src/pages/Home.tsx` - Update phone, email, address
@@ -146,97 +200,79 @@ Edit the following files to update company details:
 
 **Services & Pricing:**
 - Edit service cards in `client/src/pages/Home.tsx`
-- Update pricing information in the Services section
+- Update `client/src/pages/AutomotiveServices.tsx`
+- Update pricing in Services sections
 
 ### Color Scheme
 
 Current color palette (defined in `client/src/index.css`):
-- Primary Dark Blue: `#1a3a52`
-- Light Blue/Cyan: `#7dd3e8`
-- Card Background: `#2c4a5f`
-- Purple Gradient: `purple-900` to `purple-600`
+- **Primary Dark Blue**: `#1a3a52` (trust, security)
+- **Light Blue/Cyan**: `#7dd3e8` (CTAs, highlights)
+- **Card Background**: `#2c4a5f` (service cards)
+- **Purple Gradient**: Overlay on hero section
 
 ## 🔧 Configuration
 
 ### Calendly Integration
 
-1. Sign up for a Calendly account at https://calendly.com
-2. Get your Calendly username
-3. Update `client/src/pages/Booking.tsx`:
+1. Sign up at https://calendly.com
+2. Update `client/src/pages/Booking.tsx`:
    ```tsx
    src="https://calendly.com/YOUR-USERNAME/appointment"
    ```
 
 ### Stripe Payment Integration
 
-1. Sign up for Stripe at https://stripe.com
-2. Get your API keys from the Stripe dashboard
-3. Add environment variables:
-   ```env
-   STRIPE_PUBLIC_KEY=pk_live_...
-   STRIPE_SECRET_KEY=sk_live_...
-   ```
-4. Implement payment processing in `client/src/pages/Payment.tsx`
+1. Sign up at https://stripe.com
+2. Get your API keys
+3. Implement payment in `client/src/pages/Payment.tsx`
 
 ### Google Analytics
 
-Analytics tracking is already configured. Update the website ID in your environment:
-```env
-VITE_ANALYTICS_WEBSITE_ID=your-website-id
-```
-
-## 🌐 Domain Setup
-
-Follow the comprehensive guide in `DOMAIN_SETUP_GUIDE.md` to connect your custom domain `srqunlock.com`.
-
-**Quick steps:**
-1. Publish the site through Manus UI
-2. Configure DNS records at your domain registrar
-3. Add custom domain in Manus settings
-4. Wait for SSL certificate activation (automatic)
+Already configured with tracking ID `G-R0JFDJZ0MW` in `client/index.html`.
 
 ## 📊 SEO Features
 
-### Implemented SEO Elements:
+### Meta Tags (All 14 Pages)
+- ✅ Unique titles and descriptions
+- ✅ Keywords for local SEO
+- ✅ Open Graph for Facebook/LinkedIn
+- ✅ Twitter Card tags
+- ✅ Geo-location tags (Florida)
 
-✅ **Meta Tags**
-- Title, description, keywords
-- Open Graph tags for social sharing
-- Twitter Card tags
-- Geo-location tags for local SEO
+### Schema.org Structured Data
+- ✅ **LocalBusiness** - Company info, hours, service area
+- ✅ **Locksmith** - Business type
+- ✅ **EmergencyService** - 24/7 availability
+- ✅ **Service** - Individual services with pricing
+- ✅ **Product** - OEM keys, transponders, smart keys
 
-✅ **Structured Data (Schema.org)**
-- LocalBusiness type: Locksmith
-- Complete address and contact information
-- Service area coverage (5 cities)
-- Opening hours (24/7/365)
-- Services list
-- Owner information
+### Technical SEO
+- ✅ Pre-rendered static HTML (not empty shells!)
+- ✅ Mobile-responsive design
+- ✅ Fast loading (Vite optimization)
+- ✅ robots.txt allowing all crawlers
+- ✅ XML sitemap with all 14 pages
+- ✅ Semantic HTML structure
 
-✅ **Technical SEO**
-- Semantic HTML structure
-- Mobile-responsive design
-- Fast loading times
-- robots.txt configuration
-- XML sitemap
-- Canonical URLs
-
-### Post-Launch SEO Tasks:
+### Post-Launch Checklist
 
 1. **Google Search Console**
-   - Add and verify property
+   - Add property for `https://srqunlock.com`
    - Submit sitemap: `https://srqunlock.com/sitemap.xml`
+   - Monitor indexing status
 
 2. **Google My Business**
-   - Create business profile
+   - Create profile for Unlock SRQ LLC
    - Add address: 2456 Yancy Street, North Port, FL 34291
-   - Add service areas
-   - Upload photos
+   - Add all service areas (8 cities)
+   - Upload professional photos
 
 3. **Local Citations**
    - Yelp for Business
-   - Yellow Pages
-   - Local directories
+   - Yellow Pages (already linked in footer)
+   - Angi (formerly Angie's List)
+   - HomeAdvisor
 
 ## 📱 Contact Information
 
@@ -248,134 +284,138 @@ Follow the comprehensive guide in `DOMAIN_SETUP_GUIDE.md` to connect your custom
 **Website:** https://srqunlock.com
 
 **Service Areas:**
-- Sarasota, FL
-- North Port, FL
+- North Port, FL (headquarters - 10-15 min response)
 - Port Charlotte, FL
+- Sarasota, FL
+- Punta Gorda, FL
+- Venice, FL
 - Englewood, FL
 - Bradenton, FL
-- All areas within 50 miles
+- All Charlotte County (emergency service)
 
-## 🚀 Deployment
+## 🚀 Deployment to Replit
 
-### Deploy to Manus Platform
+### Quick Deploy
 
-1. Click the **"Publish"** button in the Manus UI
-2. Wait for the build to complete
-3. Your site will be live at the provided URL
-4. Configure your custom domain following `DOMAIN_SETUP_GUIDE.md`
+1. Click **"Publish"** button in Replit UI
+2. Wait for build to complete
+3. Your site goes live at `.replit.app` domain
+4. Configure custom domain (see below)
 
-### Environment Variables
+### Custom Domain Setup
 
-All required environment variables are automatically injected by the Manus platform:
-- Database credentials
-- OAuth configuration
-- API keys for built-in services
-- Analytics configuration
+Follow `DOMAIN_SETUP_GUIDE.md` for detailed instructions to connect `srqunlock.com`.
 
-## 🧪 Testing
-
-### Run TypeScript checks
-```bash
-pnpm type-check
-```
-
-### Run linting
-```bash
-pnpm lint
-```
-
-### Test tRPC procedures
-```bash
-pnpm test
-```
+**Quick steps:**
+1. Publish site in Replit
+2. Add CNAME record at your registrar:
+   - Type: CNAME
+   - Name: @ (or www)
+   - Value: `your-repl-name.replit.app`
+3. Add custom domain in Replit deployment settings
+4. Wait for SSL certificate (automatic)
 
 ## 📝 Available Scripts
 
-- `pnpm dev` - Start development server
-- `pnpm build` - Build for production
-- `pnpm preview` - Preview production build
-- `pnpm db:push` - Push database schema changes
-- `pnpm db:studio` - Open Drizzle Studio (database GUI)
-- `pnpm type-check` - Run TypeScript type checking
-- `pnpm lint` - Run ESLint
+```bash
+# Development
+npm run dev              # Start dev server (Vite + Express)
+
+# Production Build
+npm run build            # Build React app (creates dist/public/)
+node scripts/simple-prerender.js  # Pre-render all 14 pages for SEO
+
+# Database
+npx drizzle-kit push     # Sync database schema
+npx drizzle-kit studio   # Open database GUI
+
+# Utilities
+npm run type-check       # TypeScript validation
+```
 
 ## 🔒 Security
 
-- All sensitive data is stored in environment variables
-- Database credentials are never committed to Git
-- OAuth authentication for admin features
-- HTTPS enforced in production
-- Input validation on all forms
-- SQL injection protection via Drizzle ORM
+- ✅ Environment variables for secrets (DATABASE_URL, SESSION_SECRET)
+- ✅ `.gitignore` excludes `.env`, `dist/`, `node_modules/`
+- ✅ PostgreSQL with Drizzle ORM (SQL injection protection)
+- ✅ HTTPS enforced in production (Replit automatic)
+- ✅ Session management with express-session
+- ✅ Input validation on all forms
 
 ## 🐛 Troubleshooting
 
-### Database connection issues
-```bash
-# Check DATABASE_URL format
-mysql://username:password@host:port/database
+### Pre-rendering fails
 
-# Test connection
-pnpm db:push
+```bash
+# Make sure you built first
+npm run build
+
+# Check if Puppeteer installed correctly
+npm list puppeteer
+
+# Re-run pre-rendering
+node scripts/simple-prerender.js
 ```
 
-### Build errors
+### Database connection issues
+
 ```bash
-# Clear cache and rebuild
-rm -rf node_modules .next
-pnpm install
-pnpm build
+# Check if DATABASE_URL is set
+echo $DATABASE_URL
+
+# Push schema again
+npx drizzle-kit push
 ```
 
 ### Port already in use
+
 ```bash
-# Kill process on port 3000
-lsof -ti:3000 | xargs kill -9
+# The app uses port 5000
+# Kill existing process
+lsof -ti:5000 | xargs kill -9
+
+# Restart
+npm run dev
 ```
 
 ## 📄 License
 
 This project is proprietary software owned by Unlock SRQ LLC.
 
-## 🤝 Support
+## 🤝 Contributing
 
-For technical support or questions:
-- Email: info@srqunlock.com
-- Phone: (941) 587-5050
+See `CONTRIBUTING.md` for development guidelines.
 
-For Manus platform support:
-- Website: https://help.manus.im
+## 📈 Performance Metrics
 
-## 📈 Roadmap
+Target metrics (production):
+- ✅ Lighthouse Performance: 90+
+- ✅ First Contentful Paint: < 1.5s
+- ✅ Time to Interactive: < 3.5s
+- ✅ Cumulative Layout Shift: < 0.1
 
-### Planned Features:
+## 🎯 Roadmap
+
+### Completed ✅
+- [x] 14-page SEO architecture
+- [x] Pre-rendering solution for Google indexing
+- [x] Google Analytics integration
+- [x] Schema.org structured data
+- [x] Mobile-responsive design
+- [x] Professional photography
+- [x] Certifications display (NASTF, VSP, AUTOAUTH)
+- [x] Technology showcase section
+
+### Planned 📋
 - [ ] Customer review system
-- [ ] Service request tracking
 - [ ] Real-time availability calendar
-- [ ] SMS notifications
-- [ ] Customer portal
-- [ ] Invoice generation
+- [ ] SMS notifications for appointments
+- [ ] Customer portal for service history
 - [ ] Multi-language support (Spanish)
-
-## 🎯 Performance Metrics
-
-Target metrics for production:
-- Lighthouse Performance Score: 90+
-- First Contentful Paint: < 1.5s
-- Time to Interactive: < 3.5s
-- Cumulative Layout Shift: < 0.1
-
-## 📸 Screenshots
-
-### Desktop View
-![Desktop Homepage](docs/screenshots/desktop-home.png)
-
-### Mobile View
-![Mobile Homepage](docs/screenshots/mobile-home.png)
+- [ ] Blog with locksmith tips
 
 ---
 
-**Built with ❤️ for Unlock SRQ LLC**
+**Built with ❤️ for Unlock SRQ LLC by Maksim Yepikhin**
 
-*Last Updated: October 2025*
-
+*Last Updated: November 2025*
