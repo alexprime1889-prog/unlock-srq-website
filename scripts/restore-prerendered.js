@@ -31,8 +31,9 @@ if (!fs.existsSync(distDir)) {
   process.exit(1);
 }
 
-// Copy all HTML files from backup to dist/public
-function copyHTMLFiles(src, dest) {
+// Copy ALL files from backup to dist/public (including assets)
+// This ensures asset hashes match the HTML references
+function copyAllFiles(src, dest, htmlCount = { value: 0 }) {
   const entries = fs.readdirSync(src, { withFileTypes: true });
   
   for (const entry of entries) {
@@ -45,19 +46,24 @@ function copyHTMLFiles(src, dest) {
         fs.mkdirSync(destPath, { recursive: true });
       }
       // Recursively copy subdirectory
-      copyHTMLFiles(srcPath, destPath);
-    } else if (entry.name.endsWith('.html')) {
-      // Copy HTML file
+      copyAllFiles(srcPath, destPath, htmlCount);
+    } else {
+      // Copy ALL files (HTML, JS, CSS, images, etc.)
       fs.copyFileSync(srcPath, destPath);
-      const stats = fs.statSync(destPath);
-      console.log(`  ✅ Restored: ${entry.name} (${(stats.size / 1024).toFixed(1)} KB)`);
+      if (entry.name.endsWith('.html')) {
+        const stats = fs.statSync(destPath);
+        console.log(`  ✅ ${entry.name} (${(stats.size / 1024).toFixed(1)} KB)`);
+        htmlCount.value++;
+      }
     }
   }
+  
+  return htmlCount.value;
 }
 
 try {
-  copyHTMLFiles(backupDir, distDir);
-  console.log('\n✅ Pre-rendered HTML files restored successfully!');
+  const htmlCount = copyAllFiles(backupDir, distDir);
+  console.log(`\n✅ Restored ${htmlCount} pre-rendered HTML pages with assets!`);
   console.log('🚀 Server will now serve full SEO-optimized HTML\n');
 } catch (error) {
   console.error('❌ Error restoring files:', error);

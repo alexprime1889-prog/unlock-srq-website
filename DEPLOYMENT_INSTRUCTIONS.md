@@ -71,11 +71,15 @@ git commit -m "Add automatic pre-rendered HTML restoration for deployment"
 ```bash
 # 1. Измените контент в client/src/pages/
 
-# 2. Пересоберите и обновите pre-rendered файлы
+# 2. Пересоберите проект
 npm run build
+
+# 3. Обновите pre-rendered файлы
 node scripts/simple-prerender.js
 
-# 3. Скопируйте в backup
+# 4. Скопируйте ВСЁ (HTML + assets) в backup
+rm -rf prerendered-backup
+mkdir prerendered-backup
 cp -r dist/public/* prerendered-backup/
 
 # 4. Закоммитьте
