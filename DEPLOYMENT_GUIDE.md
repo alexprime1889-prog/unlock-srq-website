@@ -23,7 +23,7 @@
    - ✅ Географические данные
 
 3. **Инфраструктура готова:**
-   - ✅ Symlink `server/public` → `dist/public`
+   - ✅ Pre-rendered файлы копируются в `server/public/` (не симлинк!)
    - ✅ Chrome установлен для Puppeteer
    - ✅ Pre-rendering скрипт работает
    - ✅ Google Analytics настроен
@@ -44,7 +44,8 @@
 
 **Почему Google увидит полный HTML?**
 - При публикации сайт работает в production режиме
-- Production режим отдает pre-rendered файлы
+- Production режим отдает pre-rendered файлы из `server/public/`
+- Pre-render скрипт автоматически копирует файлы (симлинки не работают в deployment)
 - Google видит полный HTML сразу, без JavaScript
 
 ## 🎯 Шаги для публикации

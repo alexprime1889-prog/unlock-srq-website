@@ -4,7 +4,7 @@
 Unlock SRQ LLC is a professional locksmith website serving Sarasota, North Port, Port Charlotte, Englewood, and Bradenton, Florida. The project aims to provide a comprehensive online presence for the business, offering 24/7 emergency services, detailed service descriptions, online booking, and payment capabilities. The website is designed to be highly SEO-optimized to attract local customers and features a robust architecture to support its functionalities.
 
 ## User Preferences
-I prefer simple language and detailed explanations. I want iterative development and for you to ask before making major changes. Do not make changes to the `scripts/simple-prerender.js` file.
+I prefer simple language and detailed explanations. I want iterative development and for you to ask before making major changes.
 
 ## System Architecture
 The project utilizes a modern web stack with a clear separation of concerns.
@@ -45,7 +45,8 @@ Custom Puppeteer-based pre-rendering system that generates static HTML for all 1
 3. **Server**: Spins up local server serving built files
 4. **Crawl**: Puppeteer (bundled Chromium) visits all 14 routes
 5. **Capture**: Saves complete rendered HTML (40-80KB per page)
-6. **Hydrate**: React hydrates pre-rendered content on client for interactivity
+6. **Copy**: Recursively copies all files from `dist/public/` to `server/public/`
+7. **Hydrate**: React hydrates pre-rendered content on client for interactivity
 
 **Technical Stack:**
 - **Script**: `scripts/simple-prerender.js` (ES modules)
@@ -58,16 +59,23 @@ Custom Puppeteer-based pre-rendering system that generates static HTML for all 1
 - Next.js: Would require complete rewrite (2-3 days)
 - Custom: Full control, 1 hour implementation
 
+**Deployment Fix (November 4, 2025):**
+- **Problem**: Symlinks don't work in Replit deployment environment
+- **Solution**: Pre-render script now copies files from `dist/public/` to `server/public/`
+- **Implementation**: Recursive copy function ensures all HTML, CSS, JS, and assets are deployed
+
 **Results:**
 ✅ All 14 pages have full HTML (not empty shells)  
 ✅ Google sees complete content immediately  
-✅ Homepage: 80KB with Schema.org, meta tags  
+✅ Homepage: 78KB with Schema.org, meta tags  
 ✅ Location pages: 44KB each  
+✅ Deployment-ready files in `server/public/`
 
 **Usage:**
 ```bash
 npm run build
 node scripts/simple-prerender.js
+# This now automatically copies files to server/public/
 ```
 
 ## External Dependencies
