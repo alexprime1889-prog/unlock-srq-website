@@ -1,6 +1,21 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { execSync } from "child_process";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// In production, restore pre-rendered HTML after deployment build
+if (process.env.NODE_ENV === "production") {
+  try {
+    const scriptPath = path.join(__dirname, "../scripts/restore-prerendered.js");
+    execSync(`node ${scriptPath}`, { stdio: "inherit" });
+  } catch (error) {
+    console.error("⚠️  Warning: Could not restore pre-rendered files");
+  }
+}
 
 const app = express();
 
