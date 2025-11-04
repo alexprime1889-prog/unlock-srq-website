@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://srqunlock.com'),
   title: "24/7 Emergency Locksmith North Port & Port Charlotte FL | Unlock SRQ",
   description: "24/7 emergency locksmith serving North Port, Port Charlotte, Punta Gorda, Venice. Licensed & insured. 15-minute response. Lost keys, lockouts, commercial. Call (941) 587-5050",
 };
