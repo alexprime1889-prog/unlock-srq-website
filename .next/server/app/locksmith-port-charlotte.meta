@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(marketing)/layout,_N_T_/(marketing)/locksmith-port-charlotte/layout,_N_T_/(marketing)/locksmith-port-charlotte/page,_N_T_/locksmith-port-charlotte"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/!KG1hcmtldGluZyk/locksmith-port-charlotte/__PAGE__",
+    "/!KG1hcmtldGluZyk/locksmith-port-charlotte",
+    "/!KG1hcmtldGluZyk",
+    "/_index"
+  ]
+}

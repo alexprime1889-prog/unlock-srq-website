@@ -1,0 +1,146 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    },
+    {
+      "source": "/404",
+      "destination": "/",
+      "statusCode": 307,
+      "regex": "^(?!/_next)/404(?:/)?$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/about-us",
+      "regex": "^/about\\-us(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about\\-us(?:/)?$"
+    },
+    {
+      "page": "/automotive-products",
+      "regex": "^/automotive\\-products(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/automotive\\-products(?:/)?$"
+    },
+    {
+      "page": "/automotive-services",
+      "regex": "^/automotive\\-services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/automotive\\-services(?:/)?$"
+    },
+    {
+      "page": "/booking",
+      "regex": "^/booking(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/booking(?:/)?$"
+    },
+    {
+      "page": "/emergency-locksmith-charlotte-county",
+      "regex": "^/emergency\\-locksmith\\-charlotte\\-county(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/emergency\\-locksmith\\-charlotte\\-county(?:/)?$"
+    },
+    {
+      "page": "/locksmith-bradenton",
+      "regex": "^/locksmith\\-bradenton(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/locksmith\\-bradenton(?:/)?$"
+    },
+    {
+      "page": "/locksmith-englewood",
+      "regex": "^/locksmith\\-englewood(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/locksmith\\-englewood(?:/)?$"
+    },
+    {
+      "page": "/locksmith-north-port",
+      "regex": "^/locksmith\\-north\\-port(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/locksmith\\-north\\-port(?:/)?$"
+    },
+    {
+      "page": "/locksmith-port-charlotte",
+      "regex": "^/locksmith\\-port\\-charlotte(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/locksmith\\-port\\-charlotte(?:/)?$"
+    },
+    {
+      "page": "/locksmith-punta-gorda",
+      "regex": "^/locksmith\\-punta\\-gorda(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/locksmith\\-punta\\-gorda(?:/)?$"
+    },
+    {
+      "page": "/locksmith-sarasota",
+      "regex": "^/locksmith\\-sarasota(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/locksmith\\-sarasota(?:/)?$"
+    },
+    {
+      "page": "/locksmith-venice-fl",
+      "regex": "^/locksmith\\-venice\\-fl(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/locksmith\\-venice\\-fl(?:/)?$"
+    },
+    {
+      "page": "/payment",
+      "regex": "^/payment(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/payment(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

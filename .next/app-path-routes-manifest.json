@@ -1,0 +1,18 @@
+{
+  "/(marketing)/about-us/page": "/about-us",
+  "/(marketing)/automotive-products/page": "/automotive-products",
+  "/(marketing)/automotive-services/page": "/automotive-services",
+  "/(marketing)/booking/page": "/booking",
+  "/(marketing)/emergency-locksmith-charlotte-county/page": "/emergency-locksmith-charlotte-county",
+  "/(marketing)/locksmith-bradenton/page": "/locksmith-bradenton",
+  "/(marketing)/locksmith-englewood/page": "/locksmith-englewood",
+  "/(marketing)/locksmith-north-port/page": "/locksmith-north-port",
+  "/(marketing)/locksmith-port-charlotte/page": "/locksmith-port-charlotte",
+  "/(marketing)/locksmith-punta-gorda/page": "/locksmith-punta-gorda",
+  "/(marketing)/locksmith-sarasota/page": "/locksmith-sarasota",
+  "/(marketing)/locksmith-venice-fl/page": "/locksmith-venice-fl",
+  "/(marketing)/page": "/",
+  "/(marketing)/payment/page": "/payment",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found"
+}
