@@ -36,6 +36,132 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 }
 
 
+// Validate ../../../app/(marketing)/about-us/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/about-us">> = Specific
+  const handler = {} as typeof import("../../../app/(marketing)/about-us/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(marketing)/automotive-products/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/automotive-products">> = Specific
+  const handler = {} as typeof import("../../../app/(marketing)/automotive-products/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(marketing)/automotive-services/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/automotive-services">> = Specific
+  const handler = {} as typeof import("../../../app/(marketing)/automotive-services/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(marketing)/booking/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/booking">> = Specific
+  const handler = {} as typeof import("../../../app/(marketing)/booking/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(marketing)/emergency-locksmith-charlotte-county/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/emergency-locksmith-charlotte-county">> = Specific
+  const handler = {} as typeof import("../../../app/(marketing)/emergency-locksmith-charlotte-county/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(marketing)/locksmith-bradenton/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/locksmith-bradenton">> = Specific
+  const handler = {} as typeof import("../../../app/(marketing)/locksmith-bradenton/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(marketing)/locksmith-englewood/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/locksmith-englewood">> = Specific
+  const handler = {} as typeof import("../../../app/(marketing)/locksmith-englewood/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(marketing)/locksmith-north-port/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/locksmith-north-port">> = Specific
+  const handler = {} as typeof import("../../../app/(marketing)/locksmith-north-port/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(marketing)/locksmith-port-charlotte/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/locksmith-port-charlotte">> = Specific
+  const handler = {} as typeof import("../../../app/(marketing)/locksmith-port-charlotte/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(marketing)/locksmith-punta-gorda/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/locksmith-punta-gorda">> = Specific
+  const handler = {} as typeof import("../../../app/(marketing)/locksmith-punta-gorda/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(marketing)/locksmith-sarasota/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/locksmith-sarasota">> = Specific
+  const handler = {} as typeof import("../../../app/(marketing)/locksmith-sarasota/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(marketing)/locksmith-venice-fl/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/locksmith-venice-fl">> = Specific
+  const handler = {} as typeof import("../../../app/(marketing)/locksmith-venice-fl/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(marketing)/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/">> = Specific
+  const handler = {} as typeof import("../../../app/(marketing)/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/(marketing)/payment/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/payment">> = Specific
+  const handler = {} as typeof import("../../../app/(marketing)/payment/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/">> = Specific
@@ -50,6 +176,15 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 
 
 
+
+// Validate ../../../app/(marketing)/layout.tsx
+{
+  type __IsExpected<Specific extends LayoutConfig<"/">> = Specific
+  const handler = {} as typeof import("../../../app/(marketing)/layout.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
 
 // Validate ../../../app/layout.tsx
 {
