@@ -50,13 +50,33 @@
 
 ## 🎯 Шаги для публикации
 
+### ⚠️ ВАЖНО: Pre-rendering запускается ЛОКАЛЬНО!
+
+**Chrome/Puppeteer НЕ доступны в deployment окружении.**  
+Pre-rendering должен запускаться **в dev окружении ПЕРЕД deployment**, а не во время deployment.
+
 ### Вариант 1: Replit Deployments (рекомендуется)
 
-1. **Подготовка (одноразово):**
-   ```bash
-   npm run build
-   npx puppeteer browsers install chrome
-   node scripts/simple-prerender.js
+#### Шаг 1: Подготовка файлов локально (ОБЯЗАТЕЛЬНО)
+
+```bash
+# 1. Соберите production версию
+npm run build
+
+# 2. Запустите pre-rendering (создаст файлы в server/public/)
+node scripts/simple-prerender.js
+
+# 3. Файлы готовы для deployment!
+# server/public/ теперь содержит все 14 pre-rendered HTML страниц
+```
+
+#### Шаг 2: Deployment в Replit
+
+1. **Убедитесь что `.replit` файл НЕ включает pre-rendering:**
+   ```toml
+   [deployment]
+   build = ["npm", "run", "build"]  # БЕЗ node scripts/simple-prerender.js
+   run = ["npm", "run", "start"]
    ```
 
 2. **В Replit UI:**
@@ -64,6 +84,7 @@
    - Выберите **"Deployment"**
    - Replit автоматически:
      - Запустит `npm run build`
+     - Использует готовые файлы из `server/public/` (уже в git)
      - Запустит `npm start` (production режим)
      - Настроит HTTPS
      - Даст вам `.replit.app` домен
@@ -122,13 +143,26 @@ npm start
 # 2. Пересоберите production версию
 npm run build
 
-# 3. Обновите pre-rendered файлы
+# 3. ОБЯЗАТЕЛЬНО: Обновите pre-rendered файлы ЛОКАЛЬНО
 node scripts/simple-prerender.js
 
-# 4. Деплой (зависит от платформы)
-# - Replit: git push и нажмите "Redeploy"
+# 4. ВАЖНО: Pre-rendered файлы теперь в server/public/
+#    Они будут автоматически включены в deployment (не в .gitignore)
+
+# 5. Деплой (зависит от платформы)
+# - Replit: Нажмите "Redeploy" (файлы уже готовы)
 # - Vercel/Netlify: git push (автодеплой)
 ```
+
+### ⚠️ КРИТИЧЕСКИ ВАЖНО:
+
+**Pre-rendering должен запускаться ЛОКАЛЬНО перед каждым deployment!**
+
+1. ✅ Запустите `node scripts/simple-prerender.js` локально
+2. ✅ Файлы создаются в `server/public/`
+3. ✅ `server/public/` НЕ в .gitignore (файлы включены в git)
+4. ✅ Deployment использует готовые файлы
+5. ❌ НЕ запускайте pre-rendering в deployment build команде
 
 ### Когда НЕ нужно ре-рендерить:
 

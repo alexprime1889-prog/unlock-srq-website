@@ -60,9 +60,14 @@ Custom Puppeteer-based pre-rendering system that generates static HTML for all 1
 - Custom: Full control, 1 hour implementation
 
 **Deployment Fix (November 4, 2025):**
-- **Problem**: Symlinks don't work in Replit deployment environment
-- **Solution**: Pre-render script now copies files from `dist/public/` to `server/public/`
-- **Implementation**: Recursive copy function ensures all HTML, CSS, JS, and assets are deployed
+- **Problem 1**: Symlinks don't work in Replit deployment environment
+- **Solution 1**: Pre-render script copies files from `dist/public/` to `server/public/`
+- **Problem 2**: Chrome/Puppeteer not available in deployment build environment
+- **Solution 2**: Pre-rendering runs LOCALLY before deployment, not during deployment
+- **Implementation**: 
+  - Pre-rendered files in `server/public/` are committed to git (not in .gitignore)
+  - Deployment uses pre-built files without running Puppeteer
+  - Workflow: `npm run build` → `node scripts/simple-prerender.js` → Deploy
 
 **Results:**
 ✅ All 14 pages have full HTML (not empty shells)  
@@ -71,12 +76,20 @@ Custom Puppeteer-based pre-rendering system that generates static HTML for all 1
 ✅ Location pages: 44KB each  
 ✅ Deployment-ready files in `server/public/`
 
-**Usage:**
+**Usage (BEFORE deployment):**
 ```bash
+# Run locally in development environment:
 npm run build
 node scripts/simple-prerender.js
-# This now automatically copies files to server/public/
+# Files are copied to server/public/ and committed to git
+# Deployment uses these pre-built files
 ```
+
+**Critical Notes:**
+- Pre-rendering MUST run locally before deployment
+- Chrome/Puppeteer not available in deployment environment
+- `server/public/` removed from .gitignore to include files in deployment
+- `.replit` build command should NOT include pre-rendering script
 
 ## External Dependencies
 - **Calendly**: Integrated via iframe for appointment scheduling on the Booking page.
