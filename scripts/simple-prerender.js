@@ -115,10 +115,40 @@ async function main() {
     
     console.log('\n✅ Pre-rendering complete!');
     console.log(`📊 Generated ${pages.length} static HTML pages\n`);
+    
+    // Copy files to server/public for deployment
+    console.log('📦 Copying files to server/public...');
+    const serverPublicDir = path.join(projectRoot, 'server/public');
+    
+    // Remove old files if exists and create fresh directory
+    if (fs.existsSync(serverPublicDir)) {
+      fs.rmSync(serverPublicDir, { recursive: true, force: true });
+    }
+    fs.mkdirSync(serverPublicDir, { recursive: true });
+    
+    // Copy all files recursively
+    function copyRecursive(src, dest) {
+      const entries = fs.readdirSync(src, { withFileTypes: true });
+      for (const entry of entries) {
+        const srcPath = path.join(src, entry.name);
+        const destPath = path.join(dest, entry.name);
+        
+        if (entry.isDirectory()) {
+          fs.mkdirSync(destPath, { recursive: true });
+          copyRecursive(srcPath, destPath);
+        } else {
+          fs.copyFileSync(srcPath, destPath);
+        }
+      }
+    }
+    
+    copyRecursive(distDir, serverPublicDir);
+    console.log('✅ Files copied to server/public\n');
+    
     console.log('🎯 Next steps:');
-    console.log('  1. Run: npm start');
-    console.log('  2. Open browser and view source');
-    console.log('  3. Verify Google can see full HTML content\n');
+    console.log('  1. Click "Deploy" in Replit');
+    console.log('  2. Google will see full HTML content');
+    console.log('  3. Verify with view-source: on live URL\n');
     
   } finally {
     await browser.close();
