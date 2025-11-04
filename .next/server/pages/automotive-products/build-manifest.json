@@ -1,0 +1,18 @@
+{
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [],
+  "pages": {
+    "/automotive-products": [
+      "static/chunks/e1d399450d34fe4d.js",
+      "static/chunks/f2b785ffe1b02462.js",
+      "static/chunks/c0d6d93b2c93ae8f.js",
+      "static/chunks/d172f533ad015a3a.js",
+      "static/chunks/cf7c75daec783f25.js",
+      "static/chunks/turbopack-efad83399a18f08c.js"
+    ]
+  },
+  "ampFirstPages": []
+}

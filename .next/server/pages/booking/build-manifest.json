@@ -1,0 +1,20 @@
+{
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [],
+  "pages": {
+    "/booking": [
+      "static/chunks/f5b3020bf32481db.js",
+      "static/chunks/c0d6d93b2c93ae8f.js",
+      "static/chunks/e1d399450d34fe4d.js",
+      "static/chunks/cf7c75daec783f25.js",
+      "static/chunks/b81e9c89399b73a0.js",
+      "static/chunks/d172f533ad015a3a.js",
+      "static/chunks/51107df9d87f14e1.js",
+      "static/chunks/turbopack-715935324c0e1354.js"
+    ]
+  },
+  "ampFirstPages": []
+}

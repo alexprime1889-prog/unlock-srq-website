@@ -1,4 +1,20 @@
 {
-  "/404": "pages/404.html",
-  "/500": "pages/500.html"
+  "/": "pages/index.html",
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/_error": "pages/_error.js",
+  "/about-us": "pages/about-us.html",
+  "/automotive-products": "pages/automotive-products.html",
+  "/automotive-services": "pages/automotive-services.html",
+  "/booking": "pages/booking.html",
+  "/emergency-locksmith-charlotte-county": "pages/emergency-locksmith-charlotte-county.html",
+  "/locksmith-bradenton": "pages/locksmith-bradenton.html",
+  "/locksmith-englewood": "pages/locksmith-englewood.html",
+  "/locksmith-north-port": "pages/locksmith-north-port.html",
+  "/locksmith-port-charlotte": "pages/locksmith-port-charlotte.html",
+  "/locksmith-punta-gorda": "pages/locksmith-punta-gorda.html",
+  "/locksmith-sarasota": "pages/locksmith-sarasota.html",
+  "/locksmith-venice-fl": "pages/locksmith-venice-fl.html",
+  "/payment": "pages/payment.html",
+  "/404": "pages/404.html"
 }

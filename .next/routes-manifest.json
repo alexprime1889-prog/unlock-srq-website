@@ -34,18 +34,6 @@
       "namedRegex": "^/(?:/)?$"
     },
     {
-      "page": "/_global-error",
-      "regex": "^/_global\\-error(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/_global\\-error(?:/)?$"
-    },
-    {
-      "page": "/_not-found",
-      "regex": "^/_not\\-found(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/_not\\-found(?:/)?$"
-    },
-    {
       "page": "/about-us",
       "regex": "^/about\\-us(?:/)?$",
       "routeKeys": {},

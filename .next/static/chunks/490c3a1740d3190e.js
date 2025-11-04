@@ -1,0 +1,8 @@
+__turbopack_load_page_chunks__("/automotive-services", [
+  "static/chunks/e1d399450d34fe4d.js",
+  "static/chunks/74dd1b0a57bf45d0.js",
+  "static/chunks/c0d6d93b2c93ae8f.js",
+  "static/chunks/d172f533ad015a3a.js",
+  "static/chunks/cf7c75daec783f25.js",
+  "static/chunks/turbopack-a6920a3ca3c08ce1.js"
+])
