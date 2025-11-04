@@ -67,6 +67,11 @@ export default function Home() {
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                   24/7 Emergency Locksmith North Port & Port Charlotte FL
                 </h1>
+                <div className="mb-4 bg-[#7dd3e8]/20 border-l-4 border-[#7dd3e8] pl-4 py-2 rounded-r">
+                  <p className="text-base sm:text-lg text-white font-bold">
+                    Vehicle Security Professional License • NASTF Certified
+                  </p>
+                </div>
                 <p className="text-base sm:text-lg text-white/95 mb-4 leading-relaxed font-semibold">
                   Licensed & Insured • Serving Sarasota & Charlotte Counties • 15-Min Response
                 </p>

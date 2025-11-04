@@ -29,8 +29,8 @@ export default function Header() {
   return (
     <>
       {/* TOP BAR - Social Media */}
-      <div className="bg-[#1a3a52] text-white py-2">
-        <div className="container flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div className="bg-[#1a3a52] text-white py-1">
+        <div className="container flex flex-col sm:flex-row justify-between items-center gap-1">
           <div className="flex gap-3">
             <a
               href="https://facebook.com"
@@ -89,9 +89,9 @@ export default function Header() {
       </div>
 
       {/* HEADER - Sticky */}
-      <header className="bg-white border-b border-gray-200 py-4 sticky top-0 z-50 shadow-sm">
+      <header className="bg-white border-b border-gray-200 py-2 sticky top-0 z-50 shadow-sm">
         <div className="container">
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-3">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3" data-testid="link-logo">
               <div className="w-12 h-12 bg-[#7dd3e8] rounded-lg flex items-center justify-center">
