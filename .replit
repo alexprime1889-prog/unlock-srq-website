@@ -8,7 +8,7 @@ packages = ["imagemagick", "xorg.libXcomposite", "xorg.libXdamage", "xorg.libXra
 
 [deployment]
 deploymentTarget = "autoscale"
-build = ["npm", "run", "build"]
+build = ["sh", "-c", "npm run build && node scripts/simple-prerender.js"]
 run = ["npm", "run", "start"]
 
 [[ports]]
