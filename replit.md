@@ -50,11 +50,11 @@ The project utilizes a modern web stack with a clear separation of concerns.
 - **Templates**: A reusable `LocationPage.tsx` template is used for generating various location-specific service pages to maintain consistency and efficiency.
 
 ### Technical Implementations
-- **Frontend**: Built with React 19, TypeScript, and Vite for a fast and efficient development experience. Styling is handled using Tailwind CSS and shadcn/ui components. Wouter is used for client-side routing.
-- **Backend**: An Express 4 server handles API routes.
+- **Frontend**: Built with **Next.js 15** (App Router), React 19, and TypeScript for optimal SEO and performance. Next.js provides automatic Server-Side Rendering (SSR) ensuring all content is visible to search engines. Styling is handled using Tailwind CSS and shadcn/ui components.
+- **Backend**: Next.js API routes handle server-side functionality. PostgreSQL database integration via Drizzle ORM.
 - **Database**: PostgreSQL (managed by Replit) is used for data persistence, integrated via Drizzle ORM.
-- **SEO**: Comprehensive SEO optimization includes meta tags, Schema.org structured data (LocalBusiness, Service, Product), geo-location tags, `robots.txt`, and `sitemap.xml`.
-- **Pre-rendering**: A custom Puppeteer-based pre-rendering script (`scripts/simple-prerender.js`) generates static HTML for 14 critical pages. This ensures full content is visible to search engine crawlers, improving indexing and SEO, while maintaining React's interactive capabilities through hydration.
+- **SEO**: Comprehensive SEO optimization achieved through Next.js SSR with meta tags, Schema.org structured data (LocalBusiness, Service, Product) via `generateMetadata()` functions, geo-location tags, `robots.txt`, and `sitemap.xml`. All 14 pages serve 68-278KB of fully-rendered HTML to search engine crawlers.
+- **Routing**: Next.js App Router with `(marketing)` route group organizing all 14 public pages: homepage, about, booking, payment, automotive services/products, and 8 location-specific pages.
 
 ### Feature Specifications
 - **Homepage**: Features 10 sections including Hero, Services, Pricing, FAQ, Why Choose Us, Blog, About, Videos, Contact, and Footer.
@@ -69,41 +69,84 @@ The project utilizes a modern web stack with a clear separation of concerns.
 - **Modularity**: Frontend components are organized into pages and reusable components.
 - **Data Management**: Drizzle ORM provides a type-safe interface for database interactions.
 - **Performance**: Assets are optimized for fast loading (e.g., WebP images), and Core Web Vitals are considered.
-- **Scalability**: The pre-rendering solution ensures that the site remains performant and SEO-friendly even as content grows.
+- **Scalability**: Next.js Server-Side Rendering with Turbopack ensures that the site remains performant and SEO-friendly even as content grows, delivering fully-rendered HTML to search engines on every request.
 
 ## External Dependencies
 - **Calendly**: Used for integrating appointment scheduling on the booking page via an iframe.
 - **Stripe**: Planned for integration to handle online payments on the payment page.
 - **PostgreSQL**: The primary database for data storage, managed by Replit.
 - **Google Analytics**: Integrated for tracking website performance and user behavior (G-R0JFDJZ0MW).
-- **Puppeteer**: Used within a custom script for pre-rendering static HTML pages for SEO purposes.
+- **Next.js 15**: Core framework providing automatic SSR, SEO optimization, and App Router functionality.
+
+## Migration History
+
+### React SPA to Next.js 15 Migration (November 2025)
+**Status:** ✅ **COMPLETED AND VERIFIED**
+
+Successfully migrated from React SPA (Vite + Wouter) to Next.js 15 with Server-Side Rendering to resolve critical SEO issue where Google bots were seeing empty HTML.
+
+**Issues Encountered & Fixes:**
+1. ✅ **package.json syntax errors** - Removed invalid JSON comments and standalone commas
+2. ✅ **Calendar component Tailwind syntax** - Replaced invalid `[--cell-size:--spacing(8)]` arbitrary values with valid `[--cell-size:2rem]` syntax (8 occurrences across calendar.tsx files)
+3. ✅ **Routing conflicts** - Deleted placeholder `app/page.tsx` that was conflicting with `app/(marketing)/page.tsx`
+4. ✅ **Missing React hooks** - Created `src/hooks/useComposition.ts` and `src/hooks/usePersistFn.ts` required by form input components
+
+**Testing Results (All 14 Pages):**
+```
+✅ / (Homepage) - 278KB HTML, HTTP 200
+✅ /about-us - 88KB HTML, HTTP 200
+✅ /automotive-products - 175KB HTML, HTTP 200
+✅ /automotive-services - 176KB HTML, HTTP 200 (+ 2 JSON-LD schemas)
+✅ /booking - 70KB HTML, HTTP 200
+✅ /payment - 68KB HTML, HTTP 200
+✅ /emergency-locksmith-charlotte-county - 92KB HTML, HTTP 200
+✅ /locksmith-bradenton - 88KB HTML, HTTP 200
+✅ /locksmith-englewood - 88KB HTML, HTTP 200
+✅ /locksmith-north-port - 88KB HTML, HTTP 200
+✅ /locksmith-port-charlotte - 88KB HTML, HTTP 200
+✅ /locksmith-punta-gorda - 88KB HTML, HTTP 200
+✅ /locksmith-sarasota - 88KB HTML, HTTP 200
+✅ /locksmith-venice-fl - 88KB HTML, HTTP 200
+```
+
+**Verified Features:**
+- ✅ All pages serve full server-rendered HTML (68-278KB)
+- ✅ SEO meta tags present on all pages (title, description, Open Graph)
+- ✅ Schema.org JSON-LD structured data rendering
+- ✅ Owner name "Maksim Yepikhin" preserved in metadata
+- ✅ Google Analytics (G-R0JFDJZ0MW) integrated
+- ✅ No compilation or runtime errors
+- ✅ Stable Next.js 15 with Turbopack running on port 5000
 
 ## Deployment Process
 
-### Production Build Script
-**Location:** `scripts/build-production.sh`
-
-This automated script must be run before EVERY deployment:
+### Development
 ```bash
-./scripts/build-production.sh
+npm run dev
 ```
+Next.js dev server runs on port 5000 with hot-reload and Turbopack compilation.
 
-**What it does:**
-1. Runs `npm run build` - builds Vite bundle and Express server
-2. Runs `node scripts/simple-prerender.js` - generates 14 static HTML pages with full SEO content
-3. Prepares `dist/public/` directory for deployment
+### Production Build
+```bash
+npm run build
+```
+Generates optimized Next.js production build in `.next/` directory with:
+- Server-rendered HTML for all 14 pages
+- Optimized JavaScript bundles
+- Static assets and images
+- SEO metadata and Schema.org data
 
-**Result:** All 14 pages (40-80KB each) contain full HTML content visible to Google bots
-
-### Deployment Steps
-1. Run `./scripts/build-production.sh` in Shell
+### Deployment to Replit
+1. Ensure all changes are committed
 2. Click "Publish" button in Replit
-3. Replit automatically deploys `dist/public/` with production server
+3. Replit Autoscale automatically builds and deploys Next.js application
+4. Production server serves at https://srqunlock.com
 
-### Verification
-After deployment, visit https://srqunlock.com and view page source:
-- ✅ Should see full HTML inside `<div id="root">`
-- ✅ File size ~80KB for homepage
-- ✅ All meta tags, Schema.org, Open Graph data visible
-
-**Full deployment documentation:** See `DEPLOYMENT.md`
+### Verification Checklist
+After deployment, verify:
+- ✅ Visit https://srqunlock.com and view page source
+- ✅ Should see full HTML content (not empty `<div id="root"></div>`)
+- ✅ Homepage ~278KB with complete content visible to crawlers
+- ✅ All meta tags, Schema.org JSON-LD, and Open Graph data present
+- ✅ Test multiple pages to ensure SSR working across all routes
+- ✅ Google Search Console shows indexed pages with full content

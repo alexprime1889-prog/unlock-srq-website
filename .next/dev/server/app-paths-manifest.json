@@ -1,16 +1,3 @@
 {
-  "/(marketing)/about-us/page": "app/(marketing)/about-us/page.js",
-  "/(marketing)/automotive-products/page": "app/(marketing)/automotive-products/page.js",
-  "/(marketing)/automotive-services/page": "app/(marketing)/automotive-services/page.js",
-  "/(marketing)/booking/page": "app/(marketing)/booking/page.js",
-  "/(marketing)/emergency-locksmith-charlotte-county/page": "app/(marketing)/emergency-locksmith-charlotte-county/page.js",
-  "/(marketing)/locksmith-bradenton/page": "app/(marketing)/locksmith-bradenton/page.js",
-  "/(marketing)/locksmith-englewood/page": "app/(marketing)/locksmith-englewood/page.js",
-  "/(marketing)/locksmith-north-port/page": "app/(marketing)/locksmith-north-port/page.js",
-  "/(marketing)/locksmith-port-charlotte/page": "app/(marketing)/locksmith-port-charlotte/page.js",
-  "/(marketing)/locksmith-punta-gorda/page": "app/(marketing)/locksmith-punta-gorda/page.js",
-  "/(marketing)/locksmith-sarasota/page": "app/(marketing)/locksmith-sarasota/page.js",
-  "/(marketing)/locksmith-venice-fl/page": "app/(marketing)/locksmith-venice-fl/page.js",
-  "/(marketing)/page": "app/(marketing)/page.js",
-  "/(marketing)/payment/page": "app/(marketing)/payment/page.js"
+  "/(marketing)/page": "app/(marketing)/page.js"
 }
