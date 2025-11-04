@@ -3,6 +3,6 @@ module.exports=[33290,a=>{"use strict";var b=a.i(7997);let c={metadataBase:new U
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-R0JFDJZ0MW');
-            `}})]}),(0,b.jsx)("body",{className:"font-sans antialiased",children:a})]})}a.s(["default",()=>d,"metadata",0,c])}];
+            `}})]}),(0,b.jsx)("body",{className:"font-sans antialiased",children:a})]})}a.s(["default",()=>d,"dynamic",0,"force-static","metadata",0,c])}];
 
 //# sourceMappingURL=app_layout_tsx_271801d7._.js.map

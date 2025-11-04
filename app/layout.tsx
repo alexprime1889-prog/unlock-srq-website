@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+export const dynamic = 'force-static';
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://srqunlock.com'),
   title: "24/7 Emergency Locksmith North Port & Port Charlotte FL | Unlock SRQ",
