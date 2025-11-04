@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
-  
   "scripts": {
     "dev": "next dev -p 5000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
-  "dependencies": {    ← No blank line between
+  "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@jridgewell/trace-mapping": "^0.3.25",
     "@neondatabase/serverless": "^0.10.4",
