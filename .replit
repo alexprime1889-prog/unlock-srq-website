@@ -8,7 +8,6 @@ packages = ["imagemagick", "xorg.libXcomposite", "xorg.libXdamage", "xorg.libXra
 
 [deployment]
 deploymentTarget = "autoscale"
-build = ["npm", "run", "build"]
 run = ["npm", "run", "start"]
 
 [[ports]]
