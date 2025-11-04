@@ -6,6 +6,40 @@ This project is a professional locksmith website for Unlock SRQ LLC, serving the
 ## User Preferences
 I prefer clear and direct communication. When making changes, prioritize established design patterns and architectural decisions. Before implementing significant new features or making large-scale modifications, please ask for confirmation. Ensure all changes maintain or improve the current SEO standing of the website. Do not make changes to the existing file structure without explicit instruction.
 
+## ⚠️ SEO-Critical Projects Decision Tree
+
+**CRITICAL LESSON LEARNED:** For SEO-heavy projects requiring Google indexing, **ALWAYS use Next.js from the start**, NOT React SPA with client-side rendering.
+
+### Decision Criteria:
+
+**Use Next.js (SSR/SSG) when project has:**
+- ✅ Multiple pages requiring Google indexing (>5 pages)
+- ✅ SEO as primary business goal (local business, e-commerce, content sites)
+- ✅ Location-specific or dynamic content pages
+- ✅ Need for Schema.org structured data
+- ✅ Future backend/API requirements
+
+**Use React SPA when project has:**
+- ✅ Single-page app (dashboard, tool, calculator)
+- ✅ Behind authentication (no public SEO)
+- ✅ No Google indexing requirements
+
+### Why This Matters:
+
+1. **React SPA Problem:** Client-side rendering means Google sees empty `<div id="root"></div>` → zero SEO
+2. **Puppeteer Workaround:** Pre-rendering scripts DON'T work in Replit Autoscale deployments
+3. **Next.js Solution:** Server-Side Rendering delivers full HTML to Google bots automatically
+
+### Technology Stack by Project Type:
+
+| Project Type | Stack | Deployment |
+|-------------|-------|------------|
+| SEO-Critical Website | Next.js 15 + TypeScript + Tailwind | Replit Autoscale |
+| Internal Dashboard | React + Vite + Wouter | Replit Autoscale |
+| Static Marketing Site | Next.js (SSG) | Replit Static |
+
+**Bottom Line:** If the user mentions "SEO", "Google", "local business", or "multiple pages" → **Start with Next.js immediately**.
+
 ## System Architecture
 The project utilizes a modern web stack with a clear separation of concerns.
 
