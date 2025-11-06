@@ -68,8 +68,17 @@ export default function AboutUs() {
                       data-testid="img-owner-about"
                     />
                   </picture>
-                  <meta itemProp="creator" content="Unlock SRQ LLC" />
-                  <meta itemProp="copyrightHolder" content="Unlock SRQ LLC" />
+                  <div itemProp="creator" itemScope itemType="https://schema.org/Organization">
+                    <meta itemProp="name" content="Unlock SRQ LLC" />
+                    <meta itemProp="url" content="https://srqunlock.com" />
+                  </div>
+                  <div itemProp="copyrightHolder" itemScope itemType="https://schema.org/Organization">
+                    <meta itemProp="name" content="Unlock SRQ LLC" />
+                  </div>
+                  <meta itemProp="copyrightNotice" content="© 2025 Unlock SRQ LLC. All rights reserved." />
+                  <meta itemProp="creditText" content="Unlock SRQ LLC" />
+                  <meta itemProp="license" content="https://srqunlock.com/terms-of-service" />
+                  <meta itemProp="acquireLicensePage" content="https://srqunlock.com/#contact" />
                 </figure>
               </div>
 

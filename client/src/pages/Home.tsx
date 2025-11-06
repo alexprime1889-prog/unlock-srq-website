@@ -139,8 +139,17 @@ export default function Home() {
                       <span className="px-2 py-1 bg-[#7dd3e8] text-[#1a3a52] text-xs font-semibold rounded">Mobile Service</span>
                     </div>
                   </figcaption>
-                  <meta itemProp="creator" content="Unlock SRQ LLC" />
-                  <meta itemProp="copyrightHolder" content="Unlock SRQ LLC" />
+                  <div itemProp="creator" itemScope itemType="https://schema.org/Organization">
+                    <meta itemProp="name" content="Unlock SRQ LLC" />
+                    <meta itemProp="url" content="https://srqunlock.com" />
+                  </div>
+                  <div itemProp="copyrightHolder" itemScope itemType="https://schema.org/Organization">
+                    <meta itemProp="name" content="Unlock SRQ LLC" />
+                  </div>
+                  <meta itemProp="copyrightNotice" content="© 2025 Unlock SRQ LLC. All rights reserved." />
+                  <meta itemProp="creditText" content="Unlock SRQ LLC" />
+                  <meta itemProp="license" content="https://srqunlock.com/terms-of-service" />
+                  <meta itemProp="acquireLicensePage" content="https://srqunlock.com/#contact" />
                 </figure>
               </div>
             </div>
@@ -702,8 +711,17 @@ export default function Home() {
                     data-testid="img-about-customer-service"
                   />
                 </picture>
-                <meta itemProp="creator" content="Unlock SRQ LLC" />
-                <meta itemProp="copyrightHolder" content="Unlock SRQ LLC" />
+                <div itemProp="creator" itemScope itemType="https://schema.org/Organization">
+                  <meta itemProp="name" content="Unlock SRQ LLC" />
+                  <meta itemProp="url" content="https://srqunlock.com" />
+                </div>
+                <div itemProp="copyrightHolder" itemScope itemType="https://schema.org/Organization">
+                  <meta itemProp="name" content="Unlock SRQ LLC" />
+                </div>
+                <meta itemProp="copyrightNotice" content="© 2025 Unlock SRQ LLC. All rights reserved." />
+                <meta itemProp="creditText" content="Unlock SRQ LLC" />
+                <meta itemProp="license" content="https://srqunlock.com/terms-of-service" />
+                <meta itemProp="acquireLicensePage" content="https://srqunlock.com/#contact" />
                 <meta itemProp="description" content="Professional locksmith Maksim Yepikhin providing personalized customer service to satisfied client in Sarasota, Florida area" />
                 <meta itemProp="keywords" content="locksmith Sarasota, customer service, professional locksmith, North Port FL, Maksim Yepikhin" />
                 <figcaption itemProp="caption" className="sr-only">
@@ -825,8 +843,17 @@ export default function Home() {
                   data-testid="img-emergency-service"
                 />
               </picture>
-              <meta itemProp="creator" content="Unlock SRQ LLC" />
-              <meta itemProp="copyrightHolder" content="Unlock SRQ LLC" />
+              <div itemProp="creator" itemScope itemType="https://schema.org/Organization">
+                <meta itemProp="name" content="Unlock SRQ LLC" />
+                <meta itemProp="url" content="https://srqunlock.com" />
+              </div>
+              <div itemProp="copyrightHolder" itemScope itemType="https://schema.org/Organization">
+                <meta itemProp="name" content="Unlock SRQ LLC" />
+              </div>
+              <meta itemProp="copyrightNotice" content="© 2025 Unlock SRQ LLC. All rights reserved." />
+              <meta itemProp="creditText" content="Unlock SRQ LLC" />
+              <meta itemProp="license" content="https://srqunlock.com/terms-of-service" />
+              <meta itemProp="acquireLicensePage" content="https://srqunlock.com/#contact" />
               <figcaption itemProp="caption" className="sr-only">
                 Professional locksmith providing emergency vehicle lockout service in Sarasota, Florida
               </figcaption>
