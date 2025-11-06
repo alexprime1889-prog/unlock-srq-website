@@ -64,7 +64,7 @@ export default function AboutUs() {
                       loading="eager"
                       width="768"
                       height="1344"
-                      className="w-full h-auto object-cover aspect-[3/4]"
+                      className="w-full h-auto object-contain"
                       data-testid="img-owner-about"
                     />
                   </picture>
