@@ -54,16 +54,16 @@ export default function AboutUs() {
                 >
                   <picture>
                     <source 
-                      srcSet="/maksim-yepikhin-locksmith-with-customer-sarasota-fl.webp" 
+                      srcSet="/maksim-yepikhin-working-xhorse-locksmith.webp" 
                       type="image/webp"
                     />
                     <img 
-                      src="/maksim-yepikhin-locksmith-with-customer-sarasota-fl.png"
-                      alt="Maksim Yepikhin, licensed master locksmith and owner of Unlock SRQ, providing professional locksmith service to satisfied customer in North Port, Charlotte County Florida"
+                      src="/maksim-yepikhin-working-xhorse-locksmith.png"
+                      alt="Maksim Yepikhin, owner of Unlock SRQ LLC, working with professional Xhorse key programming equipment, demonstrating expert automotive locksmith services in North Port, Charlotte County Florida"
                       itemProp="contentUrl"
                       loading="eager"
-                      width="1536"
-                      height="2048"
+                      width="768"
+                      height="1344"
                       className="w-full h-auto object-cover aspect-[3/4]"
                       data-testid="img-owner-about"
                     />
