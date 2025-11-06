@@ -28,7 +28,9 @@ const pages = [
   { path: '/locksmith-englewood', file: 'locksmith-englewood/index.html' },
   { path: '/locksmith-bradenton', file: 'locksmith-bradenton/index.html' },
   { path: '/emergency-locksmith-charlotte-county', file: 'emergency-locksmith-charlotte-county/index.html' },
-  { path: '/about-us', file: 'about-us/index.html' }
+  { path: '/about-us', file: 'about-us/index.html' },
+  { path: '/privacy-policy', file: 'privacy-policy/index.html' },
+  { path: '/terms-of-service', file: 'terms-of-service/index.html' }
 ];
 
 // Puppeteer will use its bundled Chromium automatically

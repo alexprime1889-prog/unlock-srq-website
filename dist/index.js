@@ -120,6 +120,18 @@ function serveStatic(app2) {
 }
 
 // server/index.ts
+import { execSync } from "child_process";
+import path3 from "path";
+import { fileURLToPath } from "url";
+var __dirname = path3.dirname(fileURLToPath(import.meta.url));
+if (process.env.NODE_ENV === "production") {
+  try {
+    const scriptPath = path3.join(__dirname, "../scripts/restore-prerendered.js");
+    execSync(`node ${scriptPath}`, { stdio: "inherit" });
+  } catch (error) {
+    console.error("\u26A0\uFE0F  Warning: Could not restore pre-rendered files");
+  }
+}
 var app = express2();
 app.use(express2.json({
   verify: (req, _res, buf) => {
@@ -129,7 +141,7 @@ app.use(express2.json({
 app.use(express2.urlencoded({ extended: false }));
 app.use((req, res, next) => {
   const start = Date.now();
-  const path3 = req.path;
+  const path4 = req.path;
   let capturedJsonResponse = void 0;
   const originalResJson = res.json;
   res.json = function(bodyJson, ...args) {
@@ -138,8 +150,8 @@ app.use((req, res, next) => {
   };
   res.on("finish", () => {
     const duration = Date.now() - start;
-    if (path3.startsWith("/api")) {
-      let logLine = `${req.method} ${path3} ${res.statusCode} in ${duration}ms`;
+    if (path4.startsWith("/api")) {
+      let logLine = `${req.method} ${path4} ${res.statusCode} in ${duration}ms`;
       if (capturedJsonResponse) {
         logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
       }
