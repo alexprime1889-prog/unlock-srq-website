@@ -160,6 +160,25 @@ export default function Footer() {
           </a>
         </div>
 
+        {/* Legal Links */}
+        <div className="flex justify-center gap-6 mb-6 text-sm">
+          <a 
+            href="/privacy-policy" 
+            className="text-white/60 hover:text-[#7dd3e8] transition-colors"
+            data-testid="link-privacy-footer"
+          >
+            Privacy Policy
+          </a>
+          <span className="text-white/40">|</span>
+          <a 
+            href="/terms-of-service" 
+            className="text-white/60 hover:text-[#7dd3e8] transition-colors"
+            data-testid="link-terms-footer"
+          >
+            Terms of Service
+          </a>
+        </div>
+
         {/* Copyright */}
         <div className="text-center text-white/60 text-sm">
           <p>

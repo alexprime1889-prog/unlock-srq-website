@@ -20,6 +20,8 @@ import EnglewoodPage from "./pages/EnglewoodPage";
 import BradentonPage from "./pages/BradentonPage";
 import CharlotteCountyPage from "./pages/CharlotteCountyPage";
 import AboutUs from "./pages/AboutUs";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 function Router() {
   return (
@@ -38,6 +40,8 @@ function Router() {
       <Route path="/locksmith-bradenton" component={BradentonPage} />
       <Route path="/emergency-locksmith-charlotte-county" component={CharlotteCountyPage} />
       <Route path="/about-us" component={AboutUs} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/terms-of-service" component={TermsOfService} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
