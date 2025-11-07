@@ -93,6 +93,91 @@ export default function Booking() {
             <p className="text-2xl font-bold mb-3">Call us now: <a href="tel:9415875050" className="text-[#5DCED9] hover:underline">941-587-5050</a></p>
             <p className="text-sm text-white/80">Available 24/7/365 for emergency services</p>
           </div>
+
+          {/* Why Book Online Section */}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h2 className="text-2xl font-bold text-[#2C4A5E] mb-4">Why Book Online?</h2>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#5DCED9] font-bold">✓</span>
+                  <span><strong>Choose Your Time:</strong> Select the most convenient appointment slot that fits your schedule</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#5DCED9] font-bold">✓</span>
+                  <span><strong>Instant Confirmation:</strong> Receive immediate booking confirmation and calendar invite</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#5DCED9] font-bold">✓</span>
+                  <span><strong>No Wait Time:</strong> Avoid phone queues and book your appointment in under 2 minutes</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#5DCED9] font-bold">✓</span>
+                  <span><strong>Easy Rescheduling:</strong> Modify or cancel your appointment anytime through your confirmation email</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-[#2C4A5E] mb-4">Available Services</h2>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#5DCED9] font-bold">→</span>
+                  <span><a href="/automotive-services" className="hover:text-[#5DCED9] underline">Automotive Locksmith Services</a> - Key programming, transponder keys, lockouts</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#5DCED9] font-bold">→</span>
+                  <span>Residential Lock Services - Rekeying, installation, smart locks</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#5DCED9] font-bold">→</span>
+                  <span>Commercial Security - Master key systems, access control</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#5DCED9] font-bold">→</span>
+                  <span><a href="/automotive-products" className="hover:text-[#5DCED9] underline">Key Replacement</a> - 95% of automotive keys in stock</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Service Areas */}
+          <div className="mt-12 bg-white rounded-lg shadow-lg p-8">
+            <h2 className="text-2xl font-bold text-[#2C4A5E] mb-4 text-center">We Serve These Areas</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+              <a href="/locksmith-north-port" className="text-gray-700 hover:text-[#5DCED9] font-semibold">North Port, FL</a>
+              <a href="/locksmith-port-charlotte" className="text-gray-700 hover:text-[#5DCED9] font-semibold">Port Charlotte, FL</a>
+              <a href="/locksmith-punta-gorda" className="text-gray-700 hover:text-[#5DCED9] font-semibold">Punta Gorda, FL</a>
+              <a href="/locksmith-venice-fl" className="text-gray-700 hover:text-[#5DCED9] font-semibold">Venice, FL</a>
+              <a href="/locksmith-englewood" className="text-gray-700 hover:text-[#5DCED9] font-semibold">Englewood, FL</a>
+              <a href="/locksmith-bradenton" className="text-gray-700 hover:text-[#5DCED9] font-semibold">Bradenton, FL</a>
+              <a href="/locksmith-sarasota" className="text-gray-700 hover:text-[#5DCED9] font-semibold">Sarasota, FL</a>
+              <a href="/emergency-locksmith-charlotte-county" className="text-gray-700 hover:text-[#5DCED9] font-semibold">Charlotte County</a>
+            </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold text-[#2C4A5E] mb-6 text-center">Booking FAQ</h2>
+            <div className="space-y-4">
+              <div className="bg-white rounded-lg shadow p-6">
+                <h3 className="font-bold text-[#2C4A5E] mb-2">How far in advance should I book?</h3>
+                <p className="text-gray-700">We recommend booking at least 24 hours in advance for non-emergency services. For emergency lockouts, call us directly at (941) 587-5050 for immediate assistance.</p>
+              </div>
+              <div className="bg-white rounded-lg shadow p-6">
+                <h3 className="font-bold text-[#2C4A5E] mb-2">What if I need to change my appointment?</h3>
+                <p className="text-gray-700">You can reschedule or cancel your appointment using the link in your confirmation email. We request at least 2 hours notice for any changes.</p>
+              </div>
+              <div className="bg-white rounded-lg shadow p-6">
+                <h3 className="font-bold text-[#2C4A5E] mb-2">Do you offer same-day appointments?</h3>
+                <p className="text-gray-700">Yes! Check the calendar above for available same-day slots. For urgent needs, calling (941) 587-5050 ensures the fastest response.</p>
+              </div>
+              <div className="bg-white rounded-lg shadow p-6">
+                <h3 className="font-bold text-[#2C4A5E] mb-2">What payment methods do you accept?</h3>
+                <p className="text-gray-700">We accept all major credit cards, cash, and offer <a href="/payment" className="text-[#5DCED9] hover:underline">secure online payment</a>. Payment is collected after service completion.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
 

@@ -233,6 +233,92 @@ export default function Payment() {
               </div>
             </div>
           </div>
+
+          {/* Payment FAQ */}
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold text-[#2C4A5E] mb-6 text-center">Payment FAQ</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-white rounded-lg shadow p-6">
+                <h3 className="font-bold text-[#2C4A5E] mb-2">When should I make payment?</h3>
+                <p className="text-sm text-gray-700">Payment is collected after service completion. You can pay immediately using this portal or via phone after our technician completes the work.</p>
+              </div>
+              <div className="bg-white rounded-lg shadow p-6">
+                <h3 className="font-bold text-[#2C4A5E] mb-2">What payment methods are accepted?</h3>
+                <p className="text-sm text-gray-700">We accept all major credit cards (Visa, Mastercard, Amex, Discover), cash, and digital payments. All online payments processed through Stripe.</p>
+              </div>
+              <div className="bg-white rounded-lg shadow p-6">
+                <h3 className="font-bold text-[#2C4A5E] mb-2">Is online payment secure?</h3>
+                <p className="text-sm text-gray-700">Yes! We use Stripe, a PCI-compliant payment processor trusted by millions. Your card information is encrypted and never stored on our servers.</p>
+              </div>
+              <div className="bg-white rounded-lg shadow p-6">
+                <h3 className="font-bold text-[#2C4A5E] mb-2">Do you offer payment plans?</h3>
+                <p className="text-sm text-gray-700">For larger commercial projects, we can discuss payment arrangements. Contact us at (941) 587-5050 to discuss your specific needs.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Services Links */}
+          <div className="mt-12 bg-white rounded-lg shadow-lg p-8">
+            <h2 className="text-2xl font-bold text-[#2C4A5E] mb-6 text-center">Our Services</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div>
+                <h3 className="font-semibold text-[#2C4A5E] mb-3">Automotive Services</h3>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• <a href="/automotive-services" className="hover:text-[#5DCED9] underline">Key Programming</a></li>
+                  <li>• <a href="/automotive-services" className="hover:text-[#5DCED9] underline">Emergency Lockouts</a></li>
+                  <li>• <a href="/automotive-products" className="hover:text-[#5DCED9] underline">Key Replacement</a></li>
+                  <li>• Transponder Keys</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-[#2C4A5E] mb-3">Residential Services</h3>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• Lock Installation</li>
+                  <li>• Rekey Services</li>
+                  <li>• Smart Lock Setup</li>
+                  <li>• Home Lockouts</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-[#2C4A5E] mb-3">Commercial Services</h3>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• Master Key Systems</li>
+                  <li>• Access Control</li>
+                  <li>• High-Security Locks</li>
+                  <li>• Emergency Service</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-6 text-center">
+              <a href="/" className="text-[#5DCED9] hover:underline font-semibold">View All Services →</a>
+            </div>
+          </div>
+
+          {/* Service Areas */}
+          <div className="mt-12 bg-gradient-to-br from-[#2C4A5E] to-[#1a3a52] rounded-lg shadow-lg p-8 text-white">
+            <h2 className="text-2xl font-bold mb-4 text-center">Service Areas in Southwest Florida</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mt-6">
+              <a href="/locksmith-north-port" className="hover:text-[#5DCED9] font-semibold transition-colors">North Port</a>
+              <a href="/locksmith-port-charlotte" className="hover:text-[#5DCED9] font-semibold transition-colors">Port Charlotte</a>
+              <a href="/locksmith-punta-gorda" className="hover:text-[#5DCED9] font-semibold transition-colors">Punta Gorda</a>
+              <a href="/locksmith-venice-fl" className="hover:text-[#5DCED9] font-semibold transition-colors">Venice</a>
+              <a href="/locksmith-englewood" className="hover:text-[#5DCED9] font-semibold transition-colors">Englewood</a>
+              <a href="/locksmith-bradenton" className="hover:text-[#5DCED9] font-semibold transition-colors">Bradenton</a>
+              <a href="/locksmith-sarasota" className="hover:text-[#5DCED9] font-semibold transition-colors">Sarasota</a>
+              <a href="/emergency-locksmith-charlotte-county" className="hover:text-[#5DCED9] font-semibold transition-colors">Charlotte County</a>
+            </div>
+            <p className="text-center text-white/80 mt-6">Proudly serving Charlotte County and Sarasota County, Florida</p>
+          </div>
+
+          {/* About Link */}
+          <div className="mt-8 text-center">
+            <p className="text-gray-600">
+              <a href="/about-us" className="text-[#5DCED9] hover:underline font-semibold">Learn more about Unlock SRQ →</a>
+            </p>
+            <p className="text-gray-600 mt-2">
+              <a href="/booking" className="text-[#5DCED9] hover:underline">Schedule an Appointment</a> | <a href="/privacy-policy" className="text-gray-500 hover:underline">Privacy Policy</a>
+            </p>
+          </div>
         </div>
       </main>
 

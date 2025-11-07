@@ -1,4 +1,5 @@
 import express, { type Request, Response, NextFunction } from "express";
+import compression from "compression";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import { execSync } from "child_process";
@@ -18,6 +19,28 @@ if (process.env.NODE_ENV === "production") {
 }
 
 const app = express();
+
+// Redirect www to non-www (SEO best practice)
+app.use((req: Request, res: Response, next: NextFunction) => {
+  const host = req.headers.host;
+  if (host && host.startsWith('www.')) {
+    const newHost = host.replace(/^www\./, '');
+    return res.redirect(301, `${req.protocol}://${newHost}${req.originalUrl}`);
+  }
+  next();
+});
+
+// Enable Gzip compression for all responses (HTML, JS, CSS, JSON)
+app.use(compression({
+  filter: (req: Request, res: Response) => {
+    if (req.headers['x-no-compression']) {
+      return false;
+    }
+    return compression.filter(req, res);
+  },
+  level: 6,
+  threshold: 1024
+}));
 
 declare module 'http' {
   interface IncomingMessage {

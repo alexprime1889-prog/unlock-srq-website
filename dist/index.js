@@ -1,5 +1,6 @@
 // server/index.ts
 import express2 from "express";
+import compression from "compression";
 
 // server/routes.ts
 import { createServer } from "http";
@@ -133,6 +134,24 @@ if (process.env.NODE_ENV === "production") {
   }
 }
 var app = express2();
+app.use((req, res, next) => {
+  const host = req.headers.host;
+  if (host && host.startsWith("www.")) {
+    const newHost = host.replace(/^www\./, "");
+    return res.redirect(301, `${req.protocol}://${newHost}${req.originalUrl}`);
+  }
+  next();
+});
+app.use(compression({
+  filter: (req, res) => {
+    if (req.headers["x-no-compression"]) {
+      return false;
+    }
+    return compression.filter(req, res);
+  },
+  level: 6,
+  threshold: 1024
+}));
 app.use(express2.json({
   verify: (req, _res, buf) => {
     req.rawBody = buf;
