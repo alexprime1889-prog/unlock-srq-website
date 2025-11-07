@@ -91,6 +91,21 @@ node scripts/simple-prerender.js
 - `server/public/` removed from .gitignore to include files in deployment
 - `.replit` build command should NOT include pre-rendering script
 
+**SEO Fixes (November 7, 2025):**
+- **Problem**: Canonical URLs on /booking/ and /payment/ incorrectly pointing to homepage (https://srqunlock.com)
+- **Root Cause**: Pre-render script saved files to dist/public/ but didn't copy to server/public/ where production server reads from
+- **Solution**: 
+  - Added file copying logic to `scripts/simple-prerender.js` (line 124-138)
+  - Script now automatically copies all pre-rendered files from dist/public/ to server/public/
+  - Fixed canonical URLs to point to correct page URLs
+- **Additional Fix**: Added Footer component to Booking and Payment pages for improved internal linking structure
+- **Build Cache Issue**: Resolved Vite build caching by clearing node_modules/.vite before rebuilding
+- **Results**:
+  - ✅ Booking canonical: https://srqunlock.com/booking/
+  - ✅ Payment canonical: https://srqunlock.com/payment/
+  - ✅ Footer with Privacy Policy and Terms links present on both pages
+  - ✅ All changes properly bundled and pre-rendered to server/public/
+
 ## External Dependencies
 - **Calendly**: Integrated via iframe for appointment scheduling on the Booking page.
 - **Stripe**: Payment portal ready for integration on the Payment page. Requires API keys.

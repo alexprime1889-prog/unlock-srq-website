@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SEO from "@/components/SEO";
+import Footer from "@/components/Footer";
 import { ArrowLeft, CreditCard, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,6 +17,7 @@ import {
 export default function Payment() {
   const seoTitle = "Online Payment - Unlock SRQ LLC | Secure Payment Portal";
   const seoDescription = "Pay securely online for locksmith services. Fast, convenient, and secure payment processing. Accept all major credit cards for emergency locksmith, key programming, and lock installation services.";
+  const canonicalUrl = "https://srqunlock.com/payment/";
   
   const [selectedService, setSelectedService] = useState("");
   const [amount, setAmount] = useState("");
@@ -45,7 +47,7 @@ export default function Payment() {
 
   return (
     <>
-      <SEO title={seoTitle} description={seoDescription} />
+      <SEO title={seoTitle} description={seoDescription} canonicalUrl={canonicalUrl} />
       <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Header */}
       <header className="bg-white border-b border-gray-200 py-4 shadow-sm">
@@ -322,14 +324,7 @@ export default function Payment() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-[#2C4A5E] text-white py-8 mt-12">
-        <div className="container text-center">
-          <p className="text-white/80">
-            &copy; {new Date().getFullYear()} Unlock SRQ LLC. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
     </>
   );

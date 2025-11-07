@@ -2,10 +2,13 @@ import { useEffect } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
+import Footer from "@/components/Footer";
 
 export default function Booking() {
   const seoTitle = "Book Appointment - Unlock SRQ LLC | Professional Locksmith Services";
   const seoDescription = "Schedule your locksmith appointment online. Fast, convenient booking with instant confirmation. Available 24/7 for emergency services in Sarasota, North Port, and surrounding areas.";
+  const canonicalUrl = "https://srqunlock.com/booking/";
+  
   useEffect(() => {
     // Load Calendly widget script
     const script = document.createElement("script");
@@ -20,7 +23,7 @@ export default function Booking() {
 
   return (
     <>
-      <SEO title={seoTitle} description={seoDescription} />
+      <SEO title={seoTitle} description={seoDescription} canonicalUrl={canonicalUrl} />
       <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Header */}
       <header className="bg-white border-b border-gray-200 py-4 shadow-sm">
@@ -181,14 +184,7 @@ export default function Booking() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-[#2C4A5E] text-white py-8">
-        <div className="container text-center">
-          <p className="text-white/80">
-            &copy; {new Date().getFullYear()} Unlock SRQ LLC. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
     </>
   );

@@ -118,8 +118,21 @@ async function main() {
     console.log('\n✅ Pre-rendering complete!');
     console.log(`📊 Generated ${pages.length} static HTML pages\n`);
     
-    // NOTE: Pre-rendered files are already in dist/public/ where they belong
-    // Production server will read from dist/public after build
+    // Copy pre-rendered files from dist/public/ to server/public/
+    // This is required because production server serves from server/public/
+    console.log('📋 Copying pre-rendered files to server/public/...\n');
+    const serverPublicDir = path.join(projectRoot, 'server/public');
+    
+    // Remove old server/public/ directory if it exists
+    if (fs.existsSync(serverPublicDir)) {
+      fs.rmSync(serverPublicDir, { recursive: true });
+    }
+    
+    // Copy all files from dist/public/ to server/public/
+    const { execSync } = await import('child_process');
+    execSync(`cp -r ${distDir} ${serverPublicDir}`, { encoding: 'utf8' });
+    
+    console.log('✅ Files copied to server/public/\n');
     
     console.log('🎯 Next steps:');
     console.log('  1. Click "Deploy" in Replit');
