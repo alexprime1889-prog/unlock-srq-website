@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 30 6% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 6% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 6% 25%;
+
+    /* Navy Blue Primary - matching brand */
+    --primary: 204 50% 21%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Teal/Cyan Accent - matching brand */
+    --secondary: 186 65% 70%;
+    --secondary-foreground: 204 50% 21%;
+
+    --muted: 260 5% 96%;
+    --muted-foreground: 260 5% 45%;
+
+    --accent: 186 65% 70%;
+    --accent-foreground: 204 50% 21%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 5% 90%;
+    --input: 260 5% 90%;
+    --ring: 186 65% 70%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 260 10% 10%;
+    --foreground: 30 5% 90%;
+
+    --card: 260 10% 15%;
+    --card-foreground: 30 5% 90%;
+
+    --popover: 260 10% 15%;
+    --popover-foreground: 30 5% 90%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 217 91% 95%;
+
+    --secondary: 260 10% 20%;
+    --secondary-foreground: 30 5% 80%;
+
+    --muted: 260 10% 20%;
+    --muted-foreground: 260 5% 60%;
+
+    --accent: 260 10% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 100% / 10%;
+    --input: 0 0% 100% / 15%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+}
